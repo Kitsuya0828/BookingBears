@@ -75,7 +75,8 @@ EOM;
 		exit;
 	}
 ?>
-
+<?php
+include "
 <!DOCTYPE html>
 <html dir="ltr" lang="ja">
 <head>
@@ -214,4 +215,5 @@ EOM;
 <!-- / フッター -->
 
 </body>
-</html>
+</html>"
+?>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>お問い合わせフォーム</title>
-<link rel="stylesheet" href="style1.css">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div><h1>Booking Bears</h1></div>
