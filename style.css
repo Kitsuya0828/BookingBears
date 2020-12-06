@@ -554,22 +554,7 @@ form.contact_form h1 {
     font-weight: bold;
     color: #333333;
 }
-body > div:nth-child(3) > div {
-    border: solid 1px #ddd;
-    padding: 30px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-    background-color: #fff;
-}
-body > div:nth-child(3) > div > h1 {
-    letter-spacing: 2px;
-    margin: 0 0 15px;
-    font-size: 22px;
-    font-weight: bold;
-    color: #333333;
-    padding-left: 0;
-}
+
 form.contact_form > div {
     border-radius: 3px;
     background-color: #f6f6f6;
