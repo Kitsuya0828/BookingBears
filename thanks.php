@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="style1.css">
 </head>
 <body>
-<div><h1>Company Name</h1></div>
+<div><h1>Booking Bears</h1></div>
 <div><h2>お問い合わせ</h2> </div>
 <div>
         <div>
