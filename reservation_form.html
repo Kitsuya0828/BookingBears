@@ -12,6 +12,27 @@
 <script src="js/css3-mediaqueries.js"></script>
 <![endif]-->
 </head>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+
+<script>
+  function SubForm (){
+      $.ajax({
+          url:'https://api.apispreadsheets.com/data/4835/',
+          type:'post',
+          data:$("#normal").serializeArray(),
+          success: function(){
+            alert("フォームが正常に送信されました")
+          },
+          error: function(){
+            alert("フォーム送信時にエラーが発生しました")
+          }
+      });
+  }
+</script>
+
 <body>
 
 <!-- ヘッダー -->
@@ -52,10 +73,10 @@
 		<!-- / サブ画像 -->
 
 		<section class="content">
-            <h1 class="heading">初日申請フォーム（通常版）</h1>
+            <h3 class="heading">初日申請フォーム（通常版）</h3>
             <p>※グラウンド全面予約をご検討の方は<a href="whole_ground_form.html">こちらへ</a></p><br><br>
-			<article>
-                <form method="post" action="confirm.html">
+			      <article>
+                <form method="post" id="normal">
                     <label for="mailAddress">申込者のメールアドレス（DCメール）：</label><input name="mailAddress" type="email" id="mailAddress"><br><br>
                     <label for="studentId">申込者の学籍番号：</label><input name="studentId" type="text" id="studentId"><br><br>
                     <label for="applicantName">申込者の氏名：</label><input name="applicantName" type="text" id="applicantName"><br><br>
@@ -64,10 +85,10 @@
                     <label for="personInChargeName">使用責任者の氏名：</label><input name="personInChargeName" type="text" id="personInChargeName"><br><br>
 
                     
-                    <h2>第1希望</h2>
-                    日付を選択してください。<input name="date1" type="date" /><br>
-                    使用の用途を記述してください。<input name="purpose1" type="text"><br>
-                    予約場所と時間帯を選択してください。
+                    <big><b>第1希望</b></big><br>
+                    <label for="date1">日付を選択：</label><input name="date1" type="date"><br>
+                    <label for="purpose1">使用用途を記述：</label><input name="purpose1" type="text"><br>
+                    予約場所と時間帯を選択：
                     <table class="table" align="center" border="2">
                       <thead class="thead-dark">
                         <tr align="center">
@@ -80,60 +101,60 @@
                       <tbody>
                         <tr align="center">
                         <td>体育館A面</td>
-                        <td><input type="radio" name="first" value="体育館A面>10<12"></td>
-                        <td><input type="radio" name="first" value="体育館A面>13<16"></td>
-                        <td><input type="radio" name="first" value="体育館A面>16<19"></td>
+                          <td><input type="radio" name="first" id="first" value="体育館A面_10～12"></td>
+                          <td><input type="radio" name="first" id="first" value="体育館A面_13～16"></td>
+                          <td><input type="radio" name="first" id="first" value="体育館A面_16～19"></td>
                         </tr>
                         <tr align="center">
                         <td>体育館B面</td>
-                        <td><input type="radio" name="first" value="体育館B面>10<12"></td>
-                        <td><input type="radio" name="first" value="体育館B面>13<16"></td>
-                        <td><input type="radio" name="first" value="体育館B面>16<19"></td>
+                          <td><input type="radio" name="first" id="first" value="体育館B面_10～12"></td>
+                          <td><input type="radio" name="first" id="first" value="体育館B面_13～16"></td>
+                          <td><input type="radio" name="first" id="first" value="体育館B面_16～19"></td>
                         </tr>
                         <tr align="center">
                         <td>グラウンドC面</td>
-                        <td><input type="radio" name="first" value="グラウンドC面>10<12"></td>
-                        <td><input type="radio" name="first" value="グラウンドC面>13<16"></td>
-                        <td><input type="radio" name="first" value="グラウンドC面>16<19"></td>
+                          <td><input type="radio" name="first" id="first" value="グラウンドC面_10～12"></td>
+                          <td><input type="radio" name="first" id="first" value="グラウンドC面_13～16"></td>
+                          <td><input type="radio" name="first" id="first" value="グラウンドC面_16～19"></td>
                         </tr>
                         <tr align="center">
                         <td>グラウンドD面</td>
-                        <td><input type="radio" name="first" value="グラウンドD面>10<12"></td>
-                        <td><input type="radio" name="first" value="グラウンドD面>13<16"></td>
-                        <td><input type="radio" name="first" value="グラウンドD面>16<19"></td>
+                          <td><input type="radio" name="first" id="first" value="グラウンドD面_10～12"></td>
+                          <td><input type="radio" name="first" id="first" value="グラウンドD面_13～16"></td>
+                          <td><input type="radio" name="first" id="first" value="グラウンドD面_16～19"></td>
                         </tr>
                         <tr align="center">
                         <td>グラウンドE面</td>
-                        <td><input type="radio" name="first" value="グラウンドE面>10<12"></td>
-                        <td><input type="radio" name="first" value="グラウンドE面>13<16"></td>
-                        <td><input type="radio" name="first" value="グラウンドE面>16<19"></td>
+                          <td><input type="radio" name="first" id="first" value="グラウンドE面_10～12"></td>
+                          <td><input type="radio" name="first" id="first" value="グラウンドE面_13～16"></td>
+                          <td><input type="radio" name="first" id="first" value="グラウンドE面_16～19"></td>
                         </tr>
                         <tr align="center">
                         <td>グラウンドF面</td>
-                        <td><input type="radio" name="first" value="グラウンドF面>10<12"></td>
-                        <td><input type="radio" name="first" value="グラウンドF面>13<16"></td>
-                        <td><input type="radio" name="first" value="グラウンドF面>16<19"></td>
+                          <td><input type="radio" name="first" id="first" value="グラウンドF面_10～12"></td>
+                          <td><input type="radio" name="first" id="first" value="グラウンドF面_13～16"></td>
+                          <td><input type="radio" name="first" id="first" value="グラウンドF面_16～19"></td>
                         </tr>
                         <tr align="center">
                             <td>グラウンドG面</td>
-                            <td><input type="radio" name="first" value="グラウンドF面>10<12"></td>
-                            <td><input type="radio" name="first" value="グラウンドF面>13<16"></td>
-                            <td><input type="radio" name="first" value="グラウンドF面>16<19"></td>
+                            <td><input type="radio" name="first" id="first" value="グラウンドG面_10～12"></td>
+                            <td><input type="radio" name="first" id="first" value="グラウンドG面_13～16"></td>
+                            <td><input type="radio" name="first" id="first" value="グラウンドG面_16～19"></td>
                         </tr>
                         <tr align="center">
                             <td>グラウンドH面</td>
-                            <td><input type="radio" name="first" value="グラウンドF面>10<12"></td>
-                            <td><input type="radio" name="first" value="グラウンドF面>13<16"></td>
-                            <td><input type="radio" name="first" value="グラウンドF面>16<19"></td>
+                            <td><input type="radio" name="first" id="first" value="グラウンドG面_10～12"></td>
+                            <td><input type="radio" name="first" id="first" value="グラウンドG面_13～16"></td>
+                            <td><input type="radio" name="first" id="first" value="グラウンドG面_16～19"></td>
                         </tr>
                       </tbody>
                     </table>
                     
                     <br>
                     <big><b>第2希望</b></big><br>
-                    日付を選択してください。<input name="date2" type="date" /><br>
-                    使用の用途を記述してください。<input name="purpose2" type="text"><br>
-                    予約場所と時間帯を選択してください。
+                    <label for="date2">日付を選択：</label><input name="date2" type="date"><br>
+                    <label for="purpose2">使用用途を記述：</label><input name="purpose2" type="text"><br>
+                    予約場所と時間帯を選択：
                     <table class="table" align="center" border="2">
                       <thead class="thead-dark">
                         <tr align="center">
@@ -146,48 +167,60 @@
                       <tbody>
                       <tr align="center">
                       <td>体育館A面</td>
-                      <td><input type="radio" name="second" value="体育館A面>10<12"></td>
-                      <td><input type="radio" name="second" value="体育館A面>13<16"></td>
-                      <td><input type="radio" name="second" value="体育館A面>16<19"></td>
+                      <td><input type="radio" name="second" id="second" value="体育館A面_10～12"></td>
+                      <td><input type="radio" name="second" id="second" value="体育館A面_13～16"></td>
+                      <td><input type="radio" name="second" id="second" value="体育館A面_16～19"></td>
                       </tr>
                       <tr align="center">
                       <td>体育館B面</td>
-                      <td><input type="radio" name="second" value="体育館B面>10<12"></td>
-                      <td><input type="radio" name="second" value="体育館B面>13<16"></td>
-                      <td><input type="radio" name="second" value="体育館B面>16<19"></td>
+                      <td><input type="radio" name="second" id="second" value="体育館B面_10～12"></td>
+                      <td><input type="radio" name="second" id="second" value="体育館B面_13～16"></td>
+                      <td><input type="radio" name="second" id="second" value="体育館B面_16～19"></td>
                       </tr>
                       <tr align="center">
                       <td>グラウンドC面</td>
-                      <td><input type="radio" name="second" value="グラウンドC面>10<12"></td>
-                      <td><input type="radio" name="second" value="グラウンドC面>13<16"></td>
-                      <td><input type="radio" name="second" value="グラウンドC面>16<19"></td>
+                      <td><input type="radio" name="second" id="second" value="グラウンドC面_10～12"></td>
+                      <td><input type="radio" name="second" id="second" value="グラウンドC面_13～16"></td>
+                      <td><input type="radio" name="second" id="second" value="グラウンドC面_16～19"></td>
                       </tr>
                       <tr align="center">
                       <td>グラウンドD面</td>
-                      <td><input type="radio" name="second" value="グラウンドD面>10<12"></td>
-                      <td><input type="radio" name="second" value="グラウンドD面>13<16"></td>
-                      <td><input type="radio" name="second" value="グラウンドD面>16<19"></td>
+                      <td><input type="radio" name="second" id="second" value="グラウンドD面_10～12"></td>
+                      <td><input type="radio" name="second" id="second" value="グラウンドD面_13～16"></td>
+                      <td><input type="radio" name="second" id="second" value="グラウンドD面_16～19"></td>
                       </tr>
                       <tr align="center">
                       <td>グラウンドE面</td>
-                      <td><input type="radio" name="second" value="グラウンドE面>10<12"></td>
-                      <td><input type="radio" name="second" value="グラウンドE面>13<16"></td>
-                      <td><input type="radio" name="second" value="グラウンドE面>16<19"></td>
+                      <td><input type="radio" name="second" id="second" value="グラウンドE面_10～12"></td>
+                      <td><input type="radio" name="second" id="second" value="グラウンドE面_13～16"></td>
+                      <td><input type="radio" name="second" id="second" value="グラウンドE面_16～19"></td>
                       </tr>
                       <tr align="center">
                       <td>グラウンドF面</td>
-                      <td><input type="radio" name="second" value="グラウンドF面>10<12"></td>
-                      <td><input type="radio" name="second" value="グラウンドF面>13<16"></td>
-                      <td><input type="radio" name="second" value="グラウンドF面>16<19"></td>
+                      <td><input type="radio" name="second" id="second" value="グラウンドF面_10～12"></td>
+                      <td><input type="radio" name="second" id="second" value="グラウンドF面_13～16"></td>
+                      <td><input type="radio" name="second" id="second" value="グラウンドF面_16～19"></td>
                       </tr>
+                      <tr align="center">
+                        <td>グラウンドG面</td>
+                        <td><input type="radio" name="second" id="second" value="グラウンドG面_10～12"></td>
+                        <td><input type="radio" name="second" id="second" value="グラウンドG面_13～16"></td>
+                        <td><input type="radio" name="second" id="second" value="グラウンドG面_16～19"></td>
+                      </tr>
+                      <tr align="center">
+                        <td>グラウンドH面</td>
+                        <td><input type="radio" name="second" id="second" value="グラウンドH面_10～12"></td>
+                        <td><input type="radio" name="second" id="second" value="グラウンドH面_13～16"></td>
+                        <td><input type="radio" name="second" id="second" value="グラウンドH面_16～19"></td>
+                        </tr>
                       </tbody>
                     </table>
                     
                     <br>
                     <big><b>第3希望</b></big><br>
-                    日付を選択してください。<input name="date3" type="date" /><br>
-                    使用の用途を記述してください。<input name="purpose3" type="text"><br>
-                    予約場所と時間帯を選択してください。
+                    <label for="date3">日付を選択：</label><input name="date3" type="date" /><br>
+                    <label for="purpose3">使用用途を記述：</label><input name="purpose3" type="text"><br>
+                    予約場所と時間帯を選択：
                     <table class="table" align="center" border="2">
                       <thead class="thead-dark">
                         <tr align="center">
@@ -200,48 +233,60 @@
                       <tbody>
                       <tr align="center">
                       <td>体育館A面</td>
-                      <td><input type="radio" name="third" value="体育館A面>10<12"></td>
-                      <td><input type="radio" name="third" value="体育館A面>13<16"></td>
-                      <td><input type="radio" name="third" value="体育館A面>16<19"></td>
+                      <td><input type="radio" name="third" id="third" value="体育館A面_10～12"></td>
+                      <td><input type="radio" name="third" id="third" value="体育館A面_13～16"></td>
+                      <td><input type="radio" name="third" id="third" value="体育館A面_16～19"></td>
                       </tr>
                       <tr align="center">
                       <td>体育館B面</td>
-                      <td><input type="radio" name="third" value="体育館B面>10<12"></td>
-                      <td><input type="radio" name="third" value="体育館B面>13<16"></td>
-                      <td><input type="radio" name="third" value="体育館B面>16<19"></td>
+                      <td><input type="radio" name="third" id="third" value="体育館B面_10～12"></td>
+                      <td><input type="radio" name="third" id="third" value="体育館B面_13～16"></td>
+                      <td><input type="radio" name="third" id="third" value="体育館B面_16～19"></td>
                       </tr>
                       <tr align="center">
                       <td>グラウンドC面</td>
-                      <td><input type="radio" name="third" value="グラウンドC面>10<12"></td>
-                      <td><input type="radio" name="third" value="グラウンドC面>13<16"></td>
-                      <td><input type="radio" name="third" value="グラウンドC面>16<19"></td>
+                      <td><input type="radio" name="third" id="third" value="グラウンドC面_10～12"></td>
+                      <td><input type="radio" name="third" id="third" value="グラウンドC面_13～16"></td>
+                      <td><input type="radio" name="third" id="third" value="グラウンドC面_16～19"></td>
                       </tr>
                       <tr align="center">
                       <td>グラウンドD面</td>
-                      <td><input type="radio" name="third" value="グラウンドD面>10<12"></td>
-                      <td><input type="radio" name="third" value="グラウンドD面>13<16"></td>
-                      <td><input type="radio" name="third" value="グラウンドD面>16<19"></td>
+                      <td><input type="radio" name="third" id="third" value="グラウンドD面_10～12"></td>
+                      <td><input type="radio" name="third" id="third" value="グラウンドD面_13～16"></td>
+                      <td><input type="radio" name="third" id="third" value="グラウンドD面_16～19"></td>
                       </tr>
                       <tr align="center">
                       <td>グラウンドE面</td>
-                      <td><input type="radio" name="third" value="グラウンドE面>10<12"></td>
-                      <td><input type="radio" name="third" value="グラウンドE面>13<16"></td>
-                      <td><input type="radio" name="third" value="グラウンドE面>16<19"></td>
+                      <td><input type="radio" name="third" id="third" value="グラウンドE面_10～12"></td>
+                      <td><input type="radio" name="third" id="third" value="グラウンドE面_13～16"></td>
+                      <td><input type="radio" name="third" id="third" value="グラウンドE面_16～19"></td>
                       </tr>
                       <tr align="center">
                       <td>グラウンドF面</td>
-                      <td><input type="radio" name="third" value="グラウンドF面>10<12"></td>
-                      <td><input type="radio" name="third" value="グラウンドF面>13<16"></td>
-                      <td><input type="radio" name="third" value="グラウンドF面>16<19"></td>
+                      <td><input type="radio" name="third" id="third" value="グラウンドF面_10～12"></td>
+                      <td><input type="radio" name="third" id="third" value="グラウンドF面_13～16"></td>
+                      <td><input type="radio" name="third" id="third" value="グラウンドF面_16～19"></td>
+                      </tr>
+                      <tr align="center">
+                        <td>グラウンドG面</td>
+                        <td><input type="radio" name="third" id="third" value="グラウンドG面_10～12"></td>
+                        <td><input type="radio" name="third" id="third" value="グラウンドG面_13～16"></td>
+                        <td><input type="radio" name="third" id="third" value="グラウンドG面_16～19"></td>
+                      </tr>
+                      <tr align="center">
+                        <td>グラウンドH面</td>
+                        <td><input type="radio" name="third" id="third" value="グラウンドH面_10～12"></td>
+                        <td><input type="radio" name="third" id="third" value="グラウンドH面_13～16"></td>
+                        <td><input type="radio" name="third" id="third" value="グラウンドH面_16～19"></td>
                       </tr>
                       </tbody>
                     </table>
                     
                     <br>
                     <big><b>第4希望</b></big><br>
-                    日付を選択してください。<input name="date4" type="date" /><br>
-                    使用の用途を記述してください。<input name="purpose4" type="text"><br>
-                    予約場所と時間帯を選択してください。
+                    <label for="date4">日付を選択：</label><input name="date4" type="date" /><br>
+                    <label for="purpose4">使用用途を記述：</label><input name="purpose4" type="text"><br>
+                    予約場所と時間帯を選択：
                     <table class="table" align="center" border="2">
                       <thead class="thead-dark">
                         <tr align="center">
@@ -254,48 +299,60 @@
                       <tbody>
                       <tr align="center">
                       <td>体育館A面</td>
-                      <td><input type="radio" name="fourth" value="体育館A面>10<12"></td>
-                      <td><input type="radio" name="fourth" value="体育館A面>13<16"></td>
-                      <td><input type="radio" name="fourth" value="体育館A面>16<19"></td>
+                      <td><input type="radio" name="fourth" id="fourth" value="体育館A面_10～12"></td>
+                      <td><input type="radio" name="fourth" id="fourth" value="体育館A面_13～16"></td>
+                      <td><input type="radio" name="fourth" id="fourth" value="体育館A面_16～19"></td>
                       </tr>
                       <tr align="center">
                       <td>体育館B面</td>
-                      <td><input type="radio" name="fourth" value="体育館B面>10<12"></td>
-                      <td><input type="radio" name="fourth" value="体育館B面>13<16"></td>
-                      <td><input type="radio" name="fourth" value="体育館B面>16<19"></td>
+                      <td><input type="radio" name="fourth" id="fourth" value="体育館B面_10～12"></td>
+                      <td><input type="radio" name="fourth" id="fourth" value="体育館B面_13～16"></td>
+                      <td><input type="radio" name="fourth" id="fourth" value="体育館B面_16～19"></td>
                       </tr>
                       <tr align="center">
                       <td>グラウンドC面</td>
-                      <td><input type="radio" name="fourth" value="グラウンドC面>10<12"></td>
-                      <td><input type="radio" name="fourth" value="グラウンドC面>13<16"></td>
-                      <td><input type="radio" name="fourth" value="グラウンドC面>16<19"></td>
+                      <td><input type="radio" name="fourth" id="fourth" value="グラウンドC面_10～12"></td>
+                      <td><input type="radio" name="fourth" id="fourth" value="グラウンドC面_13～16"></td>
+                      <td><input type="radio" name="fourth" id="fourth" value="グラウンドC面_16～19"></td>
                       </tr>
                       <tr align="center">
                       <td>グラウンドD面</td>
-                      <td><input type="radio" name="fourth" value="グラウンドD面>10<12"></td>
-                      <td><input type="radio" name="fourth" value="グラウンドD面>13<16"></td>
-                      <td><input type="radio" name="fourth" value="グラウンドD面>16<19"></td>
+                      <td><input type="radio" name="fourth" id="fourth" value="グラウンドD面_10～12"></td>
+                      <td><input type="radio" name="fourth" id="fourth" value="グラウンドD面_13～16"></td>
+                      <td><input type="radio" name="fourth" id="fourth" value="グラウンドD面_16～19"></td>
                       </tr>
                       <tr align="center">
                       <td>グラウンドE面</td>
-                      <td><input type="radio" name="fourth" value="グラウンドE面>10<12"></td>
-                      <td><input type="radio" name="fourth" value="グラウンドE面>13<16"></td>
-                      <td><input type="radio" name="fourth" value="グラウンドE面>16<19"></td>
+                      <td><input type="radio" name="fourth" id="fourth" value="グラウンドE面_10～12"></td>
+                      <td><input type="radio" name="fourth" id="fourth" value="グラウンドE面_13～16"></td>
+                      <td><input type="radio" name="fourth" id="fourth" value="グラウンドE面_16～19"></td>
                       </tr>
                       <tr align="center">
                       <td>グラウンドF面</td>
-                      <td><input type="radio" name="fourth" value="グラウンドF面>10<12"></td>
-                      <td><input type="radio" name="fourth" value="グラウンドF面>13<16"></td>
-                      <td><input type="radio" name="fourth" value="グラウンドF面>16<19"></td>
+                      <td><input type="radio" name="fourth" id="fourth" value="グラウンドF面_10～12"></td>
+                      <td><input type="radio" name="fourth" id="fourth" value="グラウンドF面_13～16"></td>
+                      <td><input type="radio" name="fourth" id="fourth" value="グラウンドF面_16～19"></td>
+                      </tr>
+                      <tr align="center">
+                        <td>グラウンドG面</td>
+                        <td><input type="radio" name="fourth" id="fourth" value="グラウンドG面_10～12"></td>
+                        <td><input type="radio" name="fourth" id="fourth" value="グラウンドG面_13～16"></td>
+                        <td><input type="radio" name="fourth" id="fourth" value="グラウンドG面_16～19"></td>
+                      </tr>
+                      <tr align="center">
+                        <td>グラウンドH面</td>
+                        <td><input type="radio" name="fourth" id="fourth" value="グラウンドH面_10～12"></td>
+                        <td><input type="radio" name="fourth" id="fourth" value="グラウンドH面_13～16"></td>
+                        <td><input type="radio" name="fourth" id="fourth" value="グラウンドH面_16～19"></td>
                       </tr>
                       </tbody>
                     </table>
                     
                     <br>
                     <big><b>第5希望</b></big><br>
-                    日付を選択してください。<input name="date5" type="date" /><br>
-                    使用の用途を記述してください。<input name="purpose5" type="text"><br>
-                    予約場所と時間帯を選択してください。
+                    <label for="date5">日付を選択：</label><input name="date5" type="date" /><br>
+                    <label for="purpose5">使用用途を記述：</label><input name="purpose5" type="text"><br>
+                    予約場所と時間帯を選択：
                     <table class="table" align="center" border="2">
                       <thead class="thead-dark">
                         <tr align="center">
@@ -308,48 +365,60 @@
                       <tbody>
                       <tr align="center">
                       <td>体育館A面</td>
-                      <td><input type="radio" name="fifth" value="体育館A面>10<12"></td>
-                      <td><input type="radio" name="fifth" value="体育館A面>13<16"></td>
-                      <td><input type="radio" name="fifth" value="体育館A面>16<19"></td>
+                      <td><input type="radio" name="fifth" id="fifth" value="体育館A面_10～12"></td>
+                      <td><input type="radio" name="fifth" id="fifth" value="体育館A面_13～16"></td>
+                      <td><input type="radio" name="fifth" id="fifth" value="体育館A面_16～19"></td>
                       </tr>
                       <tr align="center">
                       <td>体育館B面</td>
-                      <td><input type="radio" name="fifth" value="体育館B面>10<12"></td>
-                      <td><input type="radio" name="fifth" value="体育館B面>13<16"></td>
-                      <td><input type="radio" name="fifth" value="体育館B面>16<19"></td>
+                      <td><input type="radio" name="fifth" id="fifth" value="体育館B面_10～12"></td>
+                      <td><input type="radio" name="fifth" id="fifth" value="体育館B面_13～16"></td>
+                      <td><input type="radio" name="fifth" id="fifth" value="体育館B面_16～19"></td>
                       </tr>
                       <tr align="center">
                       <td>グラウンドC面</td>
-                      <td><input type="radio" name="fifth" value="グラウンドC面>10<12"></td>
-                      <td><input type="radio" name="fifth" value="グラウンドC面>13<16"></td>
-                      <td><input type="radio" name="fifth" value="グラウンドC面>16<19"></td>
+                      <td><input type="radio" name="fifth" id="fifth" value="グラウンドC面_10～12"></td>
+                      <td><input type="radio" name="fifth" id="fifth" value="グラウンドC面_13～16"></td>
+                      <td><input type="radio" name="fifth" id="fifth" value="グラウンドC面_16～19"></td>
                       </tr>
                       <tr align="center">
                       <td>グラウンドD面</td>
-                      <td><input type="radio" name="fifth" value="グラウンドD面>10<12"></td>
-                      <td><input type="radio" name="fifth" value="グラウンドD面>13<16"></td>
-                      <td><input type="radio" name="fifth" value="グラウンドD面>16<19"></td>
+                      <td><input type="radio" name="fifth" id="fifth" value="グラウンドD面_10～12"></td>
+                      <td><input type="radio" name="fifth" id="fifth" value="グラウンドD面_13～16"></td>
+                      <td><input type="radio" name="fifth" id="fifth" value="グラウンドD面_16～19"></td>
                       </tr>
                       <tr align="center">
                       <td>グラウンドE面</td>
-                      <td><input type="radio" name="fifth" value="グラウンドE面>10<12"></td>
-                      <td><input type="radio" name="fifth" value="グラウンドE面>13<16"></td>
-                      <td><input type="radio" name="fifth" value="グラウンドE面>16<19"></td>
+                      <td><input type="radio" name="fifth" id="fifth" value="グラウンドE面_10～12"></td>
+                      <td><input type="radio" name="fifth" id="fifth" value="グラウンドE面_13～16"></td>
+                      <td><input type="radio" name="fifth" id="fifth" value="グラウンドE面_16～19"></td>
                       </tr>
                       <tr align="center">
                       <td>グラウンドF面</td>
-                      <td><input type="radio" name="fifth" value="グラウンドF面>10<12"></td>
-                      <td><input type="radio" name="fifth" value="グラウンドF面>13<16"></td>
-                      <td><input type="radio" name="fifth" value="グラウンドF面>16<19"></td>
+                      <td><input type="radio" name="fifth" id="fifth" value="グラウンドF面_10～12"></td>
+                      <td><input type="radio" name="fifth" id="fifth" value="グラウンドF面_13～16"></td>
+                      <td><input type="radio" name="fifth" id="fifth" value="グラウンドF面_16～19"></td>
+                      </tr>
+                      <tr align="center">
+                        <td>グラウンドG面</td>
+                        <td><input type="radio" name="fifth" id="fifth" value="グラウンドG面_10～12"></td>
+                        <td><input type="radio" name="fifth" id="fifth" value="グラウンドG面_13～16"></td>
+                        <td><input type="radio" name="fifth" id="fifth" value="グラウンドG面_16～19"></td>
+                      </tr>
+                      <tr align="center">
+                        <td>グラウンドH面</td>
+                        <td><input type="radio" name="fifth" id="fifth" value="グラウンドH面_10～12"></td>
+                        <td><input type="radio" name="fifth" id="fifth" value="グラウンドH面_13～16"></td>
+                        <td><input type="radio" name="fifth" id="fifth" value="グラウンドH面_16～19"></td>
                       </tr>
                       </tbody>
                     </table>
                     <br>
-                    <input class="btn btn-primary mr-1" type="submit" onClick="alert('送信しました')" value="送信" name="send1"><input class="btn btn-primary" type="Reset" value="リセット" name="reset1">
+                    <button type="submit" onClick="Subform()">送信</button>
                     </form>
                   </div>
                 </div>
-			</article>
+			  </article>
         </section>
         
 	</section>
