@@ -276,12 +276,13 @@ margin:10px auto;
 }
 
 table.table th,table.table td{
+text-align:center;
 padding:5px;
 border:1px solid #cacaca;
 }
 
 table.table th{
-text-align:right;
+text-align:center;
 font-weight:bold;
 letter-spacing:1px;
 white-space:nowrap;
