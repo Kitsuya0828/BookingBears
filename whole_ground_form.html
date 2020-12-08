@@ -75,9 +75,10 @@
 
 		<section class="content">
 			<h3 class="heading">初日申請フォーム（グラウンド全面版）</h3>
-			<p>※グラウンド通常予約をご検討の方は<a href="reservation_form.html">こちらへ</a></p><br><br>
+			<p>※グラウンド通常予約をご利用の方は<a href="reservation_form.html">こちらへ</a></p><br><br>
 			<article>
 				<form method="post" id="whole">
+					<input type="hidden" name="whole" value="✔">
                     <label for="mailAddress">申込者のメールアドレス（DCメール）：</label><input name="mailAddress" type="email" id="mailAddress" required><br><br>
                     <label for="studentId">申込者の学籍番号：</label><input name="studentId" type="text" id="studentId" required><br><br>
                     <label for="applicantName">申込者の氏名：</label><input name="applicantName" type="text" id="applicantName" required><br><br>
@@ -85,7 +86,7 @@
                     <label for="groupName">使用団体名：</label><input name="groupName" type="text" id="groupName" required><br><br>
                     <label for="personInChargeName">使用責任者の氏名：</label><input name="personInChargeName" type="text" id="personInChargeName" required><br><br>
 
-                    
+                    <br><br><br>
                     <big><b>第1希望（のみ）</b></big><br>
                     <label for="date1">日付を選択：</label><input name="date1" type="date" required><br>
                     <label for="purpose1">使用用途を記述：</label><input name="purpose1" type="text" required><br>
@@ -94,7 +95,7 @@
 					<label for="first">13:00-16:00</label><input id="first" type="radio" name="first" value="13～16">&nbsp;&nbsp;&nbsp;
 					<label for="first">16:00-19:00</label><input id="first" type="radio" name="first" value="16～19">
 					
-					<input type="hidden" name="second" value="#whole">
+
 					</form>
 					<br><br>
                     <button type="submit" onclick="SubForm2()">送信</button>
