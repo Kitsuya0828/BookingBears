@@ -77,12 +77,12 @@
             <p>※（全面版）グラウンド予約をご利用の方は<a href="whole_form.html">こちらへ</a></p><br><br>
 			      <article>
                 <form method="post" id="normal">
-                  <label for="氏名">使用責任者の氏名：</label><input name="氏名" type="text" id="氏名"" required><br><br>
-                  <label for="メールアドレス（DCMail）">使用責任者のメールアドレス（DCMail）：</label><input name="メールアドレス（DCMail）" type="email" id="メールアドレス（DCMail）" required><br><br>
-                  <label for="学籍番号">使用責任者の学籍番号：</label><input name="学籍番号" type="text" id="学籍番号" required><br><br>
-                  <label for="連絡先電話番号">使用責任者の連絡先電話番号：</label><input name="連絡先電話番号" type="text" id="連絡先電話番号" required><br><br>
-                  <label for="団体名・ハンドルネーム">【学友会所属団体の場合】使用団体名<br>【その他団体または個人利用の場合】ハンドルネーム：</label>
-                  <input type="search" name="groupName" autocomplete="on" list="formalGroup" id="groupName" required>
+                  <label for="name">使用責任者の氏名：</label><input name="name" type="text" id="name"" required><br><br>
+                  <label for="mail address">使用責任者のメールアドレス（DCMail）：</label><input name="mail address" type="email" id="mail address" required><br><br>
+                  <label for="student id">使用責任者の学籍番号：</label><input name="student id" type="text" id="student id" required><br><br>
+                  <label for="phone number">使用責任者の連絡先電話番号：</label><input name="phone number" type="text" id="phone number" required><br><br>
+                  <label for="group name">【学友会所属団体の場合】使用団体名<br>【その他団体または個人利用の場合】ハンドルネーム：</label>
+                  <input type="search" name="group name" autocomplete="on" list="formalGroup" id="group name" required>
                     <small><font color="#ff0000">※申請状況カレンダーに掲載されます</font></small>
                     <datalist id="formalGroup">
                       <!--<option value="文化部正規団体">-->
@@ -288,8 +288,8 @@
 
                     <br><br><br>
                     <big><b>使用申請①</b></big><br>
-                    <label for="使用月日①">使用月日を選択：</label><input name="使用月日①" type="date" required><br>
-                    <label for="使用目的①">使用目的（種目）を記述：</label><input name="使用目的①" type="text" required><br>
+                    <label for="date1">使用月日を選択：</label><input name="date1" type="date" required><br>
+                    <label for="purpose1">使用目的（種目）を記述：</label><input name="purpose1" type="text" required><br>
                     <label>使用区分と使用時間枠を選択：</label>
                     <table class="table" align="center" border="2">
                       <thead class="thead-dark">
@@ -303,59 +303,59 @@
                       <tbody>
                         <tr align="center">
                         <td>体育館A面</td>
-                          <td><input type="radio" name="区分＆時間枠①" id="区分＆時間枠①" value="体育館A面_10～12"required></td>
-                          <td><input type="radio" name="区分＆時間枠①" id="区分＆時間枠①" value="体育館A面_13～16"></td>
-                          <td><input type="radio" name="区分＆時間枠①" id="区分＆時間枠①" value="体育館A面_16～19"></td>
+                          <td><input type="radio" name="place＆time1" id="place＆time1" value="体育館A面_10～12"required></td>
+                          <td><input type="radio" name="place＆time1" id="place＆time1" value="体育館A面_13～16"></td>
+                          <td><input type="radio" name="place＆time1" id="place＆time1" value="体育館A面_16～19"></td>
                         </tr>
                         <tr align="center">
                         <td>体育館B面</td>
-                          <td><input type="radio" name="区分＆時間枠①" id="区分＆時間枠①" value="体育館B面_10～12"></td>
-                          <td><input type="radio" name="区分＆時間枠①" id="区分＆時間枠①" value="体育館B面_13～16"></td>
-                          <td><input type="radio" name="区分＆時間枠①" id="区分＆時間枠①" value="体育館B面_16～19"></td>
+                          <td><input type="radio" name="place＆time1" id="place＆time1" value="体育館B面_10～12"></td>
+                          <td><input type="radio" name="place＆time1" id="place＆time1" value="体育館B面_13～16"></td>
+                          <td><input type="radio" name="place＆time1" id="place＆time1" value="体育館B面_16～19"></td>
                         </tr>
                         <tr align="center">
                         <td>グラウンドC面</td>
-                          <td><input type="radio" name="区分＆時間枠①" id="区分＆時間枠①" value="グラウンドC面_10～12"></td>
-                          <td><input type="radio" name="区分＆時間枠①" id="区分＆時間枠①" value="グラウンドC面_13～16"></td>
-                          <td><input type="radio" name="区分＆時間枠①" id="区分＆時間枠①" value="グラウンドC面_16～19"></td>
+                          <td><input type="radio" name="place＆time1" id="place＆time1" value="グラウンドC面_10～12"></td>
+                          <td><input type="radio" name="place＆time1" id="place＆time1" value="グラウンドC面_13～16"></td>
+                          <td><input type="radio" name="place＆time1" id="place＆time1" value="グラウンドC面_16～19"></td>
                         </tr>
                         <tr align="center">
                         <td>グラウンドD面</td>
-                          <td><input type="radio" name="区分＆時間枠①" id="区分＆時間枠①" value="グラウンドD面_10～12"></td>
-                          <td><input type="radio" name="区分＆時間枠①" id="区分＆時間枠①" value="グラウンドD面_13～16"></td>
-                          <td><input type="radio" name="区分＆時間枠①" id="区分＆時間枠①" value="グラウンドD面_16～19"></td>
+                          <td><input type="radio" name="place＆time1" id="place＆time1" value="グラウンドD面_10～12"></td>
+                          <td><input type="radio" name="place＆time1" id="place＆time1" value="グラウンドD面_13～16"></td>
+                          <td><input type="radio" name="place＆time1" id="place＆time1" value="グラウンドD面_16～19"></td>
                         </tr>
                         <tr align="center">
                         <td>グラウンドE面</td>
-                          <td><input type="radio" name="区分＆時間枠①" id="区分＆時間枠①" value="グラウンドE面_10～12"></td>
-                          <td><input type="radio" name="区分＆時間枠①" id="区分＆時間枠①" value="グラウンドE面_13～16"></td>
-                          <td><input type="radio" name="区分＆時間枠①" id="区分＆時間枠①" value="グラウンドE面_16～19"></td>
+                          <td><input type="radio" name="place＆time1" id="place＆time1" value="グラウンドE面_10～12"></td>
+                          <td><input type="radio" name="place＆time1" id="place＆time1" value="グラウンドE面_13～16"></td>
+                          <td><input type="radio" name="place＆time1" id="place＆time1" value="グラウンドE面_16～19"></td>
                         </tr>
                         <tr align="center">
                         <td>グラウンドF面</td>
-                          <td><input type="radio" name="区分＆時間枠①" id="区分＆時間枠①" value="グラウンドF面_10～12"></td>
-                          <td><input type="radio" name="区分＆時間枠①" id="区分＆時間枠①" value="グラウンドF面_13～16"></td>
-                          <td><input type="radio" name="区分＆時間枠①" id="区分＆時間枠①" value="グラウンドF面_16～19"></td>
+                          <td><input type="radio" name="place＆time1" id="place＆time1" value="グラウンドF面_10～12"></td>
+                          <td><input type="radio" name="place＆time1" id="place＆time1" value="グラウンドF面_13～16"></td>
+                          <td><input type="radio" name="place＆time1" id="place＆time1" value="グラウンドF面_16～19"></td>
                         </tr>
                         <tr align="center">
                             <td>グラウンドG面</td>
-                            <td><input type="radio" name="区分＆時間枠①" id="区分＆時間枠①" value="グラウンドG面_10～12"></td>
-                            <td><input type="radio" name="区分＆時間枠①" id="区分＆時間枠①" value="グラウンドG面_13～16"></td>
-                            <td><input type="radio" name="区分＆時間枠①" id="区分＆時間枠①" value="グラウンドG面_16～19"></td>
+                            <td><input type="radio" name="place＆time1" id="place＆time1" value="グラウンドG面_10～12"></td>
+                            <td><input type="radio" name="place＆time1" id="place＆time1" value="グラウンドG面_13～16"></td>
+                            <td><input type="radio" name="place＆time1" id="place＆time1" value="グラウンドG面_16～19"></td>
                         </tr>
                         <tr align="center">
                             <td>グラウンドH面</td>
-                            <td><input type="radio" name="区分＆時間枠①" id="区分＆時間枠①" value="グラウンドG面_10～12"></td>
-                            <td><input type="radio" name="区分＆時間枠①" id="区分＆時間枠①" value="グラウンドG面_13～16"></td>
-                            <td><input type="radio" name="区分＆時間枠①" id="区分＆時間枠①" value="グラウンドG面_16～19"></td>
+                            <td><input type="radio" name="place＆time1" id="place＆time1" value="グラウンドG面_10～12"></td>
+                            <td><input type="radio" name="place＆time1" id="place＆time1" value="グラウンドG面_13～16"></td>
+                            <td><input type="radio" name="place＆time1" id="place＆time1" value="グラウンドG面_16～19"></td>
                         </tr>
                       </tbody>
                     </table>
                     
                     <br><br><br>
                     <big><b>使用申請②</b></big><br>
-                    <label for="使用月日②">使用月日を選択：</label><input name="使用月日②" type="date" required><br>
-                    <label for="使用目的②">使用目的（種目）を記述：</label><input name="使用目的②" type="text" required><br>
+                    <label for="date2">使用月日を選択：</label><input name="date2" type="date" required><br>
+                    <label for="purpose2">使用目的（種目）を記述：</label><input name="purpose2" type="text" required><br>
                     <label>使用区分と使用時間枠を選択：</label>
                     <table class="table" align="center" border="2">
                       <thead class="thead-dark">
@@ -369,59 +369,59 @@
                       <tbody>
                       <tr align="center">
                       <td>体育館A面</td>
-                      <td><input type="radio" name="区分＆時間枠②" id="区分＆時間枠②" value="体育館A面_10～12"></td>
-                      <td><input type="radio" name="区分＆時間枠②" id="区分＆時間枠②" value="体育館A面_13～16"></td>
-                      <td><input type="radio" name="区分＆時間枠②" id="区分＆時間枠②" value="体育館A面_16～19"></td>
+                      <td><input type="radio" name="place＆time2" id="place＆time2" value="体育館A面_10～12"></td>
+                      <td><input type="radio" name="place＆time2" id="place＆time2" value="体育館A面_13～16"></td>
+                      <td><input type="radio" name="place＆time2" id="place＆time2" value="体育館A面_16～19"></td>
                       </tr>
                       <tr align="center">
                       <td>体育館B面</td>
-                      <td><input type="radio" name="区分＆時間枠②" id="区分＆時間枠②" value="体育館B面_10～12"></td>
-                      <td><input type="radio" name="区分＆時間枠②" id="区分＆時間枠②" value="体育館B面_13～16"></td>
-                      <td><input type="radio" name="区分＆時間枠②" id="区分＆時間枠②" value="体育館B面_16～19"></td>
+                      <td><input type="radio" name="place＆time2" id="place＆time2" value="体育館B面_10～12"></td>
+                      <td><input type="radio" name="place＆time2" id="place＆time2" value="体育館B面_13～16"></td>
+                      <td><input type="radio" name="place＆time2" id="place＆time2" value="体育館B面_16～19"></td>
                       </tr>
                       <tr align="center">
                       <td>グラウンドC面</td>
-                      <td><input type="radio" name="区分＆時間枠②" id="区分＆時間枠②" value="グラウンドC面_10～12"></td>
-                      <td><input type="radio" name="区分＆時間枠②" id="区分＆時間枠②" value="グラウンドC面_13～16"></td>
-                      <td><input type="radio" name="区分＆時間枠②" id="区分＆時間枠②" value="グラウンドC面_16～19"></td>
+                      <td><input type="radio" name="place＆time2" id="place＆time2" value="グラウンドC面_10～12"></td>
+                      <td><input type="radio" name="place＆time2" id="place＆time2" value="グラウンドC面_13～16"></td>
+                      <td><input type="radio" name="place＆time2" id="place＆time2" value="グラウンドC面_16～19"></td>
                       </tr>
                       <tr align="center">
                       <td>グラウンドD面</td>
-                      <td><input type="radio" name="区分＆時間枠②" id="区分＆時間枠②" value="グラウンドD面_10～12"></td>
-                      <td><input type="radio" name="区分＆時間枠②" id="区分＆時間枠②" value="グラウンドD面_13～16"></td>
-                      <td><input type="radio" name="区分＆時間枠②" id="区分＆時間枠②" value="グラウンドD面_16～19"></td>
+                      <td><input type="radio" name="place＆time2" id="place＆time2" value="グラウンドD面_10～12"></td>
+                      <td><input type="radio" name="place＆time2" id="place＆time2" value="グラウンドD面_13～16"></td>
+                      <td><input type="radio" name="place＆time2" id="place＆time2" value="グラウンドD面_16～19"></td>
                       </tr>
                       <tr align="center">
                       <td>グラウンドE面</td>
-                      <td><input type="radio" name="区分＆時間枠②" id="区分＆時間枠②" value="グラウンドE面_10～12"></td>
-                      <td><input type="radio" name="区分＆時間枠②" id="区分＆時間枠②" value="グラウンドE面_13～16"></td>
-                      <td><input type="radio" name="区分＆時間枠②" id="区分＆時間枠②" value="グラウンドE面_16～19"></td>
+                      <td><input type="radio" name="place＆time2" id="place＆time2" value="グラウンドE面_10～12"></td>
+                      <td><input type="radio" name="place＆time2" id="place＆time2" value="グラウンドE面_13～16"></td>
+                      <td><input type="radio" name="place＆time2" id="place＆time2" value="グラウンドE面_16～19"></td>
                       </tr>
                       <tr align="center">
                       <td>グラウンドF面</td>
-                      <td><input type="radio" name="区分＆時間枠②" id="区分＆時間枠②" value="グラウンドF面_10～12"></td>
-                      <td><input type="radio" name="区分＆時間枠②" id="区分＆時間枠②" value="グラウンドF面_13～16"></td>
-                      <td><input type="radio" name="区分＆時間枠②" id="区分＆時間枠②" value="グラウンドF面_16～19"></td>
+                      <td><input type="radio" name="place＆time2" id="place＆time2" value="グラウンドF面_10～12"></td>
+                      <td><input type="radio" name="place＆time2" id="place＆time2" value="グラウンドF面_13～16"></td>
+                      <td><input type="radio" name="place＆time2" id="place＆time2" value="グラウンドF面_16～19"></td>
                       </tr>
                       <tr align="center">
                         <td>グラウンドG面</td>
-                        <td><input type="radio" name="区分＆時間枠②" id="区分＆時間枠②" value="グラウンドG面_10～12"></td>
-                        <td><input type="radio" name="区分＆時間枠②" id="区分＆時間枠②" value="グラウンドG面_13～16"></td>
-                        <td><input type="radio" name="区分＆時間枠②" id="区分＆時間枠②" value="グラウンドG面_16～19"></td>
+                        <td><input type="radio" name="place＆time2" id="place＆time2" value="グラウンドG面_10～12"></td>
+                        <td><input type="radio" name="place＆time2" id="place＆time2" value="グラウンドG面_13～16"></td>
+                        <td><input type="radio" name="place＆time2" id="place＆time2" value="グラウンドG面_16～19"></td>
                       </tr>
                       <tr align="center">
                         <td>グラウンドH面</td>
-                        <td><input type="radio" name="区分＆時間枠②" id="区分＆時間枠②" value="グラウンドH面_10～12"></td>
-                        <td><input type="radio" name="区分＆時間枠②" id="区分＆時間枠②" value="グラウンドH面_13～16"></td>
-                        <td><input type="radio" name="区分＆時間枠②" id="区分＆時間枠②" value="グラウンドH面_16～19"></td>
+                        <td><input type="radio" name="place＆time2" id="place＆time2" value="グラウンドH面_10～12"></td>
+                        <td><input type="radio" name="place＆time2" id="place＆time2" value="グラウンドH面_13～16"></td>
+                        <td><input type="radio" name="place＆time2" id="place＆time2" value="グラウンドH面_16～19"></td>
                         </tr>
                       </tbody>
                     </table>
                     
                     <br><br><br>
                     <big><b>使用申請③</b></big><br>
-                    <label for="使用月日③">使用月日を選択：</label><input name="使用月日③" type="date" required><br>
-                    <label for="使用目的③">使用目的（種目）を記述：</label><input name="使用目的③" type="text" required><br>
+                    <label for="date3">使用月日を選択：</label><input name="date3" type="date" required><br>
+                    <label for="purpose3">使用目的（種目）を記述：</label><input name="purpose3" type="text" required><br>
                     <label>使用区分と使用時間枠を選択：</label>
                     <table class="table" align="center" border="2">
                       <thead class="thead-dark">
@@ -435,59 +435,59 @@
                       <tbody>
                       <tr align="center">
                       <td>体育館A面</td>
-                      <td><input type="radio" name="区分＆時間枠③" id="区分＆時間枠③" value="体育館A面_10～12"></td>
-                      <td><input type="radio" name="区分＆時間枠③" id="区分＆時間枠③" value="体育館A面_13～16"></td>
-                      <td><input type="radio" name="区分＆時間枠③" id="区分＆時間枠③" value="体育館A面_16～19"></td>
+                      <td><input type="radio" name="place＆time3" id="place＆time3" value="体育館A面_10～12"></td>
+                      <td><input type="radio" name="place＆time3" id="place＆time3" value="体育館A面_13～16"></td>
+                      <td><input type="radio" name="place＆time3" id="place＆time3" value="体育館A面_16～19"></td>
                       </tr>
                       <tr align="center">
                       <td>体育館B面</td>
-                      <td><input type="radio" name="区分＆時間枠③" id="区分＆時間枠③" value="体育館B面_10～12"></td>
-                      <td><input type="radio" name="区分＆時間枠③" id="区分＆時間枠③" value="体育館B面_13～16"></td>
-                      <td><input type="radio" name="区分＆時間枠③" id="区分＆時間枠③" value="体育館B面_16～19"></td>
+                      <td><input type="radio" name="place＆time3" id="place＆time3" value="体育館B面_10～12"></td>
+                      <td><input type="radio" name="place＆time3" id="place＆time3" value="体育館B面_13～16"></td>
+                      <td><input type="radio" name="place＆time3" id="place＆time3" value="体育館B面_16～19"></td>
                       </tr>
                       <tr align="center">
                       <td>グラウンドC面</td>
-                      <td><input type="radio" name="区分＆時間枠③" id="区分＆時間枠③" value="グラウンドC面_10～12"></td>
-                      <td><input type="radio" name="区分＆時間枠③" id="区分＆時間枠③" value="グラウンドC面_13～16"></td>
-                      <td><input type="radio" name="区分＆時間枠③" id="区分＆時間枠③" value="グラウンドC面_16～19"></td>
+                      <td><input type="radio" name="place＆time3" id="place＆time3" value="グラウンドC面_10～12"></td>
+                      <td><input type="radio" name="place＆time3" id="place＆time3" value="グラウンドC面_13～16"></td>
+                      <td><input type="radio" name="place＆time3" id="place＆time3" value="グラウンドC面_16～19"></td>
                       </tr>
                       <tr align="center">
                       <td>グラウンドD面</td>
-                      <td><input type="radio" name="区分＆時間枠③" id="区分＆時間枠③" value="グラウンドD面_10～12"></td>
-                      <td><input type="radio" name="区分＆時間枠③" id="区分＆時間枠③" value="グラウンドD面_13～16"></td>
-                      <td><input type="radio" name="区分＆時間枠③" id="区分＆時間枠③" value="グラウンドD面_16～19"></td>
+                      <td><input type="radio" name="place＆time3" id="place＆time3" value="グラウンドD面_10～12"></td>
+                      <td><input type="radio" name="place＆time3" id="place＆time3" value="グラウンドD面_13～16"></td>
+                      <td><input type="radio" name="place＆time3" id="place＆time3" value="グラウンドD面_16～19"></td>
                       </tr>
                       <tr align="center">
                       <td>グラウンドE面</td>
-                      <td><input type="radio" name="区分＆時間枠③" id="区分＆時間枠③" value="グラウンドE面_10～12"></td>
-                      <td><input type="radio" name="区分＆時間枠③" id="区分＆時間枠③" value="グラウンドE面_13～16"></td>
-                      <td><input type="radio" name="区分＆時間枠③" id="区分＆時間枠③" value="グラウンドE面_16～19"></td>
+                      <td><input type="radio" name="place＆time3" id="place＆time3" value="グラウンドE面_10～12"></td>
+                      <td><input type="radio" name="place＆time3" id="place＆time3" value="グラウンドE面_13～16"></td>
+                      <td><input type="radio" name="place＆time3" id="place＆time3" value="グラウンドE面_16～19"></td>
                       </tr>
                       <tr align="center">
                       <td>グラウンドF面</td>
-                      <td><input type="radio" name="区分＆時間枠③" id="区分＆時間枠③" value="グラウンドF面_10～12"></td>
-                      <td><input type="radio" name="区分＆時間枠③" id="区分＆時間枠③" value="グラウンドF面_13～16"></td>
-                      <td><input type="radio" name="区分＆時間枠③" id="区分＆時間枠③" value="グラウンドF面_16～19"></td>
+                      <td><input type="radio" name="place＆time3" id="place＆time3" value="グラウンドF面_10～12"></td>
+                      <td><input type="radio" name="place＆time3" id="place＆time3" value="グラウンドF面_13～16"></td>
+                      <td><input type="radio" name="place＆time3" id="place＆time3" value="グラウンドF面_16～19"></td>
                       </tr>
                       <tr align="center">
                         <td>グラウンドG面</td>
-                        <td><input type="radio" name="区分＆時間枠③" id="区分＆時間枠③" value="グラウンドG面_10～12"></td>
-                        <td><input type="radio" name="区分＆時間枠③" id="区分＆時間枠③" value="グラウンドG面_13～16"></td>
-                        <td><input type="radio" name="区分＆時間枠③" id="区分＆時間枠③" value="グラウンドG面_16～19"></td>
+                        <td><input type="radio" name="place＆time3" id="place＆time3" value="グラウンドG面_10～12"></td>
+                        <td><input type="radio" name="place＆time3" id="place＆time3" value="グラウンドG面_13～16"></td>
+                        <td><input type="radio" name="place＆time3" id="place＆time3" value="グラウンドG面_16～19"></td>
                       </tr>
                       <tr align="center">
                         <td>グラウンドH面</td>
-                        <td><input type="radio" name="区分＆時間枠③" id="区分＆時間枠③" value="グラウンドH面_10～12"></td>
-                        <td><input type="radio" name="区分＆時間枠③" id="区分＆時間枠③" value="グラウンドH面_13～16"></td>
-                        <td><input type="radio" name="区分＆時間枠③" id="区分＆時間枠③" value="グラウンドH面_16～19"></td>
+                        <td><input type="radio" name="place＆time3" id="place＆time3" value="グラウンドH面_10～12"></td>
+                        <td><input type="radio" name="place＆time3" id="place＆time3" value="グラウンドH面_13～16"></td>
+                        <td><input type="radio" name="place＆time3" id="place＆time3" value="グラウンドH面_16～19"></td>
                       </tr>
                       </tbody>
                     </table>
                     
                     <br><br><br>
                     <big><b>使用申請④</b></big><br>
-                    <label for="使用月日④">使用月日を選択：</label><input name="使用月日④" type="date" required><br>
-                    <label for="使用目的④">使用目的（種目）を記述：</label><input name="使用目的④" type="text" required><br>
+                    <label for="date4">使用月日を選択：</label><input name="date4" type="date" required><br>
+                    <label for="purpose4">使用目的（種目）を記述：</label><input name="purpose4" type="text" required><br>
                     <label>使用区分と使用時間枠を選択：</label>
                     <table class="table" align="center" border="2">
                       <thead class="thead-dark">
@@ -501,59 +501,59 @@
                       <tbody>
                       <tr align="center">
                       <td>体育館A面</td>
-                      <td><input type="radio" name="区分＆時間枠④" id="区分＆時間枠④" value="体育館A面_10～12"></td>
-                      <td><input type="radio" name="区分＆時間枠④" id="区分＆時間枠④" value="体育館A面_13～16"></td>
-                      <td><input type="radio" name="区分＆時間枠④" id="区分＆時間枠④" value="体育館A面_16～19"></td>
+                      <td><input type="radio" name="place＆time4" id="place＆time4" value="体育館A面_10～12"></td>
+                      <td><input type="radio" name="place＆time4" id="place＆time4" value="体育館A面_13～16"></td>
+                      <td><input type="radio" name="place＆time4" id="place＆time4" value="体育館A面_16～19"></td>
                       </tr>
                       <tr align="center">
                       <td>体育館B面</td>
-                      <td><input type="radio" name="区分＆時間枠④" id="区分＆時間枠④" value="体育館B面_10～12"></td>
-                      <td><input type="radio" name="区分＆時間枠④" id="区分＆時間枠④" value="体育館B面_13～16"></td>
-                      <td><input type="radio" name="区分＆時間枠④" id="区分＆時間枠④" value="体育館B面_16～19"></td>
+                      <td><input type="radio" name="place＆time4" id="place＆time4" value="体育館B面_10～12"></td>
+                      <td><input type="radio" name="place＆time4" id="place＆time4" value="体育館B面_13～16"></td>
+                      <td><input type="radio" name="place＆time4" id="place＆time4" value="体育館B面_16～19"></td>
                       </tr>
                       <tr align="center">
                       <td>グラウンドC面</td>
-                      <td><input type="radio" name="区分＆時間枠④" id="区分＆時間枠④" value="グラウンドC面_10～12"></td>
-                      <td><input type="radio" name="区分＆時間枠④" id="区分＆時間枠④" value="グラウンドC面_13～16"></td>
-                      <td><input type="radio" name="区分＆時間枠④" id="区分＆時間枠④" value="グラウンドC面_16～19"></td>
+                      <td><input type="radio" name="place＆time4" id="place＆time4" value="グラウンドC面_10～12"></td>
+                      <td><input type="radio" name="place＆time4" id="place＆time4" value="グラウンドC面_13～16"></td>
+                      <td><input type="radio" name="place＆time4" id="place＆time4" value="グラウンドC面_16～19"></td>
                       </tr>
                       <tr align="center">
                       <td>グラウンドD面</td>
-                      <td><input type="radio" name="区分＆時間枠④" id="区分＆時間枠④" value="グラウンドD面_10～12"></td>
-                      <td><input type="radio" name="区分＆時間枠④" id="区分＆時間枠④" value="グラウンドD面_13～16"></td>
-                      <td><input type="radio" name="区分＆時間枠④" id="区分＆時間枠④" value="グラウンドD面_16～19"></td>
+                      <td><input type="radio" name="place＆time4" id="place＆time4" value="グラウンドD面_10～12"></td>
+                      <td><input type="radio" name="place＆time4" id="place＆time4" value="グラウンドD面_13～16"></td>
+                      <td><input type="radio" name="place＆time4" id="place＆time4" value="グラウンドD面_16～19"></td>
                       </tr>
                       <tr align="center">
                       <td>グラウンドE面</td>
-                      <td><input type="radio" name="区分＆時間枠④" id="区分＆時間枠④" value="グラウンドE面_10～12"></td>
-                      <td><input type="radio" name="区分＆時間枠④" id="区分＆時間枠④" value="グラウンドE面_13～16"></td>
-                      <td><input type="radio" name="区分＆時間枠④" id="区分＆時間枠④" value="グラウンドE面_16～19"></td>
+                      <td><input type="radio" name="place＆time4" id="place＆time4" value="グラウンドE面_10～12"></td>
+                      <td><input type="radio" name="place＆time4" id="place＆time4" value="グラウンドE面_13～16"></td>
+                      <td><input type="radio" name="place＆time4" id="place＆time4" value="グラウンドE面_16～19"></td>
                       </tr>
                       <tr align="center">
                       <td>グラウンドF面</td>
-                      <td><input type="radio" name="区分＆時間枠④" id="区分＆時間枠④" value="グラウンドF面_10～12"></td>
-                      <td><input type="radio" name="区分＆時間枠④" id="区分＆時間枠④" value="グラウンドF面_13～16"></td>
-                      <td><input type="radio" name="区分＆時間枠④" id="区分＆時間枠④" value="グラウンドF面_16～19"></td>
+                      <td><input type="radio" name="place＆time4" id="place＆time4" value="グラウンドF面_10～12"></td>
+                      <td><input type="radio" name="place＆time4" id="place＆time4" value="グラウンドF面_13～16"></td>
+                      <td><input type="radio" name="place＆time4" id="place＆time4" value="グラウンドF面_16～19"></td>
                       </tr>
                       <tr align="center">
                         <td>グラウンドG面</td>
-                        <td><input type="radio" name="区分＆時間枠④" id="区分＆時間枠④" value="グラウンドG面_10～12"></td>
-                        <td><input type="radio" name="区分＆時間枠④" id="区分＆時間枠④" value="グラウンドG面_13～16"></td>
-                        <td><input type="radio" name="区分＆時間枠④" id="区分＆時間枠④" value="グラウンドG面_16～19"></td>
+                        <td><input type="radio" name="place＆time4" id="place＆time4" value="グラウンドG面_10～12"></td>
+                        <td><input type="radio" name="place＆time4" id="place＆time4" value="グラウンドG面_13～16"></td>
+                        <td><input type="radio" name="place＆time4" id="place＆time4" value="グラウンドG面_16～19"></td>
                       </tr>
                       <tr align="center">
                         <td>グラウンドH面</td>
-                        <td><input type="radio" name="区分＆時間枠④" id="区分＆時間枠④" value="グラウンドH面_10～12"></td>
-                        <td><input type="radio" name="区分＆時間枠④" id="区分＆時間枠④" value="グラウンドH面_13～16"></td>
-                        <td><input type="radio" name="区分＆時間枠④" id="区分＆時間枠④" value="グラウンドH面_16～19"></td>
+                        <td><input type="radio" name="place＆time4" id="place＆time4" value="グラウンドH面_10～12"></td>
+                        <td><input type="radio" name="place＆time4" id="place＆time4" value="グラウンドH面_13～16"></td>
+                        <td><input type="radio" name="place＆time4" id="place＆time4" value="グラウンドH面_16～19"></td>
                       </tr>
                       </tbody>
                     </table>
                     
                     <br><br><br>
                     <big><b>使用申請⑤</b></big><br>
-                    <label for="使用月日⑤">使用月日を選択：</label><input name="使用月日⑤" type="date" required><br>
-                    <label for="使用目的⑤">使用目的（種目）を記述：</label><input name="使用目的⑤" type="text" required><br>
+                    <label for="date5">使用月日を選択：</label><input name="date5" type="date" required><br>
+                    <label for="purpose5">使用目的（種目）を記述：</label><input name="purpose5" type="text" required><br>
                     <label>使用区分と使用時間枠を選択：</label>
                     <table class="table" align="center" border="2">
                       <thead class="thead-dark">
@@ -567,55 +567,55 @@
                       <tbody>
                       <tr align="center">
                       <td>体育館A面</td>
-                      <td><input type="radio" name="区分＆時間枠⑤" id="区分＆時間枠⑤" value="体育館A面_10～12"></td>
-                      <td><input type="radio" name="区分＆時間枠⑤" id="区分＆時間枠⑤" value="体育館A面_13～16"></td>
-                      <td><input type="radio" name="区分＆時間枠⑤" id="区分＆時間枠⑤" value="体育館A面_16～19"></td>
+                      <td><input type="radio" name="place＆time5" id="place＆time5" value="体育館A面_10～12"></td>
+                      <td><input type="radio" name="place＆time5" id="place＆time5" value="体育館A面_13～16"></td>
+                      <td><input type="radio" name="place＆time5" id="place＆time5" value="体育館A面_16～19"></td>
                       </tr>
                       <tr align="center">
                       <td>体育館B面</td>
-                      <td><input type="radio" name="区分＆時間枠⑤" id="区分＆時間枠⑤" value="体育館B面_10～12"></td>
-                      <td><input type="radio" name="区分＆時間枠⑤" id="区分＆時間枠⑤" value="体育館B面_13～16"></td>
-                      <td><input type="radio" name="区分＆時間枠⑤" id="区分＆時間枠⑤" value="体育館B面_16～19"></td>
+                      <td><input type="radio" name="place＆time5" id="place＆time5" value="体育館B面_10～12"></td>
+                      <td><input type="radio" name="place＆time5" id="place＆time5" value="体育館B面_13～16"></td>
+                      <td><input type="radio" name="place＆time5" id="place＆time5" value="体育館B面_16～19"></td>
                       </tr>
                       <tr align="center">
                       <td>グラウンドC面</td>
-                      <td><input type="radio" name="区分＆時間枠⑤" id="区分＆時間枠⑤" value="グラウンドC面_10～12"></td>
-                      <td><input type="radio" name="区分＆時間枠⑤" id="区分＆時間枠⑤" value="グラウンドC面_13～16"></td>
-                      <td><input type="radio" name="区分＆時間枠⑤" id="区分＆時間枠⑤" value="グラウンドC面_16～19"></td>
+                      <td><input type="radio" name="place＆time5" id="place＆time5" value="グラウンドC面_10～12"></td>
+                      <td><input type="radio" name="place＆time5" id="place＆time5" value="グラウンドC面_13～16"></td>
+                      <td><input type="radio" name="place＆time5" id="place＆time5" value="グラウンドC面_16～19"></td>
                       </tr>
                       <tr align="center">
                       <td>グラウンドD面</td>
-                      <td><input type="radio" name="区分＆時間枠⑤" id="区分＆時間枠⑤" value="グラウンドD面_10～12"></td>
-                      <td><input type="radio" name="区分＆時間枠⑤" id="区分＆時間枠⑤" value="グラウンドD面_13～16"></td>
-                      <td><input type="radio" name="区分＆時間枠⑤" id="区分＆時間枠⑤" value="グラウンドD面_16～19"></td>
+                      <td><input type="radio" name="place＆time5" id="place＆time5" value="グラウンドD面_10～12"></td>
+                      <td><input type="radio" name="place＆time5" id="place＆time5" value="グラウンドD面_13～16"></td>
+                      <td><input type="radio" name="place＆time5" id="place＆time5" value="グラウンドD面_16～19"></td>
                       </tr>
                       <tr align="center">
                       <td>グラウンドE面</td>
-                      <td><input type="radio" name="区分＆時間枠⑤" id="区分＆時間枠⑤" value="グラウンドE面_10～12"></td>
-                      <td><input type="radio" name="区分＆時間枠⑤" id="区分＆時間枠⑤" value="グラウンドE面_13～16"></td>
-                      <td><input type="radio" name="区分＆時間枠⑤" id="区分＆時間枠⑤" value="グラウンドE面_16～19"></td>
+                      <td><input type="radio" name="place＆time5" id="place＆time5" value="グラウンドE面_10～12"></td>
+                      <td><input type="radio" name="place＆time5" id="place＆time5" value="グラウンドE面_13～16"></td>
+                      <td><input type="radio" name="place＆time5" id="place＆time5" value="グラウンドE面_16～19"></td>
                       </tr>
                       <tr align="center">
                       <td>グラウンドF面</td>
-                      <td><input type="radio" name="区分＆時間枠⑤" id="区分＆時間枠⑤" value="グラウンドF面_10～12"></td>
-                      <td><input type="radio" name="区分＆時間枠⑤" id="区分＆時間枠⑤" value="グラウンドF面_13～16"></td>
-                      <td><input type="radio" name="区分＆時間枠⑤" id="区分＆時間枠⑤" value="グラウンドF面_16～19"></td>
+                      <td><input type="radio" name="place＆time5" id="place＆time5" value="グラウンドF面_10～12"></td>
+                      <td><input type="radio" name="place＆time5" id="place＆time5" value="グラウンドF面_13～16"></td>
+                      <td><input type="radio" name="place＆time5" id="place＆time5" value="グラウンドF面_16～19"></td>
                       </tr>
                       <tr align="center">
                         <td>グラウンドG面</td>
-                        <td><input type="radio" name="区分＆時間枠⑤" id="区分＆時間枠⑤" value="グラウンドG面_10～12"></td>
-                        <td><input type="radio" name="区分＆時間枠⑤" id="区分＆時間枠⑤" value="グラウンドG面_13～16"></td>
-                        <td><input type="radio" name="区分＆時間枠⑤" id="区分＆時間枠⑤" value="グラウンドG面_16～19"></td>
+                        <td><input type="radio" name="place＆time5" id="place＆time5" value="グラウンドG面_10～12"></td>
+                        <td><input type="radio" name="place＆time5" id="place＆time5" value="グラウンドG面_13～16"></td>
+                        <td><input type="radio" name="place＆time5" id="place＆time5" value="グラウンドG面_16～19"></td>
                       </tr>
                       <tr align="center">
                         <td>グラウンドH面</td>
-                        <td><input type="radio" name="区分＆時間枠⑤" id="区分＆時間枠⑤" value="グラウンドH面_10～12"></td>
-                        <td><input type="radio" name="区分＆時間枠⑤" id="区分＆時間枠⑤" value="グラウンドH面_13～16"></td>
-                        <td><input type="radio" name="区分＆時間枠⑤" id="区分＆時間枠⑤" value="グラウンドH面_16～19"></td>
+                        <td><input type="radio" name="place＆time5" id="place＆time5" value="グラウンドH面_10～12"></td>
+                        <td><input type="radio" name="place＆time5" id="place＆time5" value="グラウンドH面_13～16"></td>
+                        <td><input type="radio" name="place＆time5" id="place＆time5" value="グラウンドH面_16～19"></td>
                       </tr>
                       </tbody>
                     </table><br><br>
-                    <label for="使用器具">使用器具：</label><input name="使用器具" type="text" id="使用器具" required>
+                    <label for="equipment">使用器具：</label><input name="equipment" type="text" id="equipment" required>
                     </form>
                     <br>
                     <button type="submit" onclick="SubForm1()">送信</button>

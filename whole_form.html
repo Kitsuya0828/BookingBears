@@ -78,13 +78,13 @@
 			<p>※（通常版）グラウンド・体育館予約をご利用の方は<a href="normal_form.html">こちらへ</a></p><br><br>
 			<article>
 				<form method="post" id="whole">
-					<input type="hidden" id="全面" name="全面" value="✔">
-					<label for="氏名">使用責任者の氏名：</label><input name="氏名" type="text" id="氏名"" required><br><br>
-          <label for="メールアドレス（DCMail）">使用責任者のメールアドレス（DCMail）：</label><input name="メールアドレス（DCMail）" type="email" id="メールアドレス（DCMail）" required><br><br>
-          <label for="学籍番号">使用責任者の学籍番号：</label><input name="学籍番号" type="text" id="学籍番号" required><br><br>
-          <label for="連絡先電話番号">使用責任者の連絡先電話番号：</label><input name="連絡先電話番号" type="text" id="連絡先電話番号" required><br><br>
-					<label for="団体名・ハンドルネーム">【学友会所属団体の場合】使用団体名<br>【その他団体または個人利用の場合】ハンドルネーム：</label>
-					<input type="search" name="groupName" autocomplete="on" list="formalGroup" id="groupName" required>
+					<input type="hidden" id="whole" name="whole" value="✔">
+					<label for="name">使用責任者の氏名：</label><input name="name" type="text" id="name"" required><br><br>
+          <label for="mail address">使用責任者のメールアドレス（DCMail）：</label><input name="mail address" type="email" id="mail address" required><br><br>
+          <label for="student id">使用責任者の学籍番号：</label><input name="student id" type="text" id="student id" required><br><br>
+          <label for="phone number">使用責任者の連絡先電話番号：</label><input name="phone number" type="text" id="phone number" required><br><br>
+          <label for="group name">【学友会所属団体の場合】使用団体名<br>【その他団体または個人利用の場合】ハンドルネーム：</label>
+          <input type="search" name="group name" autocomplete="on" list="formalGroup" id="group name" required>
                     <small><font color="#ff0000">※申請状況カレンダーに掲載されます</font></small>
                     <datalist id="formalGroup">
                       <!--<option value="文化部正規団体">-->
@@ -290,17 +290,17 @@
 
           <br><br><br>
           <big><b>使用申請</b></big><br>
-          <label for="使用月日①">使用月日を選択：</label><input name="使用月日①" type="date" required><br>
-          <label for="使用目的①">使用目的（種目）を記述：</label><input name="使用目的①" type="text" required><br>
+          <label for="date1">使用月日を選択：</label><input name="date1" type="date" required><br>
+          <label for="purpose1">使用目的（種目）を記述：</label><input name="purpose1" type="text" required><br>
 					<label>使用時間枠を選択：</label>
-					<input id="区分＆時間枠①" type="radio" name="区分＆時間枠①" value="10～12" required></label><label for="区分＆時間枠①">10:00-12:00</label>&nbsp;&nbsp;&nbsp;
-					<input id="区分＆時間枠①" type="radio" name="区分＆時間枠①" value="13～16"><label for="区分＆時間枠①">13:00-16:00</label>&nbsp;&nbsp;&nbsp;
-					<input id="区分＆時間枠①" type="radio" name="区分＆時間枠①" value="16～19"><label for="区分＆時間枠①">16:00-19:00</label><br><br>
+					<input id="place＆time1" type="radio" name="place＆time1" value="10～12" required></label><label for="place＆time1">10:00-12:00</label>&nbsp;&nbsp;&nbsp;
+					<input id="place＆time1" type="radio" name="place＆time1" value="13～16"><label for="place＆time1">13:00-16:00</label>&nbsp;&nbsp;&nbsp;
+					<input id="place＆time1" type="radio" name="place＆time1" value="16～19"><label for="place＆time1">16:00-19:00</label><br><br>
           
-          <label for="使用器具">使用器具：</label><input name="使用器具" type="text" id="使用器具" required>
+          <label for="equipment">使用器具：</label><input name="equipment" type="text" id="equipment" required>
 					</form>
 					<br><br>
-                    <button type="submit" onclick="SubForm2()">送信</button>
+          <button type="submit" onclick="SubForm2()">送信</button>
 					
 					
 			</article>
