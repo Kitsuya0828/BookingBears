@@ -540,8 +540,10 @@ font-weight:bold;
 #layer {
     display: none;  /* 初期表示は非表示 */
     position: absolute; 
-    left: 0px;
-    top: 0px;
+	left: 0px;
+	right: 0px;
+	top: 0px;
+	bottom: 0px;
     width: 100%;
     height: 100%;
     background-color: black;
@@ -549,45 +551,16 @@ font-weight:bold;
 }
 #popup {
 	display: none;  /* 初期表示は非表示 */
-	/* height: auto; */
-	/* left: 0; */
-	/* margin: auto; */
-	/* position: absolute; */
-	/* right: 0; */
-	/* width: 50%; */
-	/* transform: translate(calc(50vw - 50%),calc(50vh - 50%)); */
-    position: fixed;
-	top: 50%;
+    position: absolute; 
 	left: 50%;
-	transform: translate(-50%, -50%);
-	width: 50%;
-    /* position: absolute; 
-    left: 50%;
-    top: 50%;
-    width: 300px;
-    height: 200px;
-    margin-left: -150px;
-    margin-top: -100px;
+	right: 50%;
+	top: 50%;
+	bottom: 50%;
+    width: auto;
+    height: auto;
+    /* margin-left: -150px;
+    margin-top: -100px; */
     background-color: white;
     border-radius: 5px;
-    text-align: center; */
-}
-
-#container {
-    width: 100%;
-    height: 100%;
-    top: 0;
-    position: absolute;
-    visibility: hidden;
-    display: none;
-    background-color: rgba(22,22,22,0.5); /* complimenting your modal colors */
-}
-#container:target {
-    visibility: visible;
-    display: block;
-}
-.reveal-modal {
-    position: relative;
-    margin: 0 auto;
-    top: 25%;
+    text-align: center;
 }
