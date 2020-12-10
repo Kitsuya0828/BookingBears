@@ -1,0 +1,41 @@
+{
+	"meta": {},
+	"head": {},
+	"body": {
+		"free": [
+			{
+				"type": "layout.div",
+				"attr": {},
+				"data": [
+					{
+						"type": "tag.heading",
+						"data": {
+							"heading": "h1",
+							"main": {
+								"text": "{{PAGE_NAME}}",
+								"link": null
+							},
+							"right": {
+								"text": "",
+								"link": null
+							}
+						},
+						"attr": {
+							"css": "default",
+							"narrow": "",
+							"class": "default",
+							"hide": ""
+						}
+					},
+					{
+						"type": "tag.html",
+						"data": "<!-- cmsから出力される要素のプリセットCMS -->\n<link rel=\"stylesheet\" href=\"./html/css/cms.css\">\n",
+						"attr": {
+							"preview": ""
+						}
+					}
+				]
+			}
+		]
+	}
+}
