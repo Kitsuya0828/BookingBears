@@ -77,13 +77,13 @@
             <p>※（全面版）グラウンド予約をご利用の方は<a href="whole_form.html">こちらへ</a></p><br><br>
 			      <article>
                 <form method="post" id="normal">
-                  <label for="name">使用責任者の氏名：</label><input name="name" type="text" id="name" required><br><br>
-                  <label for="mailaddress">使用責任者のメールアドレス（DCMail）：</label><input name="mailaddress" type="email" id="mailaddress" required><br><br>
-                  <label for="studentid">使用責任者の学籍番号：</label><input name="studentid" type="text" id="studentid" required><br><br>
-                  <label for="phonenumber">使用責任者の連絡先電話番号：</label><input name="phonenumber" type="text" id="phonenumber" required><br><br>
-                  <label for="groupname">【学友会所属団体の場合】使用団体名<br>【その他団体または個人利用の場合】ハンドルネーム：</label>
+                  <label for="name">使用責任者の氏名<span style="color: #ff0000"><必須></span>：</label><input name="name" type="text" id="name" required><br><br>
+                  <label for="mailaddress">使用責任者のメールアドレス（DCMail）<span style="color: #ff0000"><必須></span>：</label><input name="mailaddress" type="email" id="mailaddress" required><br><br>
+                  <label for="studentid">使用責任者の学籍番号<span style="color: #ff0000"><必須></span>：</label><input name="studentid" type="text" id="studentid" required><br><br>
+                  <label for="phonenumber">使用責任者の連絡先電話番号<span style="color: #ff0000"><必須></span>：</label><input name="phonenumber" type="text" id="phonenumber" required><br><br>
+                  <label for="groupname">【学友会所属団体の場合】使用団体名<br>【その他団体または個人利用の場合】ハンドルネーム<span style="color: #ff0000"><どちらか必須></span>：</label>
                   <input type="search" name="groupname" autocomplete="on" list="formalGroup" id="groupname" required>
-                    <small><font color="#ff0000">※申請状況カレンダーに掲載されます</font></small>
+                    <small><font color="#b9c42">※申請状況カレンダーに掲載されます</font></small>
                     <datalist id="formalGroup">
                       <!--<option value="文化部正規団体">-->
                       <option value="文化部"></option>
@@ -288,9 +288,9 @@
 
                     <br><br><br>
                     <big><b>使用申請①</b></big><br>
-                    <label for="date1">使用月日を選択：</label><input name="date1" type="date" required><br>
-                    <label for="purpose1">使用目的（種目）を記述：</label><input name="purpose1" type="text" required><br>
-                    <label>使用区分と使用時間枠を選択：</label>
+                    <label for="date1">使用月日を選択<span style="color: #ff0000"><必須></span>：</label><input name="date1" type="date" required><br>
+                    <label for="purpose1">使用目的（種目）を記述<span style="color: #ff0000"><必須></span>：</label><input name="purpose1" type="text" required><br>
+                    <label>使用区分と使用時間枠を選択<span style="color: #ff0000"><必須></span>：</label>
                     <table class="table" align="center" border="2">
                       <thead class="thead-dark">
                         <tr align="center">
