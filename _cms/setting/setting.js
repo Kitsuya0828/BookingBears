@@ -151,7 +151,7 @@ var ASSET_DIR_PATH = "../html/";
  * 例:トップディレクトリに設定する場合 "../"
  * 例:companyディレクトリに設定する場合 "../company/"
  */
-var DEFAULT_DIR_PATH = "../";
+var DEFAULT_DIR_PATH = "../html/";
 
 
 /**
