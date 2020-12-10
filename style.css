@@ -549,12 +549,13 @@ font-weight:bold;
 }
 #popup {
 	display: none;  /* 初期表示は非表示 */
-	height: auto;
-	left: 0;
-	margin: auto;
-	position: absolute;
-	right: 0;
-	width: 300px;
+	/* height: auto; */
+	/* left: 0; */
+	/* margin: auto; */
+	/* position: absolute; */
+	/* right: 0; */
+	width: 50%;
+	transform: translate(calc(50vw - 50%),calc(50vh - 50%));
   
     /* position: absolute; 
     left: 50%;
