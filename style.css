@@ -548,8 +548,15 @@ font-weight:bold;
     opacity: 0.20;
 }
 #popup {
-    display: none;  /* 初期表示は非表示 */
-    position: absolute; 
+	display: none;  /* 初期表示は非表示 */
+	height: auto;
+	left: 0;
+	margin: auto;
+	position: absolute;
+	right: 0;
+	width: 300px;
+  
+    /* position: absolute; 
     left: 50%;
     top: 50%;
     width: 300px;
@@ -558,5 +565,5 @@ font-weight:bold;
     margin-top: -100px;
     background-color: white;
     border-radius: 5px;
-    text-align: center;
+    text-align: center; */
 }
