@@ -19,13 +19,17 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 body{
 color:#333;
+height: 100%;
 font:12px verdana,"ヒラギノ丸ゴ ProN W4","Hiragino Maru Gothic ProN","メイリオ","Meiryo","ＭＳ Ｐゴシック","MS PGothic",Sans-Serif;
 line-height:1.5;
 background:#b9cfd5;
 -webkit-text-size-adjust: none;
 }
 
-html{background:#b9cfd5;}
+html{
+	height: 100%;
+	background:#b9cfd5;
+}
 
 
 /* リンク設定
