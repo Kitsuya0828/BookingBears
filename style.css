@@ -378,6 +378,7 @@ button.btn-circle-3d {
 	right: 10px;
 	padding: 6px 40px;
 	z-index: 0;
+	font-size:5px;
   }
   
 button.btn-circle-3d:active {
