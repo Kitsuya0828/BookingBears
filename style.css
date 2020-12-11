@@ -398,6 +398,7 @@ background: #ff8181;/*ボタン色*/
 color: #FFF;
 border-bottom: solid 3px #bd6565;
 border-radius: 3px;
+text-align: center;
 }
 
 .btn-square:active {
@@ -410,7 +411,7 @@ border-bottom: none;/*線を消す*/
 
 #layer {
     display: none;  /* 初期表示は非表示 */
-    position: fixed; 
+    position: relative; 
 	left: 0px;
 	top: 0px;
     width: 100%;
