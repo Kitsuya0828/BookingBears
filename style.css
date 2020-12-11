@@ -358,8 +358,8 @@ font-weight:bold;
 
 #footer .copyright{font-size:11px;}
 
-.btn-circle-3d {
-	display: inline-block;
+button.btn-circle-3d {
+	/* display: inline-block;
 	text-decoration: none;
 	background: #ff8181;
 	color: #FFF;
@@ -372,25 +372,25 @@ font-weight:bold;
 	overflow: hidden;
 	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
 	border-bottom: solid 3px #bd6565;
-	transition: .4s;
+	transition: .4s; */
 	position: fixed;
 	bottom: 10px; 
 	right: 10px;
 	padding: 6px 40px
   }
   
-  .btn-circle-3d:active {
+button.btn-circle-3d:active {
 	-webkit-transform: translateY(2px);
 	transform: translateY(2px);
 	box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
 	border-bottom: none;
-	position: fixed;
+	/* position: fixed;
 	bottom: 10px; 
 	right: 10px;
-	padding: 6px 40px
+	padding: 6px 40px */
   }
 
-.btn-square {
+button.btn-square {
 display: inline-block;
 padding: 0.5em 1em;
 text-decoration: none;
@@ -401,7 +401,7 @@ border-radius: 3px;
 text-align: center;
 }
 
-.btn-square:active {
+button.btn-square:active {
 /*ボタンを押したとき*/
 -webkit-transform: translateY(4px);
 transform: translateY(4px);/*下に動く*/
