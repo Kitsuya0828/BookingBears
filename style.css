@@ -376,17 +376,18 @@ button.btn-circle-3d {
 	position: fixed;
 	bottom: 10px; 
 	right: 10px;
-	padding: 6px 40px;
-	z-index: 0;
+	padding: 0px;
+	/* padding: 6px 40px; */
+	z-index: 9999;
 	font-size:5px;
-  }
+}
   
 button.btn-circle-3d:active {
 	-webkit-transform: translateY(2px);
 	transform: translateY(2px);
 	box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
 	border-bottom: none;
-  }
+}
 
 button.btn-square {
 display: inline-block;
