@@ -594,20 +594,26 @@ border-bottom: none;/*線を消す*/
 	}
 }
 
+@media screen and (max-width: 640px){
+	.scroll {
+		overflow-x: auto;
+	}
+	.table {
+		min-width: 640px;
+		margin: 0 10px 50px;
+	}
+	.table td {
+		border-top: solid 1 px #ccc;
+		border-bottom: solid 1px #ccc;
+	}
+}
 
 /* スマートフォン 縦(ポートレート) */
 @media all and (max-width: 480px) 
     { .GoogleCalendar iframe 
 		{ height: 400px;  }
-	  table.table {
-		width: 50vw;
-	  }
 	}
-@media only screen and (max-width:480px){
-	table.table {
-		width: 50vw;
-	  }
-	
+@media only screen and (max-width:480px){	
 	ul#topnav li{width:50%;}
 
 	ul#topnav li:nth-child(3n){
