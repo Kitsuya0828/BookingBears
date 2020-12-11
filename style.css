@@ -275,7 +275,7 @@ box-shadow:0 0 2px rgba(0, 0, 0, 0.5);
 *************/
 table.table{
 border-collapse:collapse;
-width:100%;
+max-width:90%;
 margin:10px auto;
 }
 
@@ -292,8 +292,6 @@ letter-spacing:1px;
 white-space:nowrap;
 background:#f3f3f3;
 }
-
-table.table td{border-left:#48370d;}
 
 
 
