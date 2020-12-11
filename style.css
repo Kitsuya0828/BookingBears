@@ -600,12 +600,12 @@ border-bottom: none;/*線を消す*/
     { .GoogleCalendar iframe 
 		{ height: 400px;  }
 	  table.table {
-		width: 440px;
+		width: 50%;
 	  }
 	}
 @media only screen and (max-width:480px){
 	table.table {
-		width: 440px;
+		width: 50%;
 	  }
 	
 	ul#topnav li{width:50%;}
