@@ -73,7 +73,7 @@
                 <form method="post" id="normal">
 					<br>
 					<label for="name">氏名<span style="color: #ff0000"><必須></span>：</label><input name="name" placeholder="青葉太郎" type="text" id="name" required><br><br>
-					<label for="mailaddress">メールアドレス（DCMail）<span style="color: #ff0000"><必須></span>：</label><input name="mailaddress" placeholder="aoba.taro.s5@dc.tohoku.ac.jp" type="email" id="mailaddress" required><br><br>
+					<label for="mailaddress">メールアドレス（DCMail）<span style="color: #ff0000"><必須></span>：</label><input name="mailaddress" placeholder="aoba.taro@dc.tohoku.ac.jp" type="email" id="mailaddress" required><br><br>
 					<label for="studentid">学籍番号<span style="color: #ff0000"><必須></span>：</label><input name="studentid" placeholder="C0XX0001"type="text" id="studentid" required><br><br>
 					<label for="phonenumber">連絡先電話番号<span style="color: #ff0000"><必須></span>：</label><input name="phonenumber" placeholder="0227955822" type="text" id="phonenumber" required><br><br>
 					<label for="subject">件名<span style="color: #ff0000"><必須></span>：</label>
@@ -84,7 +84,9 @@
 						<option value="不正行為を発見しました"></option>
 						<option value="システムに不具合があります"></option>
 						<option value="抽選ルールがわかりません"></option>
-					</datalist>
+					</datalist><br><br>
+					<label for="subject">お問い合わせ内容<span style="color: #ff0000"><必須></span>：</label><br>
+					<textarea rows="10" cols="60" placeholder="ここに記入してください"></textarea>
 				</form>
 				<br>
                 <button type="submit" onclick="SubForm4()">送信</button>
