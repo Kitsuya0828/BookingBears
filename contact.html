@@ -13,13 +13,14 @@
 <script src="js/css3-mediaqueries.js"></script>
 <![endif]-->
 <script>
-	function SubForm3 (){
+	function SubForm4 (){
 		$.ajax({
 			url:'https://api.apispreadsheets.com/data/4967/',
 			type:'post',
 			data:$("#normal").serializeArray(),
 			success: function(){
 			  alert("フォームが正常に送信されました")
+			  window.location.href = "submitted.html";
 			},
 			error: function(){
 			  alert("フォーム送信時にエラーが発生しました")
@@ -89,7 +90,7 @@
 					<textarea rows="10" cols="60" placeholder="ここに記入してください"></textarea>
 				</form>
 				<br>
-                <button type="submit" onclick="SubForm4()">送信</button>
+                <button type="submit" onclick="SubForm4();location.href='submitted.html'">送信</button>
             </div>
         </section>
         

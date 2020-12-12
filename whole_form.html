@@ -26,6 +26,7 @@
           data:$("#whole").serializeArray(),
           success: function(){
             alert("フォームが正常に送信されました")
+            window.location.href = "submitted.html";
           },
           error: function(){
             alert("フォーム送信時にエラーが発生しました")
