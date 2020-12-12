@@ -26,11 +26,11 @@
 		<!-- / ロゴ -->
 		<!-- トップナビゲーション -->
 		<ul id="topnav">
-			<li><a href="index.html">トップページ<br><span>Top</span></a></li>
-			<li><a href="cautions.html">ご利用上の注意<br><span>Cautions</span></a></li>
-			<li><a href="introduction.html">体育館・グラウンド紹介<br><span>Introduction</span></a></li>
-			<li><a href="developers.html">開発者情報<br><span>Developers</span></a></li>
-			<li class="active"><a href="contact.html">お問い合わせ<br><span>Contact</span></a></li>
+			<li ><a  href="index.html">トップページ<br><span>Top</span></a></li>
+			<li ><a  href="reservation.html">予約<br><span>Reservation</span></a></li>
+			<li ><a  href="cautions.html">ご利用上の注意<br><span>Cautions</span></a></li>
+			<li ><a  href="developers.html">開発者情報<br><span>Developers</span></a></li>
+			<li class="active"><a  href="contact.html">お問い合わせ<br><span>Contact</span></a></li>
 		</ul>
 		<!-- トップナビゲーション -->
 	</div>
@@ -52,13 +52,12 @@
 		<!-- / サブ画像 -->
 
 		<section class="content">
+			<h3 class="heading">お問い合わせ内容を入力</h3>
             <div>
-                <h1>Booking Bears</h1></div>
-                <div><h2>お問い合わせ</h2></div>
                 <form id="contact_form" action="confirm.php" method="post" name="form" onsubmit="return validate()">
-                    <h1 class="contact-title">お問い合わせ 内容入力</h1>
                     <p>お問い合わせ内容をご入力の上、「確認画面へ」ボタンをクリックしてください。</p>
-                    <div>
+					<br><br>
+					<div>
                         <div>
                             <label>お名前<span>必須</span></label>
                             <input type="text" name="name" placeholder="例）山田太郎" value="">
@@ -92,8 +91,9 @@
                             <label>お問い合わせ内容<span>必須</span></label>
                             <textarea name="content" rows="5" placeholder="お問合せ内容を入力"></textarea>
                         </div>
-                    </div>
-                    <button id="to_confirm" type="submit">確認画面へ</button>
+					</div>
+					<br><br>
+                    <button style="background: aqua;"id="to_confirm" type="submit">確認画面へ</button>
                 </form>
             </div>
         </section>
