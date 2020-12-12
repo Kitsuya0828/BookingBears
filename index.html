@@ -25,11 +25,19 @@
 		<!-- / ロゴ -->
 		<!-- トップナビゲーション -->
 		<ul id="topnav">
-			<li class="active"><a href="index.html">トップページ<br><span>Top</span></a></li>
-			<li><a href="cautions.html">ご利用上の注意<br><span>Cautions</span></a></li>
-			<li><a href="introduction.html">体育館・グラウンド紹介<br><span>Introduction</span></a></li>
-			<li><a href="developers.html">開発者情報<br><span>Developers</span></a></li>
-			<li><a href="contact.html">お問い合わせ<br><span>Contact</span></a></li>
+			<li class="active" id="main"><a id="main" href="index.html">トップページ<br><span>Top</span></a></li>
+			<li id="main"><a id="main" href="#">予約<br><span>Reservation</span></a>
+				<ul>
+					<li id="sub"><a id="sub" href="check.html">予約・空き・確定状況の確認</a></li>
+					<li id="sub"><a id="sub" href="firstday_form.html">初日申請フォームの記入</a></li>
+					<li id="sub"><a id="sub" href="general_form.html">一般申請フォームの記入</a></li>
+					<li id="sub"><a id="sub" href="deletion.html">申請内容の取り消し</a></li>
+				</ul>			
+			</li>
+			<li id="main"><a id="main" href="cautions.html">ご利用上の注意<br><span>Cautions</span></a></li>
+			<li id="main"><a id="main" href="introduction.html">体育館・グラウンド紹介<br><span>Introduction</span></a></li>
+			<li id="main"><a id="main" href="developers.html">開発者情報<br><span>Developers</span></a></li>
+			<li id="main"><a id="main" href="contact.html">お問い合わせ<br><span>Contact</span></a></li>
 		</ul>
 		<!-- トップナビゲーション -->
 	</div>
@@ -61,19 +69,19 @@
 			<h3>初日申請フォームの記入</h3>
 			<img src="images/syonichi.jpg" width="220" height="175" alt="">
 			<p>１団体につき5件まで、来月の予約を行うことができます。予約が重なった場合は、毎月初日の抽選によって確定します。</p>
-			<p class="readmore"><a href="normal_form.html">予約フォームを記入する</a></p>
+			<p class="readmore"><a href="firstday_form.html">初日申請フォームを記入する</a></p>
 		</article>
 		<article class="grid">
 			<h3>一般申請フォームの記入</h3>
 			<img src="images/ippan.jpg" width="220" height="175" alt="">
 			<p>抽選済みの月に関して、空いている場所を使用したい場合は先着順によって予約を確定します。</p>
-			<p class="readmore"><a href="subpage.html">先着フォームを記入する</a></p>
+			<p class="readmore"><a href="general_form.html">一般申請フォームを記入する</a></p>
 		</article>
 		<article class="grid">
-			<h3>予約内容の変更</h3>
+			<h3>申請内容の取り消し</h3>
 			<img src="images/syoukyo.jpg" width="220" height="175" alt="">
-			<p>予約の混雑状況を考慮して、抽選日までは予約内容を訂正することができます。</p>
-			<p class="readmore"><a href="subpage.html">予約内容を変更する</a></p>
+			<p>抽選日までは申請内容を取り消すことができます。混雑状況を考慮して申請を取り消したのち、申請し直すこともできます。</p>
+			<p class="readmore"><a href="subpage.html">申請内容を取り消す</a></p>
 		</article>
 	</section>
 	<!-- / 4カラム -->
