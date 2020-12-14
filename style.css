@@ -79,7 +79,8 @@ padding:10px 0 0;
 }
 
 .logo a{
-font-size:30px;
+font-family: 'Tangerine', cursive;
+font-size:60px;
 font-weight:bold;
 line-height:1;
 color:#333;
@@ -87,6 +88,7 @@ color:#333;
 
 .logo span{
 font-size:11px;
+padding-left: 7px;
 font-weight:normal;
 }
 
@@ -373,7 +375,20 @@ font-size:20px;
 font-weight:bold;
 }
 
-#footer a{color:#333;}
+
+#footer a[href="index.html"]{
+	color:#333;
+	font-family: 'Tangerine', cursive;
+	font-size: 30px;
+	font-weight:bold;
+	line-height:1;
+}
+
+#footer span{
+	font-size: 10px;
+	padding-left: 4px;
+	font-weight:normal;
+}
 #footer a:hover{color:#888;}
 
 #footer .copyright{font-size:11px;}
