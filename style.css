@@ -375,6 +375,9 @@ font-size:20px;
 font-weight:bold;
 }
 
+#footer a{
+	color:#333;
+}
 
 #footer a[href="index.html"]{
 	color:#333;
