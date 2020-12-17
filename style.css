@@ -69,6 +69,14 @@ font-size:11px;
 font-weight:normal;
 }
 
+a[data-stt-changelang] {
+	margin:0 7px;
+}
+/* アクティブなテキストのスタイル */
+a[data-stt-active] {
+	text-decoration:none;
+	font-weight:bold;
+}
 
 /*************
 /* ロゴ
@@ -76,6 +84,10 @@ font-weight:normal;
 #header .logo{
 float:left;
 padding:10px 0 0;
+}
+
+#header .changelang{
+	text-align: right;
 }
 
 .logo a{

@@ -14,12 +14,17 @@
 <script src="js/html5.js"></script>
 <script src="js/css3-mediaqueries.js"></script>
 <![endif]-->
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+
 <script>
 	function SubForm4 (){
 		$.ajax({
-			url:'https://api.apispreadsheets.com/data/4967/',
+			url:'https://api.apispreadsheets.com/data/5205/',
 			type:'post',
-			data:$("#normal").serializeArray(),
+			data:$("#contact").serializeArray(),
 			success: function(){
 			  alert("フォームが正常に送信されました")
 			  window.location.href = "submitted.html";
@@ -39,6 +44,11 @@
 	  <div class="inner">
 		<h1>東北大学　青葉山グラウンド・体育館の予約サイト</h1>
 		<!-- ロゴ -->
+		<div class="changelang">
+			<a href="contact.html" data-stt-changelang="ja" data-stt-ignore>日本語</a> | 
+			<a href="#" data-stt-changelang="en" data-stt-ignore>English</a>
+		</div>
+		
 		<div class="logo">
 		  <a href="index.html">Sprouty<span>-スプラウティ-</span></a>
 		</div><br>
@@ -73,7 +83,7 @@
 		<section class="content">
 			<h3 class="heading">お問い合わせ内容を入力</h3>
             <div>
-                <form method="post" id="normal">
+                <form method="post" id="contact">
 					<br>
 					<label for="name">氏名<span style="color: #ff0000"><必須></span>：</label><input name="name" placeholder="青葉太郎" type="text" id="name" required><br><br>
 					<label for="mailaddress">メールアドレス（DCMail）<span style="color: #ff0000"><必須></span>：</label><input name="mailaddress" placeholder="aoba.taro@dc.tohoku.ac.jp" type="email" id="mailaddress" required><br><br>
@@ -88,13 +98,19 @@
 						<option value="システムに不具合があります"></option>
 						<option value="抽選ルールがわかりません"></option>
 					</datalist><br><br>
-					<label for="subject">お問い合わせ内容<span style="color: #ff0000"><必須></span>：</label><br>
-					<textarea rows="10" cols="60" placeholder="ここに記入してください"></textarea>
+					<label for="content">お問い合わせ内容<span style="color: #ff0000"><必須></span>：</label><br>
+					<textarea rows="10" cols="60" placeholder="ここに記入してください" id="content" name="content"></textarea>
 				</form>
 				<br>
-                <button type="submit" onclick="SubForm4();location.href='submitted.html'">送信</button>
+                <button type="submit" onclick="SubForm4 ()">送信</button>
             </div>
-        </section>
+		</section>
+		
+		<section class="content">
+			<h3 class="heading">よくあるご質問（FAQ）</h3>
+			<p>現時点で、質問はまだ届いておりません。</p>
+			<p>お気軽にお問い合わせください。</p>
+		</section>
         
 	</section>
     <!-- / コンテンツ -->
