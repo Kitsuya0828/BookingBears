@@ -21,14 +21,14 @@
   crossorigin="anonymous"></script>
 
 <script>
-  function SubForm2 (){
+  function SubForm5 (){
       $.ajax({
           url:'https://api.apispreadsheets.com/data/4835/',
           type:'post',
-          data:$("#whole").serializeArray(),
+          data:$("#cancel").serializeArray(),
           success: function(){
             alert("フォームが正常に送信されました")
-            window.location.href = "submitted.html";
+            window.location.href = "after_cancellation.html";
           },
           error: function(){
             alert("フォーム送信時にエラーが発生しました")
@@ -81,9 +81,9 @@
       <h1>東北大学　青葉山グラウンド・体育館の予約サイト</h1>
       <!-- ロゴ -->
       <div class="changelang">
-        <a href="whole_form.html" data-stt-changelang="ja" data-stt-ignore>日本語</a> | 
+        <a href="cancellation.html" data-stt-changelang="ja" data-stt-ignore>日本語</a> | 
         <a href="#" data-stt-changelang="en" data-stt-ignore>English</a>
-      </div>
+    </div>
       <div class="logo">
         <a href="index.html">Sprouty<span>-スプラウティ-</span></a>
       </div><br>
@@ -119,18 +119,19 @@
 		<!-- / サブ画像 -->
 
 		<section class="content">
-			<h3 class="heading">初日申請フォーム（グラウンド全面版）</h3>
-      <p>※（通常版）グラウンド・体育館予約をご利用の方は<a href="firstday_form.html">こちらへ</a></p><br><br>
+			<h3 class="heading">申請内容取り消しフォーム</h3>
+      <p>※抽選前の初日申請フォームの内容のみ取り消し可能です。</a></p><br><br>
+      <p>※以前入力した内容と今回取り消したい内容に相違がある場合は取り消しすることができません。</p>
 			<article>
-				<form method="post" id="whole">
+				<form method="post" id="cancel">
 					<input type="hidden" id="whole" name="whole" value="✔">
 					<label for="name">使用責任者の氏名<span style="color: #ff0000"><必須></span>：</label><input name="name" type="text" id="name" required><br><br>
-          <label for="mailaddress">使用責任者のメールアドレス（DCMail）<span style="color: #ff0000"><必須></span>：</label><input name="mailaddress" type="email" id="mailaddress" required><br><br>
-          <label for="studentid">使用責任者の学籍番号<span style="color: #ff0000"><必須></span>：</label><input name="studentid" type="text" id="studentid" required><br><br>
-          <label for="phonenumber">使用責任者の連絡先電話番号<span style="color: #ff0000"><必須></span>：</label><input name="phonenumber" type="text" id="phonenumber" required><br><br>
-          <label for="groupname">【学友会所属団体の場合】使用団体名；<br>【その他団体または個人利用の場合】ハンドルネーム<span style="color: #ff0000"><どちらか必須></span>：</label>
-          <input type="search" name="groupname" autocomplete="on" list="formalGroup" id="groupname" required>
-                    <small><font color="#4db56a">※申請状況カレンダーに掲載されます</font></small>
+                    <label for="mailaddress">使用責任者のメールアドレス（DCMail）<span style="color: #ff0000"><必須></span>：</label><input name="mailaddress" type="email" id="mailaddress" required><br><br>
+                    <label for="studentid">使用責任者の学籍番号<span style="color: #ff0000"><必須></span>：</label><input name="studentid" type="text" id="studentid" required><br><br>
+                    <label for="phonenumber">使用責任者の連絡先電話番号<span style="color: #ff0000"><必須></span>：</label><input name="phonenumber" type="text" id="phonenumber" required><br><br>
+                    <label for="groupname">【学友会所属団体の場合】使用団体名；<br>【その他団体または個人利用の場合】ハンドルネーム<span style="color: #ff0000"><どちらか必須></span>：</label>
+                    <input type="search" name="groupname" autocomplete="on" list="formalGroup" id="groupname" required>
+                    <small><font color="#4db56a">※既に申請状況カレンダーに掲載されている団体名</font></small>
                     <datalist id="formalGroup">
                       <!--<option value="文化部正規団体">-->
                       <option value="文化部"></option>
@@ -332,20 +333,9 @@
                       <option value="国際交流F.C."></option>
                       <option value="セパタクローサークル"></option>
                     </datalist><br><br>
-
-          <br><br><br>
-          <big><b>使用申請</b></big><br>
-          <label for="date1">使用月日を選択<span style="color: #ff0000"><必須></span>：</label><input name="date1" type="date" required><br>
-          <label for="purpose1">使用目的（種目）を記述<span style="color: #ff0000"><必須></span>：</label><input name="purpose1" type="text" required><br>
-					<label>使用時間枠を選択<span style="color: #ff0000"><必須></span>：</label>
-					<input id="placetime1" type="radio" name="placetime1" value="10～12" required></label><label for="placetime1">10:00-12:00</label>&nbsp;&nbsp;&nbsp;
-					<input id="placetime1" type="radio" name="placetime1" value="13～16"><label for="placetime1">13:00-16:00</label>&nbsp;&nbsp;&nbsp;
-					<input id="placetime1" type="radio" name="placetime1" value="16～19"><label for="placetime1">16:00-19:00</label><br><br>
-          
-          <label for="equipment">使用器具：</label><input name="equipment" type="text" id="equipment" required>
 					</form>
 					<br><br>
-          <button type="submit" onclick="SubForm2()">送信</button>
+          <button type="submit" onclick="SubForm5()">送信</button>
 					
 					
 			</article>
