@@ -456,6 +456,35 @@ transform: translateY(4px);/*下に動く*/
 border-bottom: none;/*線を消す*/
 }
 
+.img_wrap{
+	border: 1px solid #ddd;
+	width: 300px;
+	height: 226px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.img_wrap img{
+	width: 100%;
+	cursor: pointer;
+	transition-duration: 0.3s;
+}
+.img_wrap:hover img{
+	opacity: 0.6;
+	transition-duration: 0.3s;
+}
+
+summary {
+	cursor: pointer;
+	color: #0090ff;
+	transition: 0.2s; /* 変化を滑らかに */
+}
+
+/* ホバー時のスタイル */
+summary:hover {
+cursor: pointer; /* カーソルを指マークに */
+background-color: #EFEFEF;
+}
+
 
 #layer {
     display: none;  /* 初期表示は非表示 */
@@ -478,17 +507,24 @@ border-bottom: none;/*線を消す*/
     text-align: center;
 }
 
+#nextMonthCal {
+	width: 80vw;
+    height: 650px;
+}
+
 /* Google Calendar */
 .GoogleCalendar iframe 
     { width: 80vw;
-        height: 650px; }
+      height: 650px; }
 
 @media all and (max-width: 767px) 
     { .GoogleCalendar iframe 
-        { height: 400px;  }
+		{ height: 400px;  };
+	#nextMonthCal {
+		height: 400px;
+	}
 	}
 /* Google Calendar */
-
 .cal_wrapper {
 	max-width: 960px; /* 最大幅 */
 	min-width: 300px; /* 最小幅 */
@@ -508,7 +544,7 @@ border-bottom: none;/*線を消す*/
 	}
 /* 画面幅が768px以上の場合の縦横比の指定 */
 @media only screen and (min-width: 768px) {
-.googlecal { padding-bottom: 75%; }
+.googlecal { padding-bottom: 75%; };
 }
 
 /* PC用 */
