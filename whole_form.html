@@ -35,20 +35,6 @@
           }
       });
   }
-
-  $(function() {
-     
-     // show popupボタンクリック時の処理
-     $('#show').click(function(e) {
-         $('#popup, #layer').show();
-     });
-      
-     // レイヤー/ポップアップのcloseボタンクリック時の処理
-     $('#close, #layer').click(function(e) {
-         $('#popup, #layer').hide();
-     });
-      
- });
 </script>
 
 <body>
@@ -100,8 +86,6 @@
 	</div>
 </div>
 <!-- / ヘッダー -->
-
-<button class="btn-circle-3d" id="show">みんなの<br>申請状況<br>を表示</button>
 
 <div id="wrapper">
 
@@ -335,6 +319,14 @@
 
           <br><br><br>
           <big><b>使用申請</b></big><br>
+          <details>
+            <summary><span style="border-bottom: solid 1px #0090ff;">みんなの申請状況を表示</span></summary>
+            <div class="cal_wrapper">
+                <div class="googlecal">
+                    <div id="nextMonthCal"></div> <!--来月-->
+                </div>
+            </div>
+          </details>     
           <label for="date1">使用月日を選択<span style="color: #ff0000"><必須></span>：</label><input name="date1" type="date" required><br>
           <label for="purpose1">使用目的（種目）を記述<span style="color: #ff0000"><必須></span>：</label><input name="purpose1" type="text" required><br>
 					<label>使用時間枠を選択<span style="color: #ff0000"><必須></span>：</label>
@@ -384,15 +376,6 @@
 	</div>
 </div>
 <!-- / フッター -->
-
-<!-- レイヤー -->
-<div id="layer"></div>
-<!-- ポップアップ -->
-<div id="popup" class="GoogleCalendar">
-    <div id="nextMonthCal"></div> <!--来月-->
-    <!-- <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;src=Y19xMWFqaTkxcW4wdm5mc2o5N3BvMWdmbDZiNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y191a29zZWhqcmk5aTVlNDB1N3M0aXU0ZjEyY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y18wanI0aTBzajR0MDNvaDk1M3U5NG9nOXVlb0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19mbWJpZWNkbnRvaXVpaThnYTBlYWlocXExZ0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19xMWNlcmI4cWRmbmh0Z2I5a2dhZWpoMjNkb0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19odGtzYXA5aThyYjJxZTJyZGo5c2wwaWFnMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19mNGRwcmIzc2Fob2tzdWdka2doMnNjdnBnY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y185dTlyZGZlZjhpMjRodjU0NDkwZmZycHBla0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%234285F4&amp;color=%237986CB&amp;color=%237CB342&amp;color=%233F51B5&amp;color=%23D81B60&amp;color=%23AD1457&amp;color=%23D50000&amp;color=%238E24AA&amp;mode=MONTH&amp;showPrint=0&amp;showNav=1&amp;title=%E7%94%B3%E8%AB%8B%E7%8A%B6%E6%B3%81" style="border:solid 1px #777" width="100vw" height="650" frameborder="0" scrolling="no"></iframe> -->
-    <br><button class="btn-square" id="close">閉じる</button>
-</div>
 
 
 </body>

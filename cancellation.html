@@ -34,21 +34,7 @@
             alert("フォーム送信時にエラーが発生しました")
           }
       });
-  }
-
-  $(function() {
-     
-     // show popupボタンクリック時の処理
-     $('#show').click(function(e) {
-         $('#popup, #layer').show();
-     });
-      
-     // レイヤー/ポップアップのcloseボタンクリック時の処理
-     $('#close, #layer').click(function(e) {
-         $('#popup, #layer').hide();
-     });
-      
- });
+    }
 </script>
 
 <body>
@@ -101,8 +87,6 @@
 </div>
 <!-- / ヘッダー -->
 
-<button class="btn-circle-3d" id="show">みんなの<br>申請状況<br>を表示</button>
-
 <div id="wrapper">
 
 	<!-- コンテンツ -->
@@ -120,9 +104,17 @@
 
 		<section class="content">
 			<h3 class="heading">申請内容取り消しフォーム</h3>
-      <p>※抽選前の初日申請フォームの内容のみ取り消し可能です。</a></p><br><br>
-      <p>※以前入力した内容と今回取り消したい内容に相違がある場合は取り消しすることができません。</p>
+      <p>※抽選前の初日申請フォームの内容のみ取り消し可能です。</a></p>
+      <p>※以前入力した内容と今回取り消したい内容に相違がある場合は取り消しすることができません。</p><br><br>
 			<article>
+        <details>
+          <summary><span style="border-bottom: solid 1px #0090ff;">現在の確定状況を表示</span></summary>
+          <div class="cal_wrapper">
+            <div class="googlecal">
+              <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;src=Y18wNTFlM2kxdmJ2N3Y5c2dkdmp2NGFncmoyMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y18wbGZzOGs0aWpibG9vcnZvMnJhZG8wdmprNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y191dDI2czA0OWRxZWc4Zmk2ZHRlNGpwNG1rY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19sZmtqcW9nb2NlcGNsYjNicW5oYm03amRrc0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y184Ym5nbTd2YmhyczJsY3NjZGhoZWY0NTlrMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19kcXY5dWE0YWdxbG9ncThpaW9kNmg2N2NwZ0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19ybDkwdWNlNzJkNHFpbmFsNnFkcDltMW1wc0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19kbG0xa3BrN29ocjlhMzF0NXB1MDRvMDNxb0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23EF6C00&amp;color=%239E69AF&amp;color=%23009688&amp;color=%23AD1457&amp;color=%239E69AF&amp;color=%23A79B8E&amp;color=%23009688&amp;color=%23B39DDB&amp;showPrint=0&amp;title=%E7%A2%BA%E5%AE%9A%E7%8A%B6%E6%B3%81" style="border:solid 1px #777" width="100%" height="650" frameborder="0" scrolling="no"></iframe>
+            </div>
+          </div>
+        </details><br>
 				<form method="post" id="cancel">
 					<input type="hidden" id="whole" name="whole" value="✔">
 					<label for="name">使用責任者の氏名<span style="color: #ff0000"><必須></span>：</label><input name="name" type="text" id="name" required><br><br>
@@ -334,7 +326,6 @@
                       <option value="セパタクローサークル"></option>
                     </datalist><br><br>
 					</form>
-					<br><br>
           <button type="submit" onclick="SubForm5()">送信</button>
 					
 					
@@ -374,16 +365,6 @@
 	</div>
 </div>
 <!-- / フッター -->
-
-<!-- レイヤー -->
-<div id="layer"></div>
-<!-- ポップアップ -->
-<div id="popup" class="GoogleCalendar">
-    <div id="nextMonthCal"></div> <!--来月-->
-    <!-- <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;src=Y19xMWFqaTkxcW4wdm5mc2o5N3BvMWdmbDZiNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y191a29zZWhqcmk5aTVlNDB1N3M0aXU0ZjEyY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y18wanI0aTBzajR0MDNvaDk1M3U5NG9nOXVlb0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19mbWJpZWNkbnRvaXVpaThnYTBlYWlocXExZ0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19xMWNlcmI4cWRmbmh0Z2I5a2dhZWpoMjNkb0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19odGtzYXA5aThyYjJxZTJyZGo5c2wwaWFnMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19mNGRwcmIzc2Fob2tzdWdka2doMnNjdnBnY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y185dTlyZGZlZjhpMjRodjU0NDkwZmZycHBla0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%234285F4&amp;color=%237986CB&amp;color=%237CB342&amp;color=%233F51B5&amp;color=%23D81B60&amp;color=%23AD1457&amp;color=%23D50000&amp;color=%238E24AA&amp;mode=MONTH&amp;showPrint=0&amp;showNav=1&amp;title=%E7%94%B3%E8%AB%8B%E7%8A%B6%E6%B3%81" style="border:solid 1px #777" width="100vw" height="650" frameborder="0" scrolling="no"></iframe> -->
-    <br><button class="btn-square" id="close">閉じる</button>
-</div>
-
 
 </body>
 </html>

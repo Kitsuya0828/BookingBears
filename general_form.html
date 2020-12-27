@@ -34,19 +34,6 @@
           }
       });
   }
-  $(function() {
-     
-     // show popupボタンクリック時の処理
-     $('#show').click(function(e) {
-         $('#popup, #layer').show();
-     });
-      
-     // レイヤー/ポップアップのcloseボタンクリック時の処理
-     $('#close, #layer').click(function(e) {
-         $('#popup, #layer').hide();
-     });
-      
- });
 </script>
 
 <body>
@@ -76,8 +63,6 @@
 	</div>
 </div>
 <!-- / ヘッダー -->
-
-<button class="btn-circle-3d" id="show">現在の<br>確定状況<br>を表示</button>
 
 <div id="wrapper">
 
@@ -310,7 +295,14 @@
 
                     <br><br><br>
                     <big><b>使用申請①</b></big><br>
-                                         
+                    <details>
+                      <summary><span style="border-bottom: solid 1px #0090ff;">現在の確定状況を表示</span></summary>
+                      <div class="cal_wrapper">
+                        <div class="googlecal">
+                          <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;src=Y18wNTFlM2kxdmJ2N3Y5c2dkdmp2NGFncmoyMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y18wbGZzOGs0aWpibG9vcnZvMnJhZG8wdmprNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y191dDI2czA0OWRxZWc4Zmk2ZHRlNGpwNG1rY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19sZmtqcW9nb2NlcGNsYjNicW5oYm03amRrc0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y184Ym5nbTd2YmhyczJsY3NjZGhoZWY0NTlrMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19kcXY5dWE0YWdxbG9ncThpaW9kNmg2N2NwZ0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19ybDkwdWNlNzJkNHFpbmFsNnFkcDltMW1wc0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19kbG0xa3BrN29ocjlhMzF0NXB1MDRvMDNxb0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23EF6C00&amp;color=%239E69AF&amp;color=%23009688&amp;color=%23AD1457&amp;color=%239E69AF&amp;color=%23A79B8E&amp;color=%23009688&amp;color=%23B39DDB&amp;showPrint=0&amp;title=%E7%A2%BA%E5%AE%9A%E7%8A%B6%E6%B3%81" style="border:solid 1px #777" width="100%" height="650" frameborder="0" scrolling="no"></iframe>
+                        </div>
+                      </div>
+                    </details>           
                     <label for="date1">使用月日を選択<span style="color: #ff0000"><必須></span>：</label><input name="date1" type="date" required><br>
                     <label for="purpose1">使用目的（種目）を記述<span style="color: #ff0000"><必須></span>：</label><input name="purpose1" type="text" required><br>
                     <label>使用区分と使用時間枠を選択<span style="color: #ff0000"><必須></span>：</label>
@@ -379,6 +371,14 @@
                     
                     <br><br><br>
                     <big><b>使用申請②</b></big><br>
+                    <details>
+                      <summary><span style="border-bottom: solid 1px #0090ff;">現在の確定状況を表示</span></summary>
+                      <div class="cal_wrapper">
+                        <div class="googlecal">
+                          <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;src=Y18wNTFlM2kxdmJ2N3Y5c2dkdmp2NGFncmoyMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y18wbGZzOGs0aWpibG9vcnZvMnJhZG8wdmprNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y191dDI2czA0OWRxZWc4Zmk2ZHRlNGpwNG1rY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19sZmtqcW9nb2NlcGNsYjNicW5oYm03amRrc0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y184Ym5nbTd2YmhyczJsY3NjZGhoZWY0NTlrMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19kcXY5dWE0YWdxbG9ncThpaW9kNmg2N2NwZ0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19ybDkwdWNlNzJkNHFpbmFsNnFkcDltMW1wc0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19kbG0xa3BrN29ocjlhMzF0NXB1MDRvMDNxb0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23EF6C00&amp;color=%239E69AF&amp;color=%23009688&amp;color=%23AD1457&amp;color=%239E69AF&amp;color=%23A79B8E&amp;color=%23009688&amp;color=%23B39DDB&amp;showPrint=0&amp;title=%E7%A2%BA%E5%AE%9A%E7%8A%B6%E6%B3%81" style="border:solid 1px #777" width="100%" height="650" frameborder="0" scrolling="no"></iframe>
+                        </div>
+                      </div>
+                    </details>
                     <label for="date2">使用月日を選択：</label><input name="date2" type="date" required><br>
                     <label for="purpose2">使用目的（種目）を記述：</label><input name="purpose2" type="text" required><br>
                     <label>使用区分と使用時間枠を選択：</label>
@@ -443,6 +443,14 @@
                     
                     <br><br><br>
                     <big><b>使用申請③</b></big><br>
+                    <details>
+                      <summary><span style="border-bottom: solid 1px #0090ff;">現在の確定状況を表示</span></summary>
+                      <div class="cal_wrapper">
+                        <div class="googlecal">
+                          <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;src=Y18wNTFlM2kxdmJ2N3Y5c2dkdmp2NGFncmoyMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y18wbGZzOGs0aWpibG9vcnZvMnJhZG8wdmprNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y191dDI2czA0OWRxZWc4Zmk2ZHRlNGpwNG1rY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19sZmtqcW9nb2NlcGNsYjNicW5oYm03amRrc0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y184Ym5nbTd2YmhyczJsY3NjZGhoZWY0NTlrMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19kcXY5dWE0YWdxbG9ncThpaW9kNmg2N2NwZ0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19ybDkwdWNlNzJkNHFpbmFsNnFkcDltMW1wc0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19kbG0xa3BrN29ocjlhMzF0NXB1MDRvMDNxb0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23EF6C00&amp;color=%239E69AF&amp;color=%23009688&amp;color=%23AD1457&amp;color=%239E69AF&amp;color=%23A79B8E&amp;color=%23009688&amp;color=%23B39DDB&amp;showPrint=0&amp;title=%E7%A2%BA%E5%AE%9A%E7%8A%B6%E6%B3%81" style="border:solid 1px #777" width="100%" height="650" frameborder="0" scrolling="no"></iframe>
+                        </div>
+                      </div>
+                    </details>
                     <label for="date3">使用月日を選択：</label><input name="date3" type="date" required><br>
                     <label for="purpose3">使用目的（種目）を記述：</label><input name="purpose3" type="text" required><br>
                     <label>使用区分と使用時間枠を選択：</label>
@@ -511,6 +519,14 @@
                     
                     <br><br><br>
                     <big><b>使用申請④</b></big><br>
+                    <details>
+                      <summary><span style="border-bottom: solid 1px #0090ff;">現在の確定状況を表示</span></summary>
+                      <div class="cal_wrapper">
+                        <div class="googlecal">
+                          <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;src=Y18wNTFlM2kxdmJ2N3Y5c2dkdmp2NGFncmoyMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y18wbGZzOGs0aWpibG9vcnZvMnJhZG8wdmprNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y191dDI2czA0OWRxZWc4Zmk2ZHRlNGpwNG1rY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19sZmtqcW9nb2NlcGNsYjNicW5oYm03amRrc0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y184Ym5nbTd2YmhyczJsY3NjZGhoZWY0NTlrMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19kcXY5dWE0YWdxbG9ncThpaW9kNmg2N2NwZ0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19ybDkwdWNlNzJkNHFpbmFsNnFkcDltMW1wc0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19kbG0xa3BrN29ocjlhMzF0NXB1MDRvMDNxb0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23EF6C00&amp;color=%239E69AF&amp;color=%23009688&amp;color=%23AD1457&amp;color=%239E69AF&amp;color=%23A79B8E&amp;color=%23009688&amp;color=%23B39DDB&amp;showPrint=0&amp;title=%E7%A2%BA%E5%AE%9A%E7%8A%B6%E6%B3%81" style="border:solid 1px #777" width="100%" height="650" frameborder="0" scrolling="no"></iframe>
+                        </div>
+                      </div>
+                    </details>
                     <label for="date4">使用月日を選択：</label><input name="date4" type="date" required><br>
                     <label for="purpose4">使用目的（種目）を記述：</label><input name="purpose4" type="text" required><br>
                     <label>使用区分と使用時間枠を選択：</label>
@@ -579,6 +595,14 @@
                     
                     <br><br><br>
                     <big><b>使用申請⑤</b></big><br>
+                    <details>
+                      <summary><span style="border-bottom: solid 1px #0090ff;">現在の確定状況を表示</span></summary>
+                      <div class="cal_wrapper">
+                        <div class="googlecal">
+                          <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;src=Y18wNTFlM2kxdmJ2N3Y5c2dkdmp2NGFncmoyMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y18wbGZzOGs0aWpibG9vcnZvMnJhZG8wdmprNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y191dDI2czA0OWRxZWc4Zmk2ZHRlNGpwNG1rY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19sZmtqcW9nb2NlcGNsYjNicW5oYm03amRrc0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y184Ym5nbTd2YmhyczJsY3NjZGhoZWY0NTlrMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19kcXY5dWE0YWdxbG9ncThpaW9kNmg2N2NwZ0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19ybDkwdWNlNzJkNHFpbmFsNnFkcDltMW1wc0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19kbG0xa3BrN29ocjlhMzF0NXB1MDRvMDNxb0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23EF6C00&amp;color=%239E69AF&amp;color=%23009688&amp;color=%23AD1457&amp;color=%239E69AF&amp;color=%23A79B8E&amp;color=%23009688&amp;color=%23B39DDB&amp;showPrint=0&amp;title=%E7%A2%BA%E5%AE%9A%E7%8A%B6%E6%B3%81" style="border:solid 1px #777" width="100%" height="650" frameborder="0" scrolling="no"></iframe>
+                        </div>
+                      </div>
+                    </details>
                     <label for="date5">使用月日を選択：</label><input name="date5" type="date" required><br>
                     <label for="purpose5">使用目的（種目）を記述：</label><input name="purpose5" type="text" required><br>
                     <label>使用区分と使用時間枠を選択：</label>
@@ -689,13 +713,6 @@
 </div>
 <!-- / フッター -->
 
-<!-- レイヤー -->
-<div id="layer"></div>
-<!-- ポップアップ -->
-<div id="popup" class="GoogleCalendar">
-    <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;src=Y18wNTFlM2kxdmJ2N3Y5c2dkdmp2NGFncmoyMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y18wbGZzOGs0aWpibG9vcnZvMnJhZG8wdmprNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y191dDI2czA0OWRxZWc4Zmk2ZHRlNGpwNG1rY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19sZmtqcW9nb2NlcGNsYjNicW5oYm03amRrc0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y184Ym5nbTd2YmhyczJsY3NjZGhoZWY0NTlrMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19kcXY5dWE0YWdxbG9ncThpaW9kNmg2N2NwZ0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19ybDkwdWNlNzJkNHFpbmFsNnFkcDltMW1wc0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19kbG0xa3BrN29ocjlhMzF0NXB1MDRvMDNxb0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23EF6C00&amp;color=%239E69AF&amp;color=%23009688&amp;color=%23AD1457&amp;color=%239E69AF&amp;color=%23A79B8E&amp;color=%23009688&amp;color=%23B39DDB&amp;showPrint=0&amp;title=%E7%A2%BA%E5%AE%9A%E7%8A%B6%E6%B3%81" style="border:solid 1px #777" width="100%" height="650" frameborder="0" scrolling="no"></iframe>
-    <br><button class="btn-square" id="close">閉じる</button>
-</div>
 
 </body>
 
