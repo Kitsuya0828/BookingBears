@@ -20,7 +20,37 @@
   crossorigin="anonymous"></script>
 
 <script>
+	    // ロック用関数
+		function screenLock(){
+      // ロック用のdivを生成
+      var element = document.createElement('div'); 
+      element.id = "screenLock"; 
+      // ロック用のスタイル
+      element.style.height = '100%'; 
+      element.style.left = '0px'; 
+      element.style.position = 'fixed';
+      element.style.top = '0px';
+      element.style.width = '100%';
+      element.style.zIndex = '9999';
+      element.style.opacity = '0';
+   
+      var objBody = document.getElementsByTagName("body").item(0); 
+      objBody.appendChild(element);
+   
+      setTimeout( function() {
+          // ロック画面の削除
+          delete_dom_obj('screenLock');
+      }, 2000 );
+  }
+   
+  // div削除関数
+  function delete_dom_obj( id_name ){
+      var dom_obj = document.getElementById(id_name);
+      var dom_obj_parent=dom_obj.parentNode;
+      dom_obj_parent.removeChild(dom_obj);
+  }
 	function SubForm4 (){
+		screenLock();
 		$.ajax({
 			url:'https://api.apispreadsheets.com/data/5205/',
 			type:'post',

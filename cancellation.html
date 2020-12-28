@@ -21,9 +21,40 @@
   crossorigin="anonymous"></script>
 
 <script>
+    // ロック用関数
+    function screenLock(){
+      // ロック用のdivを生成
+      var element = document.createElement('div'); 
+      element.id = "screenLock"; 
+      // ロック用のスタイル
+      element.style.height = '100%'; 
+      element.style.left = '0px'; 
+      element.style.position = 'fixed';
+      element.style.top = '0px';
+      element.style.width = '100%';
+      element.style.zIndex = '9999';
+      element.style.opacity = '0';
+   
+      var objBody = document.getElementsByTagName("body").item(0); 
+      objBody.appendChild(element);
+   
+      setTimeout( function() {
+          // ロック画面の削除
+          delete_dom_obj('screenLock');
+      }, 2000 );
+  }
+   
+  // div削除関数
+  function delete_dom_obj( id_name ){
+      var dom_obj = document.getElementById(id_name);
+      var dom_obj_parent=dom_obj.parentNode;
+      dom_obj_parent.removeChild(dom_obj);
+  }
+
   function SubForm5 (){
+      screenLock();
       $.ajax({
-          url:'https://api.apispreadsheets.com/data/4835/',
+          url:'https://api.apispreadsheets.com/data/5694/',
           type:'post',
           data:$("#cancel").serializeArray(),
           success: function(){
@@ -105,14 +136,14 @@
 		<section class="content">
 			<h3 class="heading">申請内容取り消しフォーム</h3>
       <p>※抽選前の初日申請フォームの内容のみ取り消し可能です。</a></p>
-      <p>※以前入力した内容と今回取り消したい内容に相違がある場合は取り消しすることができません。</p><br><br>
+      <p>※以前入力した内容と今回取り消したい内容に少しでも相違がある場合は取り消すことができません。</p><br><br>
 			<article>
         <details>
-          <summary><span style="border-bottom: solid 1px #0090ff;">現在の確定状況を表示</span></summary>
+          <summary><span style="border-bottom: solid 1px #0090ff;">みんなの申請状況を表示</span></summary>
           <div class="cal_wrapper">
-            <div class="googlecal">
-              <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;src=Y18wNTFlM2kxdmJ2N3Y5c2dkdmp2NGFncmoyMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y18wbGZzOGs0aWpibG9vcnZvMnJhZG8wdmprNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y191dDI2czA0OWRxZWc4Zmk2ZHRlNGpwNG1rY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19sZmtqcW9nb2NlcGNsYjNicW5oYm03amRrc0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y184Ym5nbTd2YmhyczJsY3NjZGhoZWY0NTlrMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19kcXY5dWE0YWdxbG9ncThpaW9kNmg2N2NwZ0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19ybDkwdWNlNzJkNHFpbmFsNnFkcDltMW1wc0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19kbG0xa3BrN29ocjlhMzF0NXB1MDRvMDNxb0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23EF6C00&amp;color=%239E69AF&amp;color=%23009688&amp;color=%23AD1457&amp;color=%239E69AF&amp;color=%23A79B8E&amp;color=%23009688&amp;color=%23B39DDB&amp;showPrint=0&amp;title=%E7%A2%BA%E5%AE%9A%E7%8A%B6%E6%B3%81" style="border:solid 1px #777" width="100%" height="650" frameborder="0" scrolling="no"></iframe>
-            </div>
+              <div class="googlecal">
+                  <div id="nextMonthCal"></div> <!--来月-->
+              </div>
           </div>
         </details><br>
 				<form method="post" id="cancel">
