@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="ja">
+<html dir="ltr" lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, user-scalable=yes, maximum-scale=1.0, minimum-scale=1.0">
-<meta name="description" content="Sprouty | 東北大学　青葉山グラウンド・体育館の予約サイト">
+<meta name="description" content="Sprouty | Tohoku University Aobayama Ground and Gymnasium Reservation Site">
 <meta name="keywords" content="">
-<title>Sprouty | 東北大学　青葉山グラウンド・体育館の予約サイト</title>
+<title>Sprouty | Tohoku University Aobayama Ground and Gymnasium Reservation Site</title>
 <script type="text/javascript" src="contact.js"></script>
-<link rel="stylesheet" href="style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../style.css" type="text/css" media="screen">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap" rel="stylesheet">
 <!--[if lt IE 9]>
@@ -72,11 +72,11 @@
 	<!-- ヘッダー -->
 	<div id="header">
 	  <div class="inner">
-		<h1>東北大学　青葉山グラウンド・体育館の予約サイト</h1>
+		<h1>Tohoku University Aobayama Ground and Gymnasium Reservation Site</h1>
 		<!-- ロゴ -->
 		<div class="changelang">
-			<a href="contact.html" data-stt-changelang="ja" data-stt-ignore>日本語</a> | 
-			<a href="en/contact.html" data-stt-changelang="en" data-stt-ignore>English</a>
+			<a href="../contact.html" data-stt-changelang="ja" data-stt-ignore>日本語</a> | 
+			<a href="contact.html" data-stt-changelang="en" data-stt-ignore>English</a>
 		</div>
 		
 		<div class="logo">
@@ -85,11 +85,11 @@
 		<!-- / ロゴ -->
 		<!-- トップナビゲーション -->
 		<ul id="topnav">
-			<li ><a  href="index.html">トップページ<br><span>Top</span></a></li>
-			<li ><a  href="reservation.html">予約<br><span>Reservation</span></a></li>
-			<li ><a  href="cautions.html">ご利用上の注意<br><span>Cautions</span></a></li>
-			<li ><a  href="developers.html">開発者情報<br><span>Developers</span></a></li>
-			<li class="active"><a  href="contact.html">お問い合わせ<br><span>Contact</span></a></li>
+			<li ><a  href="index.html">Top</a></li>
+			<li ><a  href="reservation.html">Reservation</a></li>
+			<li ><a  href="cautions.html">Cautions</a></li>
+			<li ><a  href="developers.html">Developers</a></li>
+			<li class="active"><a  href="contact.html">Contact</a></li>
 		</ul>
 		<!-- トップナビゲーション -->
 	</div>
@@ -102,7 +102,7 @@
 
 		<!-- サブ画像 -->
 		<div id="mainBanner" class="subImg">
-			<img src="images/mainImg2.jpg" alt="" width="940" height="200">
+			<img src="../images/mainImg2.jpg" alt="" width="940" height="200">
 			<div class="slogan">
 				<h2>Lorem ipsum dolor sit amet</h2>
 				<h3>Donec ut magna in dolor aliquet feugiat eu eget risus.</h3>
@@ -111,35 +111,35 @@
 		<!-- / サブ画像 -->
 
 		<section class="content">
-			<h3 class="heading">お問い合わせ内容を入力</h3>
+			<h3 class="heading">Enter the details of your inquiry</h3>
             <div>
                 <form method="post" id="contact">
 					<br>
-					<label for="name">氏名<span style="color: #ff0000"><必須></span>：</label><input name="name" placeholder="青葉太郎" type="text" id="name" required><br><br>
-					<label for="mailaddress">メールアドレス（DCMail）<span style="color: #ff0000"><必須></span>：</label><input name="mailaddress" placeholder="aoba.taro@dc.tohoku.ac.jp" type="email" id="mailaddress" required><br><br>
-					<label for="studentid">学籍番号<span style="color: #ff0000"><必須></span>：</label><input name="studentid" placeholder="C0XX0001"type="text" id="studentid" required><br><br>
-					<label for="phonenumber">連絡先電話番号<span style="color: #ff0000"><必須></span>：</label><input name="phonenumber" placeholder="0227955822" type="text" id="phonenumber" required><br><br>
-					<label for="subject">件名<span style="color: #ff0000"><必須></span>：</label>
+					<label for="name">Name<span style="color: #ff0000"><必須></span>：</label><input name="name" placeholder="Taro Aoba" type="text" id="name" required><br><br>
+					<label for="mailaddress">Email address（DCMail）<span style="color: #ff0000"><必須></span>：</label><input name="mailaddress" placeholder="aoba.taro@dc.tohoku.ac.jp" type="email" id="mailaddress" required><br><br>
+					<label for="studentid">student ID number<span style="color: #ff0000"><必須></span>：</label><input name="studentid" placeholder="C0XX0001"type="text" id="studentid" required><br><br>
+					<label for="phonenumber">Contact phone number<span style="color: #ff0000"><必須></span>：</label><input name="phonenumber" placeholder="0227955822" type="text" id="phonenumber" required><br><br>
+					<label for="subject">Subject<span style="color: #ff0000"><必須></span>：</label>
 					<input type="search" name="subject" autocomplete="on" list="typicalsubjects" id="subject" required>
 					<datalist id="typicalsubjects">
-						<option value="申請方法がわかりません"></option>
-						<option value="従来の申請方法でもいいですか"></option>
-						<option value="不正行為を発見しました"></option>
-						<option value="システムに不具合があります"></option>
-						<option value="抽選ルールがわかりません"></option>
+						<option value="I don't know how to apply."></option>
+						<option value="Can I use the traditional application method?"></option>
+						<option value="I've discovered a fraud."></option>
+						<option value="There's a glitch in the system."></option>
+						<option value="I don't understand the lottery rules."></option>
 					</datalist><br><br>
-					<label for="content">お問い合わせ内容<span style="color: #ff0000"><必須></span>：</label><br>
-					<textarea rows="10" cols="60" placeholder="ここに記入してください" id="content" name="content"></textarea>
+					<label for="content">Details of your inquiry<span style="color: #ff0000"><必須></span>：</label><br>
+					<textarea rows="10" cols="60" placeholder="Fill out the form here" id="content" name="content"></textarea>
 				</form>
 				<br>
-                <button type="submit" onclick="SubForm4 ()">送信</button>
+                <button type="submit" onclick="SubForm4 ()">Submit</button>
             </div>
 		</section>
 		
 		<section class="content">
-			<h3 class="heading">よくあるご質問（FAQ）</h3>
-			<p>現時点で、質問はまだ届いておりません。</p>
-			<p>お気軽にお問い合わせください。</p>
+			<h3 class="heading">Frequently Asked Questions (FAQ)</h3>
+			<p>At this time, we have not received any questions.</p>
+			<p>Please feel free to contact us.</p>
 		</section>
         
 	</section>
@@ -160,8 +160,8 @@
 			</article>
 			<article class="grid">
 				<!-- 電話番号+受付時間 -->
-				<p>工学部・工学研究科　教務課学生支援係</p>
-				<p class="tel">電話: <strong>022-795-5822</strong></p>
+				<p>Faculty of Engineering, Graduate School of Engineering Student Support Section, Academic Affairs Division</p>
+				<p class="tel">TEL: <strong>022-795-5822</strong></p>
 				<p class="mail">E-mail: eng-kose@grp.tohoku.ac.jp</p>
 				<!--<p>受付時間: 平日 AM 10:00 〜 PM 5:00</p>-->
 				<!-- / 電話番号+受付時間 -->

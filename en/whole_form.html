@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="ja">
+<html dir="ltr" lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, user-scalable=yes, maximum-scale=1.0, minimum-scale=1.0">
-<meta name="description" content="Sprouty | 東北大学　青葉山グラウンド・体育館の予約サイト">
+<meta name="description" content="Sprouty | Tohoku University Aobayama Ground and Gymnasium Reservation Site">
 <meta name="keywords" content="">
-<title>Sprouty | 東北大学　青葉山グラウンド・体育館の予約サイト</title>
-<link rel="stylesheet" href="style.css" type="text/css" media="screen">
+<title>Sprouty | Tohoku University Aobayama Ground and Gymnasium Reservation Site</title>
+<link rel="stylesheet" href="../style.css" type="text/css" media="screen">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap" rel="stylesheet">
 <!--[if lt IE 9]>
@@ -50,22 +50,21 @@
       var dom_obj_parent=dom_obj.parentNode;
       dom_obj_parent.removeChild(dom_obj);
   }
-
-  function SubForm5 (){
+  function SubForm2 (){
       screenLock();
       $.ajax({
-          url:'https://api.apispreadsheets.com/data/5694/',
+          url:'https://api.apispreadsheets.com/data/4835/',
           type:'post',
-          data:$("#cancel").serializeArray(),
+          data:$("#whole").serializeArray(),
           success: function(){
             alert("フォームが正常に送信されました")
-            window.location.href = "after_cancellation.html";
+            window.location.href = "submitted.html";
           },
           error: function(){
             alert("フォーム送信時にエラーが発生しました")
           }
       });
-    }
+  }
 </script>
 
 <body>
@@ -95,23 +94,23 @@
   <!-- ヘッダー -->
   <div id="header">
     <div class="inner">
-      <h1>東北大学　青葉山グラウンド・体育館の予約サイト</h1>
+      <h1>Tohoku University Aobayama Ground and Gymnasium Reservation Site</h1>
       <!-- ロゴ -->
       <div class="changelang">
-        <a href="cancellation.html" data-stt-changelang="ja" data-stt-ignore>日本語</a> | 
-        <a href="en/cancellation.html" data-stt-changelang="en" data-stt-ignore>English</a>
-    </div>
+        <a href="../whole_form.html" data-stt-changelang="ja" data-stt-ignore>日本語</a> | 
+        <a href="whole_form.html" data-stt-changelang="en" data-stt-ignore>English</a>
+      </div>
       <div class="logo">
         <a href="index.html">Sprouty<span>-スプラウティ-</span></a>
       </div><br>
       <!-- / ロゴ -->
 		<!-- トップナビゲーション -->
 		<ul id="topnav">
-			<li ><a  href="index.html">トップページ<br><span>Top</span></a></li>
-			<li class="active" ><a  href="reservation.html">予約<br><span>Reservation</span></a></li>
-			<li ><a  href="cautions.html">ご利用上の注意<br><span>Cautions</span></a></li>
-			<li ><a  href="developers.html">開発者情報<br><span>Developers</span></a></li>
-			<li ><a  href="contact.html">お問い合わせ<br><span>Contact</span></a></li>
+			<li ><a  href="index.html">Top</a></li>
+			<li class="active" ><a  href="reservation.html">Reservation</a></li>
+			<li ><a  href="cautions.html">Cautions</a></li>
+			<li ><a  href="developers.html">Developers</a></li>
+			<li ><a  href="contact.html">Contact</a></li>
 		</ul>
 		<!-- トップナビゲーション -->
 	</div>
@@ -125,35 +124,27 @@
 
 		<!-- サブ画像 -->
 		<div id="mainBanner" class="subImg">
-			<img src="images/mainImg2.jpg" alt="" width="940" height="200">
+			<img src="../images/mainImg2.jpg" alt="" width="940" height="200">
 			<div class="slogan">
-				<h2>Lorem ipsum dolor sit amet</h2>
-				<h3>Donec ut magna in dolor aliquet feugiat eu eget risus.</h3>
+				<h2>This is the page to make reservations for next month</h2>
+				<h3>If you want to reserve an available category for this month, please click "Reserve" -> "Fill out general application form".</h3>
 			</div>
 		</div>
 		<!-- / サブ画像 -->
 
 		<section class="content">
-			<h3 class="heading">申請内容取り消しフォーム</h3>
-      <p>※抽選前の初日申請フォームの内容のみ取り消し可能です。</a></p>
-      <p>※以前入力した内容と今回取り消したい内容に少しでも相違がある場合は取り消すことができません。</p><br><br>
+			<h3 class="heading">First Day Application Form (Full Ground Version)</h3>
+      <p>※For those who use the (Normal version) ground/gym reservation service<a href="firstday_form.html">Click Here</a></p><br><br>
 			<article>
-        <details>
-          <summary><span style="border-bottom: solid 1px #0090ff;">みんなの申請状況を表示</span></summary>
-          <div class="cal_wrapper">
-              <div class="googlecal">
-                  <div id="nextMonthCal"></div> <!--来月-->
-              </div>
-          </div>
-        </details><br>
-				<form method="post" id="cancel">
-					<label for="name">使用責任者の氏名<span style="color: #ff0000"><必須></span>：</label><input name="name" type="text" id="name" required><br><br>
-                    <label for="mailaddress">使用責任者のメールアドレス（DCMail）<span style="color: #ff0000"><必須></span>：</label><input name="mailaddress" type="email" id="mailaddress" required><br><br>
-                    <label for="studentid">使用責任者の学籍番号<span style="color: #ff0000"><必須></span>：</label><input name="studentid" type="text" id="studentid" required><br><br>
-                    <label for="phonenumber">使用責任者の連絡先電話番号<span style="color: #ff0000"><必須></span>：</label><input name="phonenumber" type="text" id="phonenumber" required><br><br>
-                    <label for="groupname">【学友会所属団体の場合】使用団体名；<br>【その他団体または個人利用の場合】ハンドルネーム<span style="color: #ff0000"><どちらか必須></span>：</label>
-                    <input type="search" name="groupname" autocomplete="on" list="formalGroup" id="groupname" required>
-                    <small><font color="#4db56a">※既に申請状況カレンダーに掲載されている団体名</font></small>
+				<form method="post" id="whole">
+					<input type="hidden" id="whole" name="whole" value="✔">
+					<label for="name">Name of person responsible for use<span style="color: #ff0000">[Required]</span>：</label><input name="name" type="text" id="name" required><br><br>
+          <label for="mailaddress">Email address of person responsible for use（DCMail）<span style="color: #ff0000">[Required]</span>：</label><input name="mailaddress" type="email" id="mailaddress" required><br><br>
+          <label for="studentid">Student ID of the person responsible for use<span style="color: #ff0000">[Required]</span>：</label><input name="studentid" type="text" id="studentid" required><br><br>
+          <label for="phonenumber">Contact telephone number of the person responsible for use<span style="color: #ff0000">[Required]</span>：</label><input name="phonenumber" type="text" id="phonenumber" required><br><br>
+          <label for="groupname">【For organizations affiliated with alumni associations】Organization name；<br>【For other group or individual use】screen name<span style="color: #ff0000">[Either is required]</span>：</label>
+          <input type="search" name="groupname" autocomplete="on" list="formalGroup" id="groupname" required>
+                    <small><font color="#4db56a">※It will be posted on the application status calendar</font></small>
                     <datalist id="formalGroup">
                       <!--<option value="文化部正規団体">-->
                       <option value="文化部"></option>
@@ -355,8 +346,28 @@
                       <option value="国際交流F.C."></option>
                       <option value="セパタクローサークル"></option>
                     </datalist><br><br>
+
+          <br><br><br>
+          <big><b>Application for use</b></big><br>
+          <details>
+            <summary><span style="border-bottom: solid 1px #0090ff;">View everyone's application status</span></summary>
+            <div class="cal_wrapper">
+                <div class="googlecal">
+                    <div id="nextMonthCal"></div> <!--来月-->
+                </div>
+            </div>
+          </details>     
+          <label for="date1">Select the month and date of use<span style="color: #ff0000">[Required]</span>：</label><input name="date1" type="date" required><br>
+          <label for="purpose1">Describe the purpose of use (discipline)<span style="color: #ff0000">[Required]</span>：</label><input name="purpose1" type="text" required><br>
+					<label>Select a time frame for use<span style="color: #ff0000">[Required]</span>：</label>
+					<input id="placetime1" type="radio" name="placetime1" value="10～12" required></label><label for="placetime1">10:00-12:00</label>&nbsp;&nbsp;&nbsp;
+					<input id="placetime1" type="radio" name="placetime1" value="13～16"><label for="placetime1">13:00-16:00</label>&nbsp;&nbsp;&nbsp;
+					<input id="placetime1" type="radio" name="placetime1" value="16～19"><label for="placetime1">16:00-19:00</label><br><br>
+          
+          <label for="equipment">Use of equipment：</label><input name="equipment" type="text" id="equipment" required>
 					</form>
-          <button type="submit" onclick="SubForm5()">送信</button>
+					<br><br>
+          <button type="submit" onclick="SubForm2()">Submit</button>
 					
 					
 			</article>
@@ -381,8 +392,8 @@
 			</article>
 			<article class="grid">
 				<!-- 電話番号+受付時間 -->
-				<p>工学部・工学研究科　教務課学生支援係</p>
-				<p class="tel">電話: <strong>022-795-5822</strong></p>
+				<p>Faculty of Engineering, Graduate School of Engineering, Student Support Division, Academic Affairs Section</p>
+				<p class="tel">TEL: <strong>022-795-5822</strong></p>
 				<p class="mail">E-mail: eng-kose@grp.tohoku.ac.jp</p>
 				<!--<p>受付時間: 平日 AM 10:00 〜 PM 5:00</p>-->
 				<!-- / 電話番号+受付時間 -->
@@ -395,6 +406,7 @@
 	</div>
 </div>
 <!-- / フッター -->
+
 
 </body>
 </html>
