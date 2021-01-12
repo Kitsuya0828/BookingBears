@@ -42,7 +42,7 @@
           delete_dom_obj('screenLock');
       }, 2000 );
   }
-   
+
   // div削除関数
   function delete_dom_obj( id_name ){
       var dom_obj = document.getElementById(id_name);
@@ -64,6 +64,20 @@
           }
       });
   }
+
+  function keisan(){
+  var num1 = parseInt(document.normal.kougaku.value);
+  var num2 = parseInt(document.normal.rigaku.value);
+  var num3 = parseInt(document.normal.yakugaku.value);
+  var num4 = parseInt(document.normal.nougaku.value);
+  var num5 = parseInt(document.normal.jyouhou.value);
+  var num6 = parseInt(document.normal.kankyou.value);
+  var num7 = parseInt(document.normal.ikougaku.value);
+  var num8 = parseInt(document.normal.syokuin.value);
+  var num9 = parseInt(document.normal.sonota.value);
+  document.normal.total.value = num1 + num2 + num3 + num4 + num5 + num6 + num7 + num8 + num9;
+  }
+
 </script>
 
 <body>
@@ -140,7 +154,7 @@
 		</section>
 
 		<section class="content">
-            <h3 class="heading">事前申請フォーム（通常版）</h3>
+            <h3 class="heading">B. 事前申請フォーム（通常版）</h3>
             <p>※（全面版）グラウンド予約をご利用の方は<a href="whole_form.html">こちらへ</a></p><hr>
             <ol>
               <li>・使用を希望する月の、前々月から入力可能です。</li>
@@ -149,7 +163,7 @@
             <br><br>
 
 			      <article>
-                <form method="post" id="normal">
+                <form method="post" id="normal" name="normal">
                   <label for="name">使用責任者の氏名<span style="color: #ff0000"><必須></span>：</label><input name="name" type="text" id="name" required><br><br>
                   <label for="mailaddress">使用責任者のメールアドレス（DCMail）<span style="color: #ff0000"><必須></span>：</label><input name="mailaddress" type="email" id="mailaddress" required><br><br>
                   <label for="studentid">使用責任者の学籍番号<span style="color: #ff0000"><必須></span>：</label><input name="studentid" type="text" id="studentid" required><br><br>
@@ -359,6 +373,7 @@
                       <option value="セパタクローサークル"></option>
                     </datalist><br><br>
                     <p>使用人数<span style="color: #ff0000"><必須></span>：</p>
+                    <div class="scroll">
                       <table class="table">
                         <tr><th align='center'>所属</th>
                         <th align='center'>人数</th>
@@ -367,27 +382,27 @@
                         <th align='center'>所属</th>
                         <th align='center'>人数</th></tr>
                         <tr><td>工学</td>
-                        <td><input type='text' name='kougaku' onChange='keisan()' value="0">人</td>
+                        <td><input type='text' name='kougaku' onChange='keisan()' value="0" style="width:20px;">人</td>
                         <td>理学</td>
-                        <td><input type='text' name='rigaku' onChange='keisan()' value="0">人</td>
+                        <td><input type='text' name='rigaku' onChange='keisan()' value="0" style="width:20px;">人</td>
                         <td>薬学</td>
-                        <td><input type='text' name='yakugaku' onChange='keisan()' value="0">人</td></tr>
+                        <td><input type='text' name='yakugaku' onChange='keisan()' value="0" style="width:20px;">人</td></tr>
                         <tr><td>農学</td>
-                        <td><input type='text' name='nougaku' onChange='keisan()' value="0">人</td>
+                        <td><input type='text' name='nougaku' onChange='keisan()' value="0" style="width:20px;">人</td>
                         <td>情報</td>
-                        <td><input type='text' name='jyouhou' onChange='keisan()' value="0">人</td>
+                        <td><input type='text' name='jyouhou' onChange='keisan()' value="0" style="width:20px;">人</td>
                         <td>環境</td>
-                        <td><input type='text' name='kankyou' onChange='keisan()' value="0">人</td></tr>
+                        <td><input type='text' name='kankyou' onChange='keisan()' value="0" style="width:20px;">人</td></tr>
                         <tr><td>医工学</td>
-                        <td><input type='text' name='ikougaku' onChange='keisan()' value="0">人</td>
+                        <td><input type='text' name='ikougaku' onChange='keisan()' value="0" style="width:20px;">人</td>
                         <td>職員</td>
-                        <td><input type='text' name='syokuin' onChange='keisan()' value="0">人</td>
+                        <td><input type='text' name='syokuin' onChange='keisan()' value="0" style="width:20px;">人</td>
                         <td>その他</td>
-                        <td><input type='text' name='sonota' onChange='keisan()' value="0">人</td></tr>
+                        <td><input type='text' name='sonota' onChange='keisan()' value="0" style="width:20px;">人</td></tr>
                         <tr><td align='center' colspan=5>使用人数計</td>
-                        <td><input type='text' name='total' >人</td></tr>
+                        <td><input type='text' name='total'  style="width:30px;">人</td></tr>
                         </table>
-
+                    </div>
 
                     <br><br>
                     <hr style="border:0;border-top:1px dashed;"><br>
@@ -402,7 +417,7 @@
                     </details>                       
                     <label for="date1">使用月日を選択<span style="color: #ff0000"><必須></span>：</label><input name="date1" type="date" required><br>
                     <label for="purpose1">使用目的（種目）を記述<span style="color: #ff0000"><必須></span>：</label><input name="purpose1" type="text" required><br>
-                    <label>使用区分と使用時間枠を選択<span style="color: #ff0000"><必須></span>：</label>
+                    <label>使用区分と使用時間区分を選択<span style="color: #ff0000"><必須></span>：</label>
                     <div class="scroll">
                       <table class="table">
                       
@@ -478,7 +493,7 @@
                     </details>
                     <label for="date2">使用月日を選択：</label><input name="date2" type="date" required><br>
                     <label for="purpose2">使用目的（種目）を記述：</label><input name="purpose2" type="text" required><br>
-                    <label>使用区分と使用時間枠を選択：</label>
+                    <label>使用区分と使用時間区分を選択：</label>
                     <div class="scroll">
                       <table class="table">
                         <tr>
@@ -550,7 +565,7 @@
                     </details>
                     <label for="date3">使用月日を選択：</label><input name="date3" type="date" required><br>
                     <label for="purpose3">使用目的（種目）を記述：</label><input name="purpose3" type="text" required><br>
-                    <label>使用区分と使用時間枠を選択：</label>
+                    <label>使用区分と使用時間区分を選択：</label>
                     <div class="scroll">
                       <table class="table">
                         
@@ -626,7 +641,7 @@
                     </details>
                     <label for="date4">使用月日を選択：</label><input name="date4" type="date" required><br>
                     <label for="purpose4">使用目的（種目）を記述：</label><input name="purpose4" type="text" required><br>
-                    <label>使用区分と使用時間枠を選択：</label>
+                    <label>使用区分と使用時間区分を選択：</label>
                     <div class="scroll">
                       <table class="table">
                         
@@ -702,7 +717,7 @@
                     </details>
                     <label for="date5">使用月日を選択：</label><input name="date5" type="date" required><br>
                     <label for="purpose5">使用目的（種目）を記述：</label><input name="purpose5" type="text" required><br>
-                    <label>使用区分と使用時間枠を選択：</label>
+                    <label>使用区分と使用時間区分を選択：</label>
                     <div class="scroll">
                       <table class="table">
                         

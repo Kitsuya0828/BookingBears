@@ -88,7 +88,20 @@
     var dates = "dates="+String(myYear)+String(nextMonth)+"01/"+String(myYear)+String(nextMonth)+"01&amp;";
     //指定したidを書き換え
     document.getElementById("nextMonthCal").innerHTML = calendarCode1+dates+calenderCode2;
-    }		
+    }	
+
+    function keisan(){
+    var num1 = parseInt(document.whole.kougaku.value);
+    var num2 = parseInt(document.whole.rigaku.value);
+    var num3 = parseInt(document.whole.yakugaku.value);
+    var num4 = parseInt(document.whole.nougaku.value);
+    var num5 = parseInt(document.whole.jyouhou.value);
+    var num6 = parseInt(document.whole.kankyou.value);
+    var num7 = parseInt(document.whole.ikougaku.value);
+    var num8 = parseInt(document.whole.syokuin.value);
+    var num9 = parseInt(document.whole.sonota.value);
+    document.whole.total.value = num1 + num2 + num3 + num4 + num5 + num6 + num7 + num8 + num9;
+    }
   </script>
 
   <!-- ヘッダー -->
@@ -141,8 +154,8 @@
 		</section>
 
 		<section class="content">
-			<h3 class="heading">初日申請フォーム（グラウンド全面版）</h3>
-      <p>※（通常版）グラウンド・体育館予約をご利用の方は<a href="firstday_form.html">こちらへ</a></p><br><br>
+			<h3 class="heading">B. 事前申請フォーム（グラウンド全面版）</h3>
+      <p>※（通常版）グラウンド・体育館予約をご利用の方は<a href="firstday_form.html">こちらへ</a></p><hr><br><br>
 			<article>
 				<form method="post" id="whole">
 					<input type="hidden" id="whole" name="whole" value="✔">
@@ -354,8 +367,39 @@
                       <option value="国際交流F.C."></option>
                       <option value="セパタクローサークル"></option>
                     </datalist><br><br>
+                    <p>使用人数<span style="color: #ff0000"><必須></span>：</p>
+                    <div class="scroll">
+                      <table class="table">
+                        <tr><th align='center'>所属</th>
+                        <th align='center'>人数</th>
+                        <th align='center'>所属</th>
+                        <th align='center'>人数</th>
+                        <th align='center'>所属</th>
+                        <th align='center'>人数</th></tr>
+                        <tr><td>工学</td>
+                        <td><input type='text' name='kougaku' onChange='keisan()' value="0" style="width:20px;">人</td>
+                        <td>理学</td>
+                        <td><input type='text' name='rigaku' onChange='keisan()' value="0" style="width:20px;">人</td>
+                        <td>薬学</td>
+                        <td><input type='text' name='yakugaku' onChange='keisan()' value="0" style="width:20px;">人</td></tr>
+                        <tr><td>農学</td>
+                        <td><input type='text' name='nougaku' onChange='keisan()' value="0" style="width:20px;">人</td>
+                        <td>情報</td>
+                        <td><input type='text' name='jyouhou' onChange='keisan()' value="0" style="width:20px;">人</td>
+                        <td>環境</td>
+                        <td><input type='text' name='kankyou' onChange='keisan()' value="0" style="width:20px;">人</td></tr>
+                        <tr><td>医工学</td>
+                        <td><input type='text' name='ikougaku' onChange='keisan()' value="0" style="width:20px;">人</td>
+                        <td>職員</td>
+                        <td><input type='text' name='syokuin' onChange='keisan()' value="0" style="width:20px;">人</td>
+                        <td>その他</td>
+                        <td><input type='text' name='sonota' onChange='keisan()' value="0" style="width:20px;">人</td></tr>
+                        <tr><td align='center' colspan=5>使用人数計</td>
+                        <td><input type='text' name='total'  style="width:30px;">人</td></tr>
+                        </table>
+                    </div>
 
-          <br><br><br>
+          <br><br><hr style="border:0;border-top:1px dashed;"><br>
           <big><b>使用申請</b></big><br>
           <details>
             <summary><span style="border-bottom: solid 1px #0090ff;">みんなの申請状況を表示</span></summary>
@@ -367,7 +411,7 @@
           </details>     
           <label for="date1">使用月日を選択<span style="color: #ff0000"><必須></span>：</label><input name="date1" type="date" required><br>
           <label for="purpose1">使用目的（種目）を記述<span style="color: #ff0000"><必須></span>：</label><input name="purpose1" type="text" required><br>
-					<label>使用時間枠を選択<span style="color: #ff0000"><必須></span>：</label>
+					<label>使用時間区分を選択<span style="color: #ff0000"><必須></span>：</label>
 					<input id="placetime1" type="radio" name="placetime1" value="10～12" required></label><label for="placetime1">10:00-12:00</label>&nbsp;&nbsp;&nbsp;
 					<input id="placetime1" type="radio" name="placetime1" value="13～16"><label for="placetime1">13:00-16:00</label>&nbsp;&nbsp;&nbsp;
 					<input id="placetime1" type="radio" name="placetime1" value="16～19"><label for="placetime1">16:00-19:00</label><br><br>
