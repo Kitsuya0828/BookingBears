@@ -125,8 +125,8 @@
 		<div id="mainBanner" class="subImg">
 			<img src="images/mainImg2.jpg" alt="" width="940" height="200">
 			<div class="slogan">
-				<h2>これは来月の予約をするページです</h2>
-				<h3>今月分で空いている区分を予約したい場合は「予約」→「一般申請フォームの記入」をクリックしてください。</h3>
+				<h2>これは翌々月の予約をするページです</h2>
+				<h3>今月・来月分で空いている区分を予約したい場合は「予約」→「一般申請フォームの記入」をクリックしてください。</h3>
 			</div>
 		</div>
     <!-- / サブ画像 -->
@@ -140,8 +140,14 @@
 		</section>
 
 		<section class="content">
-            <h3 class="heading">初日申請フォーム（通常版）</h3>
-            <p>※（全面版）グラウンド予約をご利用の方は<a href="whole_form.html">こちらへ</a></p><br><br>
+            <h3 class="heading">事前申請フォーム（通常版）</h3>
+            <p>※（全面版）グラウンド予約をご利用の方は<a href="whole_form.html">こちらへ</a></p><hr>
+            <ol>
+              <li>・使用を希望する月の、前々月から入力可能です。</li>
+              <li>・申請内容は、使用希望する月の前月初日（ただし開館日）１３時に抽選によって確定します。</li>
+            </ol>
+            <br><br>
+
 			      <article>
                 <form method="post" id="normal">
                   <label for="name">使用責任者の氏名<span style="color: #ff0000"><必須></span>：</label><input name="name" type="text" id="name" required><br><br>
@@ -352,8 +358,39 @@
                       <option value="国際交流F.C."></option>
                       <option value="セパタクローサークル"></option>
                     </datalist><br><br>
+                    <p>使用人数<span style="color: #ff0000"><必須></span>：</p>
+                      <table class="table">
+                        <tr><th align='center'>所属</th>
+                        <th align='center'>人数</th>
+                        <th align='center'>所属</th>
+                        <th align='center'>人数</th>
+                        <th align='center'>所属</th>
+                        <th align='center'>人数</th></tr>
+                        <tr><td>工学</td>
+                        <td><input type='text' name='kougaku' onChange='keisan()' value="0">人</td>
+                        <td>理学</td>
+                        <td><input type='text' name='rigaku' onChange='keisan()' value="0">人</td>
+                        <td>薬学</td>
+                        <td><input type='text' name='yakugaku' onChange='keisan()' value="0">人</td></tr>
+                        <tr><td>農学</td>
+                        <td><input type='text' name='nougaku' onChange='keisan()' value="0">人</td>
+                        <td>情報</td>
+                        <td><input type='text' name='jyouhou' onChange='keisan()' value="0">人</td>
+                        <td>環境</td>
+                        <td><input type='text' name='kankyou' onChange='keisan()' value="0">人</td></tr>
+                        <tr><td>医工学</td>
+                        <td><input type='text' name='ikougaku' onChange='keisan()' value="0">人</td>
+                        <td>職員</td>
+                        <td><input type='text' name='syokuin' onChange='keisan()' value="0">人</td>
+                        <td>その他</td>
+                        <td><input type='text' name='sonota' onChange='keisan()' value="0">人</td></tr>
+                        <tr><td align='center' colspan=5>使用人数計</td>
+                        <td><input type='text' name='total' >人</td></tr>
+                        </table>
 
-                    <br><br><br>
+
+                    <br><br>
+                    <hr style="border:0;border-top:1px dashed;"><br>
                     <big><b>使用申請①</b></big><br>
                     <details>
                         <summary><span style="border-bottom: solid 1px #0090ff;">みんなの申請状況を表示</span></summary>
