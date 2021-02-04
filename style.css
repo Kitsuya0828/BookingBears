@@ -569,10 +569,15 @@ background-color: #EFEFEF;
 	margin-left:20px;
 	}
 	
-	/* サブコンテンツ + フッター グリッド(3カラム) */
-	#sub .grid, #footer .grid{
-	width:300px;
+	/* サブコンテンツ (3カラム)-->2カラムに変更 */
+	#sub .grid{
+	width:460px;
 	}
+
+	/* フッター グリッド(3カラム) */
+	#footer .grid{
+		width:300px;
+		}
 	
 	/* ギャラリー グリッド(4カラム) */
 	#gallery{
