@@ -155,7 +155,14 @@
 
 		<section class="content">
 			<h3 class="heading">B. 事前申請フォーム（グラウンド全面版）</h3>
-      <p>※（通常版）グラウンド・体育館予約をご利用の方は<a href="firstday_form.html">こちらへ</a></p><hr><br><br>
+      <p>※（通常版）グラウンド・体育館予約をご利用の方は<a href="firstday_form.html" style="text-decoration: underline;">こちらへ</a></p><hr>
+      <font color="red"><b>
+        <ol>
+          <li>・使用を希望する月の、前々月の20日から入力可能です。</li>
+          <li>・申請内容は、使用希望する月の前月初日（ただし開館日）１３時に抽選によって確定します。</li>
+        </ol>
+      </b></font>
+      <br><br>
 			<article>
 				<form method="post" id="whole">
 					<input type="hidden" id="whole" name="whole" value="✔">
@@ -165,7 +172,7 @@
           <label for="phonenumber">使用責任者の連絡先電話番号<span style="color: #ff0000"><必須></span>：</label><input name="phonenumber" type="text" id="phonenumber" required><br><br>
           <label for="groupname">【学友会所属団体の場合】使用団体名；<br>【その他団体または個人利用の場合】ハンドルネーム<span style="color: #ff0000"><どちらか必須></span>：</label>
           <input type="search" name="groupname" autocomplete="on" list="formalGroup" id="groupname" required>
-                    <small><font color="#4db56a">※申請状況カレンダーに掲載されます</font></small>
+                    <small><font color="#4db56a">※確定状況カレンダーに掲載されます</font></small>
                     <datalist id="formalGroup">
                       <!--<option value="文化部正規団体">-->
                       <option value="文化部"></option>
@@ -412,9 +419,9 @@
           <label for="date1">使用月日を選択<span style="color: #ff0000"><必須></span>：</label><input name="date1" type="date" required><br>
           <label for="purpose1">使用目的（種目）を記述<span style="color: #ff0000"><必須></span>：</label><input name="purpose1" type="text" required><br>
 					<label>使用時間区分を選択<span style="color: #ff0000"><必須></span>：</label>
-					<input id="placetime1" type="radio" name="placetime1" value="10～12" required></label><label for="placetime1">10:00-12:00</label>&nbsp;&nbsp;&nbsp;
-					<input id="placetime1" type="radio" name="placetime1" value="13～16"><label for="placetime1">13:00-16:00</label>&nbsp;&nbsp;&nbsp;
-					<input id="placetime1" type="radio" name="placetime1" value="16～19"><label for="placetime1">16:00-19:00</label><br><br>
+					<input id="placetime1" type="radio" name="placetime1" value="10～12" required></label><label for="placetime1">10:00-11:50</label>&nbsp;&nbsp;&nbsp;
+					<input id="placetime1" type="radio" name="placetime1" value="13～16"><label for="placetime1">13:00-15:50</label>&nbsp;&nbsp;&nbsp;
+					<input id="placetime1" type="radio" name="placetime1" value="16～19"><label for="placetime1">16:00-18:50</label><br><br>
           
           <label for="equipment">使用器具：</label><input name="equipment" type="text" id="equipment" required>
 					</form>
