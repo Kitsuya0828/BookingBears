@@ -18,39 +18,49 @@
 
 <script type="text/javascript">
     window.onload = googleCalendarSet;
-    function shiftMonth(shift=1,id1,id2){
-        // var calendarCode1 = '<iframe src="https://calendar.google.com/calendar/embed?';
-	    // var calenderCode2 = 'height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;src=Y19xMWFqaTkxcW4wdm5mc2o5N3BvMWdmbDZiNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y191a29zZWhqcmk5aTVlNDB1N3M0aXU0ZjEyY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y18wanI0aTBzajR0MDNvaDk1M3U5NG9nOXVlb0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19mbWJpZWNkbnRvaXVpaThnYTBlYWlocXExZ0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19xMWNlcmI4cWRmbmh0Z2I5a2dhZWpoMjNkb0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19odGtzYXA5aThyYjJxZTJyZGo5c2wwaWFnMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19mNGRwcmIzc2Fob2tzdWdka2doMnNjdnBnY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y185dTlyZGZlZjhpMjRodjU0NDkwZmZycHBla0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%234285F4&amp;color=%237986CB&amp;color=%237CB342&amp;color=%233F51B5&amp;color=%23D81B60&amp;color=%23AD1457&amp;color=%23D50000&amp;color=%238E24AA&amp;mode=MONTH&amp;showPrint=0&amp;showNav=1&amp;title=%E7%94%B3%E8%AB%8B%E7%8A%B6%E6%B3%81" style="border:solid 1px #777" width="100%" height="650" frameborder="0" scrolling="no">'
-        var today = new Date;
+    function shiftMonth(shift,num){
+        var calendarCode1 = '<iframe src="https://calendar.google.com/calendar/embed?';
+	    var calenderCode2 = [
+			'height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;src=Y19wdWczbWFqMXU5cmd2czk3Z2xmaGlpOW9ka0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y18yb2YwcjVmbGJidmZlOGU3Z3Z0NHBiZTU5c0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19nMTUwMDRwNmEwb3NqcnRkYWdndGRhZWR1b0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23E67C73&amp;color=%237986CB&amp;color=%23E4C441&amp;title=%E7%94%B3%E8%AB%8B%E7%8A%B6%E6%B3%81%E3%80%90%E4%BD%93%E8%82%B2%E9%A4%A8A%E9%9D%A2%E3%80%91" id="shinsei" style="border:solid 1px #777" width="100%" height="650" frameborder="0" scrolling="no">',
+			'height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;title=%E7%94%B3%E8%AB%8B%E7%8A%B6%E6%B3%81%E3%80%90%E4%BD%93%E8%82%B2%E9%A4%A8B%E9%9D%A2%E3%80%91&amp;src=Y18ybzlzcnRpbWJqbmk5N3NpYzFndHZsamo5NEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19kNWhzMzY3aXJyY280b3R2czJsNGgydWFua0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y192MmZndGtocTczanZ0M21xZml1MDVoNGhya0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23E67C73&amp;color=%237986CB&amp;color=%23E4C441" id="shinsei" style="border:solid 1px #777" width="100%" height="650" frameborder="0" scrolling="no">',
+			'height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;title=%E7%94%B3%E8%AB%8B%E7%8A%B6%E6%B3%81%E3%80%90%E3%82%B0%E3%83%A9%E3%82%A6%E3%83%B3%E3%83%89C%E9%9D%A2%E3%80%91&amp;src=Y19maWYwYWpjZGxuMWtnYzZndW40cnE3ZWZ0a0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19nZjBlc2twNDRtNHV2MHRpZ2MzaGpqaXR0MEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19lYjVtdThlbGZ0MnFzaWMyNTJ1NTNlMTg4a0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23E67C73&amp;color=%237986CB&amp;color=%23E4C441" id="shinsei" style="border:solid 1px #777" width="100%" height="650" frameborder="0" scrolling="no">',
+			'height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;title=%E7%94%B3%E8%AB%8B%E7%8A%B6%E6%B3%81%E3%80%90%E3%82%B0%E3%83%A9%E3%82%A6%E3%83%B3%E3%83%89D%E9%9D%A2%E3%80%91&amp;src=Y19jZjdpaDJlZXJiNmFrMmRnZTRia2cxZmE5c0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19xOTczbHZuNTlsZGQzaGZvMG1qMmdtdDFnc0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19ocXFyNWEyN3ZxOGRkcnVrYzFxNHI4bWY3Z0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23E67C73&amp;color=%237986CB&amp;color=%23E4C441" id="shinsei" style="border:solid 1px #777" width="100%" height="650" frameborder="0" scrolling="no">',
+			'height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;title=%E7%94%B3%E8%AB%8B%E7%8A%B6%E6%B3%81%E3%80%90%E3%82%B0%E3%83%A9%E3%82%A6%E3%83%B3%E3%83%89E%E9%9D%A2%E3%80%91&amp;src=Y19wczZ0NDVkMGJkajRscDh2cWNxYzVvdnFqOEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19vZWM5dnM1OWs0MjVhdGszYTU2a2QwYWNrMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y18wcWt0cjcwZGFhNXBiYWhzdW5tMzE5NDBwNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23E67C73&amp;color=%237986CB&amp;color=%23E4C441" id="shinsei" style="border:solid 1px #777" width="100%" height="650" frameborder="0" scrolling="no">',
+			'height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;title=%E7%94%B3%E8%AB%8B%E7%8A%B6%E6%B3%81%E3%80%90%E3%82%B0%E3%83%A9%E3%82%A6%E3%83%B3%E3%83%89F%E9%9D%A2%E3%80%91&amp;src=Y19hNGM1NDcxYTVzbDhiY2pmNXZsbWRzcW5tNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19lOHZzcDI2MDllb2ltYnIzcmVoNmE1aGwzOEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y183Z25yb2U3c2cwMWRhdHM1NzE2dGJldWduZ0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23E67C73&amp;color=%237986CB&amp;color=%23E4C441" id="shinsei" style="border:solid 1px #777" width="100%" height="650" frameborder="0" scrolling="no">',
+			'height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;title=%E7%94%B3%E8%AB%8B%E7%8A%B6%E6%B3%81%E3%80%90%E3%82%B0%E3%83%A9%E3%82%A6%E3%83%B3%E3%83%89G%E9%9D%A2%E3%80%91&amp;src=Y18zb3E1bjA0YmdkdHZhc3RsZzVmNXRobXNjOEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19nOTA0ZHR0YmYwYW9tOXNwZXJ1cnRobzNtOEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19mcG5rdTRiNmJpNHVsOXFjbmpyb24wMDljZ0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23E67C73&amp;color=%237986CB&amp;color=%23E4C441" id="shinsei" style="border:solid 1px #777" width="100%" height="650" frameborder="0" scrolling="no">',
+			'height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;title=%E7%94%B3%E8%AB%8B%E7%8A%B6%E6%B3%81%E3%80%90%E3%82%B0%E3%83%A9%E3%82%A6%E3%83%B3%E3%83%89H%E9%9D%A2%E3%80%91&amp;src=Y180amc2aXNocG9kdTA0ZHM2NDZkcW10a2RlNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y184Z2JxZzVzcW9vOHJiZjdpbTVzNGxhOGhvZ0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19wNGg4b244MG9ncHZuOTBpa2ExaDFvamVhNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23E67C73&amp;color=%237986CB&amp;color=%23E4C441" id="shinsei" style="border:solid 1px #777" width="100%" height="650" frameborder="0" scrolling="no"></iframe>'
+		];
+        var today = new Date();
         var myYear = today.getFullYear();//年を取得
         var myMonth = today.getMonth()+1;//月を取得、1月が0から始まるからややこしい
-        var nextMonth = myMonth+shift;
+        var nextMonth = myMonth+parseInt(shift);
         //12月を超えると月マイナス12
         if(nextMonth>12){nextMonth-=12;myYear+=1;};
         //10以下を二ケタに
         if(nextMonth<10){nextMonth = "0"+nextMonth;};
         //日付を出力
         var dates = "dates="+String(myYear)+String(nextMonth)+"01/"+String(myYear)+String(nextMonth)+"01&amp;";
-        return id1 + dates + id2;
+		console.log(String(calendarCode1)+String(dates)+String(calenderCode2[num]));
+        document.getElementById("shinsei").innerHTML = calendarCode1+dates+calenderCode2[num];
     }
-	function googleCalendarSet(){
-	//カレンダーの埋め込みコードをコピペして分割する
-	var calendarCode1 = '<iframe src="https://calendar.google.com/calendar/embed?';
-	var calenderCode2 = 'height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;src=Y19xMWFqaTkxcW4wdm5mc2o5N3BvMWdmbDZiNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y191a29zZWhqcmk5aTVlNDB1N3M0aXU0ZjEyY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y18wanI0aTBzajR0MDNvaDk1M3U5NG9nOXVlb0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19mbWJpZWNkbnRvaXVpaThnYTBlYWlocXExZ0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19xMWNlcmI4cWRmbmh0Z2I5a2dhZWpoMjNkb0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19odGtzYXA5aThyYjJxZTJyZGo5c2wwaWFnMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19mNGRwcmIzc2Fob2tzdWdka2doMnNjdnBnY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y185dTlyZGZlZjhpMjRodjU0NDkwZmZycHBla0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%234285F4&amp;color=%237986CB&amp;color=%237CB342&amp;color=%233F51B5&amp;color=%23D81B60&amp;color=%23AD1457&amp;color=%23D50000&amp;color=%238E24AA&amp;mode=MONTH&amp;showPrint=0&amp;showNav=1&amp;title=%E7%94%B3%E8%AB%8B%E7%8A%B6%E6%B3%81" style="border:solid 1px #777" width="100%" height="650" frameborder="0" scrolling="no">'
-	/*再来月のカレンダー*/
-	var today = new Date;
-	var myYear = today.getFullYear();//年を取得
-	var myMonth = today.getMonth()+1;//月を取得、1月が0から始まるからややこしい
-	var nextMonth = myMonth+2;
-	//12月を超えると1月に
-	if(nextMonth>12){nextMonth-=12;myYear+=1;};
-	//10以下を二ケタに
-	if(nextMonth<10){nextMonth = "0"+nextMonth;};
-	//日付を出力
-	var dates = "dates="+String(myYear)+String(nextMonth)+"01/"+String(myYear)+String(nextMonth)+"01&amp;";
-	//指定したidを書き換え
-	document.getElementById("nextMonthCal").innerHTML = calendarCode1+dates+calenderCode2;
-	}		
+	// function googleCalendarSet(){
+	// //カレンダーの埋め込みコードをコピペして分割する
+	// var calendarCode1 = '<iframe src="https://calendar.google.com/calendar/embed?';
+	// var calenderCode2 = 'height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;src=Y19xMWFqaTkxcW4wdm5mc2o5N3BvMWdmbDZiNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y191a29zZWhqcmk5aTVlNDB1N3M0aXU0ZjEyY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y18wanI0aTBzajR0MDNvaDk1M3U5NG9nOXVlb0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19mbWJpZWNkbnRvaXVpaThnYTBlYWlocXExZ0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19xMWNlcmI4cWRmbmh0Z2I5a2dhZWpoMjNkb0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19odGtzYXA5aThyYjJxZTJyZGo5c2wwaWFnMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19mNGRwcmIzc2Fob2tzdWdka2doMnNjdnBnY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y185dTlyZGZlZjhpMjRodjU0NDkwZmZycHBla0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%234285F4&amp;color=%237986CB&amp;color=%237CB342&amp;color=%233F51B5&amp;color=%23D81B60&amp;color=%23AD1457&amp;color=%23D50000&amp;color=%238E24AA&amp;mode=MONTH&amp;showPrint=0&amp;showNav=1&amp;title=%E7%94%B3%E8%AB%8B%E7%8A%B6%E6%B3%81" style="border:solid 1px #777" width="100%" height="650" frameborder="0" scrolling="no">'
+	// /*再来月のカレンダー*/
+	// var today = new Date;
+	// var myYear = today.getFullYear();//年を取得
+	// var myMonth = today.getMonth()+1;//月を取得、1月が0から始まるからややこしい
+	// var nextMonth = myMonth+2;
+	// //12月を超えると1月に
+	// if(nextMonth>12){nextMonth-=12;myYear+=1;};
+	// //10以下を二ケタに
+	// if(nextMonth<10){nextMonth = "0"+nextMonth;};
+	// //日付を出力
+	// var dates = "dates="+String(myYear)+String(nextMonth)+"01/"+String(myYear)+String(nextMonth)+"01&amp;";
+	// //指定したidを書き換え
+	// document.getElementById("nextMonthCal").innerHTML = calendarCode1+dates+calenderCode2;
+	// }		
 </script>
 
 <!-- ヘッダー -->
@@ -95,35 +105,43 @@
 		<section class="content">
 			<h3 class="heading">A. 申請状況カレンダー</h3><p><font color="red">※事前申請フォーム記入後、反映に10分ほど時間がかかります。</font></p>
 			<article>
-				<table class="table">
-					<tr>
-					  <th>名称</th>
-					  <th>＜午前＞</th>
-					  <th>＜午後＞</th>
-					  <th>＜夕方＞</th>
-					</tr>
-					<tr>
-					  <td>時間区分</td>
-					  <td>10:00~11:50</td>
-					  <td>13:00~15:50</td>
-					  <td>16:00~18:50</td>
-					</tr>
-				</table>
-                
-				<ul id="shinsei">
-					<li><a target="shinsei" href="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;src=Y19wdWczbWFqMXU5cmd2czk3Z2xmaGlpOW9ka0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y18yb2YwcjVmbGJidmZlOGU3Z3Z0NHBiZTU5c0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19nMTUwMDRwNmEwb3NqcnRkYWdndGRhZWR1b0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23E67C73&amp;color=%237986CB&amp;color=%23E4C441&amp;title=%E7%94%B3%E8%AB%8B%E7%8A%B6%E6%B3%81%E3%80%90%E4%BD%93%E8%82%B2%E9%A4%A8A%E9%9D%A2%E3%80%91">体育館A面</a></li>
-					<li><a target="shinsei" href="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;title=%E7%94%B3%E8%AB%8B%E7%8A%B6%E6%B3%81%E3%80%90%E4%BD%93%E8%82%B2%E9%A4%A8B%E9%9D%A2%E3%80%91&amp;src=Y18ybzlzcnRpbWJqbmk5N3NpYzFndHZsamo5NEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19kNWhzMzY3aXJyY280b3R2czJsNGgydWFua0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y192MmZndGtocTczanZ0M21xZml1MDVoNGhya0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23E67C73&amp;color=%237986CB&amp;color=%23E4C441">体育館B面</a></li>
-					<li><a target="shinsei" href="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;title=%E7%94%B3%E8%AB%8B%E7%8A%B6%E6%B3%81%E3%80%90%E3%82%B0%E3%83%A9%E3%82%A6%E3%83%B3%E3%83%89C%E9%9D%A2%E3%80%91&amp;src=Y19maWYwYWpjZGxuMWtnYzZndW40cnE3ZWZ0a0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19nZjBlc2twNDRtNHV2MHRpZ2MzaGpqaXR0MEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19lYjVtdThlbGZ0MnFzaWMyNTJ1NTNlMTg4a0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23E67C73&amp;color=%237986CB&amp;color=%23E4C441">グラウンドC面</a></li>
-					<li><a target="shinsei" href="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;title=%E7%94%B3%E8%AB%8B%E7%8A%B6%E6%B3%81%E3%80%90%E3%82%B0%E3%83%A9%E3%82%A6%E3%83%B3%E3%83%89D%E9%9D%A2%E3%80%91&amp;src=Y19jZjdpaDJlZXJiNmFrMmRnZTRia2cxZmE5c0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19xOTczbHZuNTlsZGQzaGZvMG1qMmdtdDFnc0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19ocXFyNWEyN3ZxOGRkcnVrYzFxNHI4bWY3Z0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23E67C73&amp;color=%237986CB&amp;color=%23E4C441">グラウンドD面</a></li>
-					<li><a target="shinsei" href="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;title=%E7%94%B3%E8%AB%8B%E7%8A%B6%E6%B3%81%E3%80%90%E3%82%B0%E3%83%A9%E3%82%A6%E3%83%B3%E3%83%89E%E9%9D%A2%E3%80%91&amp;src=Y19wczZ0NDVkMGJkajRscDh2cWNxYzVvdnFqOEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19vZWM5dnM1OWs0MjVhdGszYTU2a2QwYWNrMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y18wcWt0cjcwZGFhNXBiYWhzdW5tMzE5NDBwNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23E67C73&amp;color=%237986CB&amp;color=%23E4C441">グラウンドE面</a></li>
-					<li><a target="shinsei" href="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;title=%E7%94%B3%E8%AB%8B%E7%8A%B6%E6%B3%81%E3%80%90%E3%82%B0%E3%83%A9%E3%82%A6%E3%83%B3%E3%83%89F%E9%9D%A2%E3%80%91&amp;src=Y19hNGM1NDcxYTVzbDhiY2pmNXZsbWRzcW5tNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19lOHZzcDI2MDllb2ltYnIzcmVoNmE1aGwzOEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y183Z25yb2U3c2cwMWRhdHM1NzE2dGJldWduZ0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23E67C73&amp;color=%237986CB&amp;color=%23E4C441">グラウンドF面</a></li>
-					<li><a target="shinsei" href="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;title=%E7%94%B3%E8%AB%8B%E7%8A%B6%E6%B3%81%E3%80%90%E3%82%B0%E3%83%A9%E3%82%A6%E3%83%B3%E3%83%89G%E9%9D%A2%E3%80%91&amp;src=Y18zb3E1bjA0YmdkdHZhc3RsZzVmNXRobXNjOEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19nOTA0ZHR0YmYwYW9tOXNwZXJ1cnRobzNtOEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19mcG5rdTRiNmJpNHVsOXFjbmpyb24wMDljZ0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23E67C73&amp;color=%237986CB&amp;color=%23E4C441">グラウンドG面</a></li>
-					<li><a target="shinsei" href="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;title=%E7%94%B3%E8%AB%8B%E7%8A%B6%E6%B3%81%E3%80%90%E3%82%B0%E3%83%A9%E3%82%A6%E3%83%B3%E3%83%89H%E9%9D%A2%E3%80%91&amp;src=Y180amc2aXNocG9kdTA0ZHM2NDZkcW10a2RlNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y184Z2JxZzVzcW9vOHJiZjdpbTVzNGxhOGhvZ0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19wNGg4b244MG9ncHZuOTBpa2ExaDFvamVhNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23E67C73&amp;color=%237986CB&amp;color=%23E4C441">グラウンドH面</a></li>
-				</ul>
+				<div class="scroll">
+					<table class="table">
+						<tr>
+						<th>名称</th>
+						<th>＜午前＞</th>
+						<th>＜午後＞</th>
+						<th>＜夕方＞</th>
+						</tr>
+						<tr>
+						<td>時間区分</td>
+						<td>10:00~11:50</td>
+						<td>13:00~15:50</td>
+						<td>16:00~18:50</td>
+						</tr>
+					</table>
+				</div>
+				<hr style="border:0;border-top:1px dashed;">
+				<!-- <button><a target="shinsei" href="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;src=Y19wdWczbWFqMXU5cmd2czk3Z2xmaGlpOW9ka0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y18yb2YwcjVmbGJidmZlOGU3Z3Z0NHBiZTU5c0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19nMTUwMDRwNmEwb3NqcnRkYWdndGRhZWR1b0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23E67C73&amp;color=%237986CB&amp;color=%23E4C441&amp;title=%E7%94%B3%E8%AB%8B%E7%8A%B6%E6%B3%81%E3%80%90%E4%BD%93%E8%82%B2%E9%A4%A8A%E9%9D%A2%E3%80%91">体育館A面</a></button>
+				<button><a target="shinsei" href="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;title=%E7%94%B3%E8%AB%8B%E7%8A%B6%E6%B3%81%E3%80%90%E4%BD%93%E8%82%B2%E9%A4%A8B%E9%9D%A2%E3%80%91&amp;src=Y18ybzlzcnRpbWJqbmk5N3NpYzFndHZsamo5NEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19kNWhzMzY3aXJyY280b3R2czJsNGgydWFua0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y192MmZndGtocTczanZ0M21xZml1MDVoNGhya0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23E67C73&amp;color=%237986CB&amp;color=%23E4C441">体育館B面</a></button>
+				<button><a target="shinsei" href="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;title=%E7%94%B3%E8%AB%8B%E7%8A%B6%E6%B3%81%E3%80%90%E3%82%B0%E3%83%A9%E3%82%A6%E3%83%B3%E3%83%89C%E9%9D%A2%E3%80%91&amp;src=Y19maWYwYWpjZGxuMWtnYzZndW40cnE3ZWZ0a0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19nZjBlc2twNDRtNHV2MHRpZ2MzaGpqaXR0MEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19lYjVtdThlbGZ0MnFzaWMyNTJ1NTNlMTg4a0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23E67C73&amp;color=%237986CB&amp;color=%23E4C441">グラウンドC面</a></button>
+				<button><a target="shinsei" href="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;title=%E7%94%B3%E8%AB%8B%E7%8A%B6%E6%B3%81%E3%80%90%E3%82%B0%E3%83%A9%E3%82%A6%E3%83%B3%E3%83%89D%E9%9D%A2%E3%80%91&amp;src=Y19jZjdpaDJlZXJiNmFrMmRnZTRia2cxZmE5c0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19xOTczbHZuNTlsZGQzaGZvMG1qMmdtdDFnc0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19ocXFyNWEyN3ZxOGRkcnVrYzFxNHI4bWY3Z0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23E67C73&amp;color=%237986CB&amp;color=%23E4C441">グラウンドD面</a></button>
+				<button><a target="shinsei" href="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;title=%E7%94%B3%E8%AB%8B%E7%8A%B6%E6%B3%81%E3%80%90%E3%82%B0%E3%83%A9%E3%82%A6%E3%83%B3%E3%83%89E%E9%9D%A2%E3%80%91&amp;src=Y19wczZ0NDVkMGJkajRscDh2cWNxYzVvdnFqOEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19vZWM5dnM1OWs0MjVhdGszYTU2a2QwYWNrMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y18wcWt0cjcwZGFhNXBiYWhzdW5tMzE5NDBwNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23E67C73&amp;color=%237986CB&amp;color=%23E4C441">グラウンドE面</a></button>
+				<button><a target="shinsei" href="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;title=%E7%94%B3%E8%AB%8B%E7%8A%B6%E6%B3%81%E3%80%90%E3%82%B0%E3%83%A9%E3%82%A6%E3%83%B3%E3%83%89F%E9%9D%A2%E3%80%91&amp;src=Y19hNGM1NDcxYTVzbDhiY2pmNXZsbWRzcW5tNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19lOHZzcDI2MDllb2ltYnIzcmVoNmE1aGwzOEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y183Z25yb2U3c2cwMWRhdHM1NzE2dGJldWduZ0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23E67C73&amp;color=%237986CB&amp;color=%23E4C441">グラウンドF面</a></button>
+				<button><a target="shinsei" href="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;title=%E7%94%B3%E8%AB%8B%E7%8A%B6%E6%B3%81%E3%80%90%E3%82%B0%E3%83%A9%E3%82%A6%E3%83%B3%E3%83%89G%E9%9D%A2%E3%80%91&amp;src=Y18zb3E1bjA0YmdkdHZhc3RsZzVmNXRobXNjOEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19nOTA0ZHR0YmYwYW9tOXNwZXJ1cnRobzNtOEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19mcG5rdTRiNmJpNHVsOXFjbmpyb24wMDljZ0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23E67C73&amp;color=%237986CB&amp;color=%23E4C441">グラウンドG面</a></button>
+				<button><a target="shinsei" href="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;title=%E7%94%B3%E8%AB%8B%E7%8A%B6%E6%B3%81%E3%80%90%E3%82%B0%E3%83%A9%E3%82%A6%E3%83%B3%E3%83%89H%E9%9D%A2%E3%80%91&amp;src=Y180amc2aXNocG9kdTA0ZHM2NDZkcW10a2RlNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y184Z2JxZzVzcW9vOHJiZjdpbTVzNGxhOGhvZ0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19wNGg4b244MG9ncHZuOTBpa2ExaDFvamVhNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23E67C73&amp;color=%237986CB&amp;color=%23E4C441">グラウンドH面</a></button> -->
+				<button onClick="javascript:shiftMonth(2,0)">体育館A面</button>
+				<button onClick="javascript:shiftMonth(2,1)">体育館B面</button>
+				<button onClick="javascript:shiftMonth(2,2)">グラウンドC面</button>
+				<button onClick="javascript:shiftMonth(2,3)">グラウンドD面</button>
+				<button onClick="javascript:shiftMonth(2,4)">グラウンドE面</button>
+				<button onClick="javascript:shiftMonth(2,5)">グラウンドF面</button>
+				<button onClick="javascript:shiftMonth(2,6)">グラウンドG面</button>
+				<button onClick="javascript:shiftMonth(2,7)">グラウンドH面</button>
 				<br><br>
 				
-				<div class="googlecal">
-					<iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;src=Y19wdWczbWFqMXU5cmd2czk3Z2xmaGlpOW9ka0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y18yb2YwcjVmbGJidmZlOGU3Z3Z0NHBiZTU5c0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19nMTUwMDRwNmEwb3NqcnRkYWdndGRhZWR1b0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23E67C73&amp;color=%237986CB&amp;color=%23E4C441&amp;title=%E7%94%B3%E8%AB%8B%E7%8A%B6%E6%B3%81%E3%80%90%E4%BD%93%E8%82%B2%E9%A4%A8A%E9%9D%A2%E3%80%91" name="shinsei" style="border:solid 1px #777" width="100%" height="650" frameborder="0" scrolling="no"></iframe>
+				<div class="googlecal"id="shinsei">
+					<iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;src=Y19wdWczbWFqMXU5cmd2czk3Z2xmaGlpOW9ka0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y18yb2YwcjVmbGJidmZlOGU3Z3Z0NHBiZTU5c0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19nMTUwMDRwNmEwb3NqcnRkYWdndGRhZWR1b0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23E67C73&amp;color=%237986CB&amp;color=%23E4C441&amp;title=%E7%94%B3%E8%AB%8B%E7%8A%B6%E6%B3%81%E3%80%90%E4%BD%93%E8%82%B2%E9%A4%A8A%E9%9D%A2%E3%80%91" id="shinsei" style="border:solid 1px #777" width="100%" height="650" frameborder="0" scrolling="no"></iframe>
 				</div>
 				<br>
 				<p>通常版事前申請：👤<br>グラウンド全面版事前申請：👥</p>
@@ -135,31 +153,34 @@
 			<article>
 				<p><font color="red">※一般申請フォーム記入後、反映に10分ほど時間がかかります。</font></p>
 				<p><font color="red">※カレンダーには使用 "開始" 時間が記載されています。</font></p>
-				<table class="table">
-					<tr>
-					  <th>名称</th>
-					  <th>＜午前＞</th>
-					  <th>＜午後＞</th>
-					  <th>＜夕方＞</th>
-					</tr>
-					<tr>
-					  <td>時間区分</td>
-					  <td>10:00~11:50</td>
-					  <td>13:00~15:50</td>
-					  <td>16:00~18:50</td>
-					</tr>
-				</table>
+				<div class="scroll">
+					<table class="table">
+						<tr>
+						<th>名称</th>
+						<th>＜午前＞</th>
+						<th>＜午後＞</th>
+						<th>＜夕方＞</th>
+						</tr>
+						<tr>
+						<td>時間区分</td>
+						<td>10:00~11:50</td>
+						<td>13:00~15:50</td>
+						<td>16:00~18:50</td>
+						</tr>
+					</table>
+				</div>
+				<hr style="border:0;border-top:1px dashed;">
 				<div class="cal_wrapper">
-					<ul id="shinsei">
-						<li><a target="kakutei" href="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;title=%E7%A2%BA%E5%AE%9A%E7%8A%B6%E6%B3%81%E3%80%90%E4%BD%93%E8%82%B2%E9%A4%A8A%E9%9D%A2%E3%80%91&amp;src=Y19ybDkwdWNlNzJkNHFpbmFsNnFkcDltMW1wc0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23009688">体育館A面</a></li>
-						<li><a target="kakutei" href="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;src=Y19kbG0xa3BrN29ocjlhMzF0NXB1MDRvMDNxb0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23B39DDB&amp;title=%E7%A2%BA%E5%AE%9A%E7%8A%B6%E6%B3%81%E3%80%90%E4%BD%93%E8%82%B2%E9%A4%A8B%E9%9D%A2%E3%80%91">体育館B面</a></li>
-						<li><a target="kakutei" href="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;title=%E7%A2%BA%E5%AE%9A%E7%8A%B6%E6%B3%81%E3%80%90%E3%82%B0%E3%83%A9%E3%82%A6%E3%83%B3%E3%83%89C%E9%9D%A2%E3%80%91&amp;src=Y18wNTFlM2kxdmJ2N3Y5c2dkdmp2NGFncmoyMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23EF6C00">グラウンドC面</a></li>
-						<li><a target="kakutei" href="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;title=%E7%A2%BA%E5%AE%9A%E7%8A%B6%E6%B3%81%E3%80%90%E3%82%B0%E3%83%A9%E3%82%A6%E3%83%B3%E3%83%89D%E9%9D%A2%E3%80%91&amp;src=Y18wbGZzOGs0aWpibG9vcnZvMnJhZG8wdmprNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%239E69AF">グラウンドD面</a></li>
-						<li><a target="kakutei" href="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;title=%E7%A2%BA%E5%AE%9A%E7%8A%B6%E6%B3%81%E3%80%90%E3%82%B0%E3%83%A9%E3%82%A6%E3%83%B3%E3%83%89E%E9%9D%A2%E3%80%91&amp;src=Y191dDI2czA0OWRxZWc4Zmk2ZHRlNGpwNG1rY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23009688">グラウンドE面</a></li>
-						<li><a target="kakutei" href="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;title=%E7%A2%BA%E5%AE%9A%E7%8A%B6%E6%B3%81%E3%80%90%E3%82%B0%E3%83%A9%E3%82%A6%E3%83%B3%E3%83%89F%E9%9D%A2%E3%80%91&amp;src=Y19sZmtqcW9nb2NlcGNsYjNicW5oYm03amRrc0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23AD1457">グラウンドF面</a></li>
-						<li><a target="kakutei" href="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;title=%E7%A2%BA%E5%AE%9A%E7%8A%B6%E6%B3%81%E3%80%90%E3%82%B0%E3%83%A9%E3%82%A6%E3%83%B3%E3%83%89G%E9%9D%A2%E3%80%91&amp;src=Y184Ym5nbTd2YmhyczJsY3NjZGhoZWY0NTlrMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%239E69AF">グラウンドG面</a></li>
-						<li><a target="kakutei" href="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;title=%E7%A2%BA%E5%AE%9A%E7%8A%B6%E6%B3%81%E3%80%90%E3%82%B0%E3%83%A9%E3%82%A6%E3%83%B3%E3%83%89H%E9%9D%A2%E3%80%91&amp;src=Y19kcXY5dWE0YWdxbG9ncThpaW9kNmg2N2NwZ0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23A79B8E">グラウンドH面</a></li>
-					</ul>
+					
+						<button><a target="kakutei" href="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;title=%E7%A2%BA%E5%AE%9A%E7%8A%B6%E6%B3%81%E3%80%90%E4%BD%93%E8%82%B2%E9%A4%A8A%E9%9D%A2%E3%80%91&amp;src=Y19ybDkwdWNlNzJkNHFpbmFsNnFkcDltMW1wc0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23009688">体育館A面</a></button>
+						<button><a target="kakutei" href="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;src=Y19kbG0xa3BrN29ocjlhMzF0NXB1MDRvMDNxb0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23B39DDB&amp;title=%E7%A2%BA%E5%AE%9A%E7%8A%B6%E6%B3%81%E3%80%90%E4%BD%93%E8%82%B2%E9%A4%A8B%E9%9D%A2%E3%80%91">体育館B面</a></button>
+						<button><a target="kakutei" href="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;title=%E7%A2%BA%E5%AE%9A%E7%8A%B6%E6%B3%81%E3%80%90%E3%82%B0%E3%83%A9%E3%82%A6%E3%83%B3%E3%83%89C%E9%9D%A2%E3%80%91&amp;src=Y18wNTFlM2kxdmJ2N3Y5c2dkdmp2NGFncmoyMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23EF6C00">グラウンドC面</a></button>
+						<button><a target="kakutei" href="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;title=%E7%A2%BA%E5%AE%9A%E7%8A%B6%E6%B3%81%E3%80%90%E3%82%B0%E3%83%A9%E3%82%A6%E3%83%B3%E3%83%89D%E9%9D%A2%E3%80%91&amp;src=Y18wbGZzOGs0aWpibG9vcnZvMnJhZG8wdmprNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%239E69AF">グラウンドD面</a></button>
+						<button><a target="kakutei" href="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;title=%E7%A2%BA%E5%AE%9A%E7%8A%B6%E6%B3%81%E3%80%90%E3%82%B0%E3%83%A9%E3%82%A6%E3%83%B3%E3%83%89E%E9%9D%A2%E3%80%91&amp;src=Y191dDI2czA0OWRxZWc4Zmk2ZHRlNGpwNG1rY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23009688">グラウンドE面</a></button>
+						<button><a target="kakutei" href="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;title=%E7%A2%BA%E5%AE%9A%E7%8A%B6%E6%B3%81%E3%80%90%E3%82%B0%E3%83%A9%E3%82%A6%E3%83%B3%E3%83%89F%E9%9D%A2%E3%80%91&amp;src=Y19sZmtqcW9nb2NlcGNsYjNicW5oYm03amRrc0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23AD1457">グラウンドF面</a></button>
+						<button><a target="kakutei" href="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;title=%E7%A2%BA%E5%AE%9A%E7%8A%B6%E6%B3%81%E3%80%90%E3%82%B0%E3%83%A9%E3%82%A6%E3%83%B3%E3%83%89G%E9%9D%A2%E3%80%91&amp;src=Y184Ym5nbTd2YmhyczJsY3NjZGhoZWY0NTlrMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%239E69AF">グラウンドG面</a></button>
+						<button><a target="kakutei" href="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;title=%E7%A2%BA%E5%AE%9A%E7%8A%B6%E6%B3%81%E3%80%90%E3%82%B0%E3%83%A9%E3%82%A6%E3%83%B3%E3%83%89H%E9%9D%A2%E3%80%91&amp;src=Y19kcXY5dWE0YWdxbG9ncThpaW9kNmg2N2NwZ0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23A79B8E">グラウンドH面</a></button>
+					
 					<br><br>
 					<div class="googlecal">
 						<iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;title=%E7%A2%BA%E5%AE%9A%E7%8A%B6%E6%B3%81%E3%80%90%E4%BD%93%E8%82%B2%E9%A4%A8A%E9%9D%A2%E3%80%91&amp;src=Y19ybDkwdWNlNzJkNHFpbmFsNnFkcDltMW1wc0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23009688" name="kakutei" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>

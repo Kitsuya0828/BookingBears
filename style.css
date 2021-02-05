@@ -753,7 +753,7 @@ background-color: #EFEFEF;
 
 
 /* メニュー選択 */
-ul#shinsei{
+/* ul#shinsei{
 	float:left;
 	overflow:hidden;
 }
@@ -775,4 +775,4 @@ ul#shinsei a{
 	display:inline-block;
 	padding:10px 10px;
 	color:#333;
-}
+} */
