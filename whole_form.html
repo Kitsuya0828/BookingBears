@@ -102,6 +102,32 @@
     var num9 = parseInt(document.whole.sonota.value);
     document.whole.total.value = num1 + num2 + num3 + num4 + num5 + num6 + num7 + num8 + num9;
     }
+    function shiftMonth(shift,num){
+    var calendarCode1 = '<iframe src="https://calendar.google.com/calendar/embed?';
+    var calenderCode2 = [
+    'height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;src=Y19wdWczbWFqMXU5cmd2czk3Z2xmaGlpOW9ka0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y18yb2YwcjVmbGJidmZlOGU3Z3Z0NHBiZTU5c0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19nMTUwMDRwNmEwb3NqcnRkYWdndGRhZWR1b0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23E67C73&amp;color=%237986CB&amp;color=%23E4C441&amp;title=%E7%94%B3%E8%AB%8B%E7%8A%B6%E6%B3%81%E3%80%90%E4%BD%93%E8%82%B2%E9%A4%A8A%E9%9D%A2%E3%80%91" id="shinsei" style="border:solid 1px #777" width="100%" height="650" frameborder="0" scrolling="no">',
+    'height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;title=%E7%94%B3%E8%AB%8B%E7%8A%B6%E6%B3%81%E3%80%90%E4%BD%93%E8%82%B2%E9%A4%A8B%E9%9D%A2%E3%80%91&amp;src=Y18ybzlzcnRpbWJqbmk5N3NpYzFndHZsamo5NEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19kNWhzMzY3aXJyY280b3R2czJsNGgydWFua0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y192MmZndGtocTczanZ0M21xZml1MDVoNGhya0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23E67C73&amp;color=%237986CB&amp;color=%23E4C441" id="shinsei" style="border:solid 1px #777" width="100%" height="650" frameborder="0" scrolling="no">',
+    'height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;title=%E7%94%B3%E8%AB%8B%E7%8A%B6%E6%B3%81%E3%80%90%E3%82%B0%E3%83%A9%E3%82%A6%E3%83%B3%E3%83%89C%E9%9D%A2%E3%80%91&amp;src=Y19maWYwYWpjZGxuMWtnYzZndW40cnE3ZWZ0a0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19nZjBlc2twNDRtNHV2MHRpZ2MzaGpqaXR0MEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19lYjVtdThlbGZ0MnFzaWMyNTJ1NTNlMTg4a0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23E67C73&amp;color=%237986CB&amp;color=%23E4C441" id="shinsei" style="border:solid 1px #777" width="100%" height="650" frameborder="0" scrolling="no">',
+    'height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;title=%E7%94%B3%E8%AB%8B%E7%8A%B6%E6%B3%81%E3%80%90%E3%82%B0%E3%83%A9%E3%82%A6%E3%83%B3%E3%83%89D%E9%9D%A2%E3%80%91&amp;src=Y19jZjdpaDJlZXJiNmFrMmRnZTRia2cxZmE5c0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19xOTczbHZuNTlsZGQzaGZvMG1qMmdtdDFnc0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19ocXFyNWEyN3ZxOGRkcnVrYzFxNHI4bWY3Z0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23E67C73&amp;color=%237986CB&amp;color=%23E4C441" id="shinsei" style="border:solid 1px #777" width="100%" height="650" frameborder="0" scrolling="no">',
+    'height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;title=%E7%94%B3%E8%AB%8B%E7%8A%B6%E6%B3%81%E3%80%90%E3%82%B0%E3%83%A9%E3%82%A6%E3%83%B3%E3%83%89E%E9%9D%A2%E3%80%91&amp;src=Y19wczZ0NDVkMGJkajRscDh2cWNxYzVvdnFqOEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19vZWM5dnM1OWs0MjVhdGszYTU2a2QwYWNrMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y18wcWt0cjcwZGFhNXBiYWhzdW5tMzE5NDBwNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23E67C73&amp;color=%237986CB&amp;color=%23E4C441" id="shinsei" style="border:solid 1px #777" width="100%" height="650" frameborder="0" scrolling="no">',
+    'height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;title=%E7%94%B3%E8%AB%8B%E7%8A%B6%E6%B3%81%E3%80%90%E3%82%B0%E3%83%A9%E3%82%A6%E3%83%B3%E3%83%89F%E9%9D%A2%E3%80%91&amp;src=Y19hNGM1NDcxYTVzbDhiY2pmNXZsbWRzcW5tNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19lOHZzcDI2MDllb2ltYnIzcmVoNmE1aGwzOEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y183Z25yb2U3c2cwMWRhdHM1NzE2dGJldWduZ0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23E67C73&amp;color=%237986CB&amp;color=%23E4C441" id="shinsei" style="border:solid 1px #777" width="100%" height="650" frameborder="0" scrolling="no">',
+    'height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;title=%E7%94%B3%E8%AB%8B%E7%8A%B6%E6%B3%81%E3%80%90%E3%82%B0%E3%83%A9%E3%82%A6%E3%83%B3%E3%83%89G%E9%9D%A2%E3%80%91&amp;src=Y18zb3E1bjA0YmdkdHZhc3RsZzVmNXRobXNjOEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19nOTA0ZHR0YmYwYW9tOXNwZXJ1cnRobzNtOEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19mcG5rdTRiNmJpNHVsOXFjbmpyb24wMDljZ0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23E67C73&amp;color=%237986CB&amp;color=%23E4C441" id="shinsei" style="border:solid 1px #777" width="100%" height="650" frameborder="0" scrolling="no">',
+    'height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;title=%E7%94%B3%E8%AB%8B%E7%8A%B6%E6%B3%81%E3%80%90%E3%82%B0%E3%83%A9%E3%82%A6%E3%83%B3%E3%83%89H%E9%9D%A2%E3%80%91&amp;src=Y180amc2aXNocG9kdTA0ZHM2NDZkcW10a2RlNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y184Z2JxZzVzcW9vOHJiZjdpbTVzNGxhOGhvZ0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19wNGg4b244MG9ncHZuOTBpa2ExaDFvamVhNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23E67C73&amp;color=%237986CB&amp;color=%23E4C441" id="shinsei" style="border:solid 1px #777" width="100%" height="650" frameborder="0" scrolling="no"></iframe>'
+  ];
+      var today = new Date();
+      var myYear = today.getFullYear();//年を取得
+      var myMonth = today.getMonth()+1;//月を取得、1月が0から始まるからややこしい
+      var nextMonth = myMonth+parseInt(shift);
+      //12月を超えると月マイナス12
+      if(nextMonth>12){nextMonth-=12;myYear+=1;};
+      //10以下を二ケタに
+      if(nextMonth<10){nextMonth = "0"+nextMonth;};
+      //日付を出力
+      var dates = "dates="+String(myYear)+String(nextMonth)+"01/"+String(myYear)+String(nextMonth)+"01&amp;";
+      document.getElementById("shinsei5").innerHTML = calendarCode1+dates+calenderCode2[num];
+  }
+	window.onload = function(){shiftMonth(2,0);}
+
   </script>
 
   <!-- ヘッダー -->
@@ -408,14 +434,42 @@
 
           <br><br><hr style="border:0;border-top:1px dashed;"><br>
           <big><b>使用申請</b></big><br>
-          <details>
-            <summary><span style="border-bottom: solid 1px #0090ff;">みんなの申請状況を表示</span></summary>
-            <div class="cal_wrapper">
-                <div class="googlecal">
-                    <div id="nextMonthCal"></div> <!--来月-->
-                </div>
+          <details style = "border: solid 1px #0090ff;border-radius: 10px;">
+            <summary><span>みんなの申請状況を表示</span></summary>
+            <div class="scroll">
+              <table class="table">
+                <tr>
+                <th>名称</th>
+                <th>＜午前＞</th>
+                <th>＜午後＞</th>
+                <th>＜夕方＞</th>
+                </tr>
+                <tr>
+                <td>時間区分</td>
+                <td>10:00~11:50</td>
+                <td>13:00~15:50</td>
+                <td>16:00~18:50</td>
+                </tr>
+              </table>
             </div>
-          </details>     
+            <hr style="border:0;border-top:1px dashed;">
+            <button onClick="javascript:shiftMonth(2,0)"><a>体育館A面</a></button>
+            <button onClick="javascript:shiftMonth(2,1)"><a>体育館B面</a></button>
+            <button onClick="javascript:shiftMonth(2,2)"><a>グラウンドC面</a></button>
+            <button onClick="javascript:shiftMonth(2,3)"><a>グラウンドD面</a></button>
+            <button onClick="javascript:shiftMonth(2,4)"><a>グラウンドE面</a></button>
+            <button onClick="javascript:shiftMonth(2,5)"><a>グラウンドF面</a></button>
+            <button onClick="javascript:shiftMonth(2,6)"><a>グラウンドG面</a></button>
+            <button onClick="javascript:shiftMonth(2,7)"><a>グラウンドH面</a></button>
+            <br><br>
+            
+            <div class="googlecal"id="shinsei5">
+              <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;src=Y19wdWczbWFqMXU5cmd2czk3Z2xmaGlpOW9ka0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y18yb2YwcjVmbGJidmZlOGU3Z3Z0NHBiZTU5c0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19nMTUwMDRwNmEwb3NqcnRkYWdndGRhZWR1b0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23E67C73&amp;color=%237986CB&amp;color=%23E4C441&amp;title=%E7%94%B3%E8%AB%8B%E7%8A%B6%E6%B3%81%E3%80%90%E4%BD%93%E8%82%B2%E9%A4%A8A%E9%9D%A2%E3%80%91" id="shinsei5" style="border:solid 1px #777" width="100%" height="650" frameborder="0" scrolling="no"></iframe>
+            </div>
+            <br>
+            <p>通常版事前申請：👤<br>グラウンド全面版事前申請：👥</p>
+            <br>
+          </details>   
           <label for="date1">使用月日を選択<span style="color: #ff0000"><必須></span>：</label><input name="date1" type="date" required><br>
           <label for="purpose1">使用目的（種目）を記述<span style="color: #ff0000"><必須></span>：</label><input name="purpose1" type="text" required><br>
 					<label>使用時間区分を選択<span style="color: #ff0000"><必須></span>：</label>
