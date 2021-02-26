@@ -51,6 +51,79 @@
   }
   function SubForm1 (){
     screenLock();
+    var checked = new Date();
+    var myYear = checked.getFullYear();//年を取得
+    var myMonth = checked.getMonth()+1;//月を取得、1月が0から始まるからややこしい
+    var nextNextMonth = myMonth+2;
+
+    if (parseInt(checked.getDate())<20){
+        window.alert(`事前申請が可能な期間は、申請月の前々月の20日~末日までです。\n例）${nextNextMonth}月分の事前申請期間：${myMonth}月20日～${myMonth}月末日\nもう一度ご確認ください。`);
+        return 0;
+    }
+
+    if(nextNextMonth>12){nextNextMonth-=12;myYear+=1;}
+
+    if ((document.normal.date1.value)){
+      if ((new Date(document.normal.date1.value)).getMonth()+1 != nextNextMonth){
+          window.alert(`${nextNextMonth}月の事前申請のみ可能です。\nもう一度ご確認ください。`);
+          return 0;
+      }
+    }
+    if ((document.normal.date2.value)){
+      if ((new Date(document.normal.date2.value)).getMonth()+1 != nextNextMonth){
+          window.alert(`${nextNextMonth}月の事前申請のみ可能です。\nもう一度ご確認ください。`);
+          return 0;
+      }
+    }
+    if ((document.normal.date3.value)){
+      if ((new Date(document.normal.date3.value)).getMonth()+1 != nextNextMonth){
+          window.alert(`${nextNextMonth}月の事前申請のみ可能です。\nもう一度ご確認ください。`);
+          return 0;
+      }
+    }
+    if ((document.normal.date4.value)){
+      if ((new Date(document.normal.date4.value)).getMonth()+1 != nextNextMonth){
+          window.alert(`${nextNextMonth}月の事前申請のみ可能です。\nもう一度ご確認ください。`);
+          return 0;
+      }
+    }
+    if ((document.normal.date5.value)){
+      if ((new Date(document.normal.date5.value)).getMonth()+1 != nextNextMonth){
+          window.alert(`${nextNextMonth}月の事前申請のみ可能です。\nもう一度ご確認ください。`);
+          return 0;
+      }
+    }
+
+    var gymCnt = 0;
+    if ((document.normal.placetime1.value)){
+      if ((document.normal.placetime1.value).startsWith("体育館")){
+        gymCnt += 1;
+      }
+    }
+    if ((document.normal.placetime2.value)){
+      if ((document.normal.placetime2.value).startsWith("体育館")){
+        gymCnt += 1;
+      }
+    }
+    if ((document.normal.placetime3.value)){
+      if ((document.normal.placetime3.value).startsWith("体育館")){
+        gymCnt += 1;
+      }
+    }
+    if ((document.normal.placetime4.value)){
+      if ((document.normal.placetime4.value).startsWith("体育館")){
+        gymCnt += 1;
+      }
+    }
+    if ((document.normal.placetime5.value)){
+      if ((document.normal.placetime5.value).startsWith("体育館")){
+        gymCnt += 1;
+      }
+    }
+    if (gymCnt > 2){
+      window.alert(`１度の申請で体育館は２件まで申請可能です。\n体育館の申請が${gymCnt}件ありました。\nもう一度ご確認ください。`);
+      return 0;
+    }
     $.ajax({
         url:'https://api.apispreadsheets.com/data/5754/',
         type:'post',
@@ -152,7 +225,8 @@
             <p>※（全面版）グラウンド予約をご利用の方は<a href="whole_form.html" style="text-decoration: underline;">こちらへ</a></p><hr>
             <font color="red"><b>
             <ol>
-              <li>・使用を希望する月の、前々月の20日から入力可能です。</li>
+              <li>・使用を希望する月の、前々月の20日から末日まで入力可能です。</li>
+              <li>・１度の申請で体育館は２件まで申請可能です。
               <li>・申請内容は、使用希望する月の前月初日（ただし開館日）１３時に抽選によって確定します。</li>
             </ol>
             </b></font>
