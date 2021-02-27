@@ -71,25 +71,25 @@
 <body>
 
   <script type="text/javascript">
-    window.onload = googleCalendarSet;
-    function googleCalendarSet(){
-    //カレンダーの埋め込みコードをコピペして分割する
-    var calendarCode1 = '<iframe src="https://calendar.google.com/calendar/embed?';
-    var calenderCode2 = 'height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;src=Y19xMWFqaTkxcW4wdm5mc2o5N3BvMWdmbDZiNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y191a29zZWhqcmk5aTVlNDB1N3M0aXU0ZjEyY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y18wanI0aTBzajR0MDNvaDk1M3U5NG9nOXVlb0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19mbWJpZWNkbnRvaXVpaThnYTBlYWlocXExZ0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19xMWNlcmI4cWRmbmh0Z2I5a2dhZWpoMjNkb0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19odGtzYXA5aThyYjJxZTJyZGo5c2wwaWFnMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19mNGRwcmIzc2Fob2tzdWdka2doMnNjdnBnY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y185dTlyZGZlZjhpMjRodjU0NDkwZmZycHBla0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%234285F4&amp;color=%237986CB&amp;color=%237CB342&amp;color=%233F51B5&amp;color=%23D81B60&amp;color=%23AD1457&amp;color=%23D50000&amp;color=%238E24AA&amp;mode=MONTH&amp;showPrint=0&amp;showNav=1&amp;title=%E7%94%B3%E8%AB%8B%E7%8A%B6%E6%B3%81" style="border:solid 1px #777" width="100%" height="650" frameborder="0" scrolling="no">'
-    /*来月のカレンダー*/
-    var today = new Date;
-    var myYear = today.getFullYear();//年を取得
-    var myMonth = today.getMonth()+1;//月を取得、1月が0から始まるからややこしい
-    var nextMonth = myMonth+1;
-    //12月を超えると1月に
-    if(nextMonth>12){nextMonth-=12;myYear+=1;};
-    //10以下を二ケタに
-    if(nextMonth<10){nextMonth = "0"+nextMonth;};
-    //日付を出力
-    var dates = "dates="+String(myYear)+String(nextMonth)+"01/"+String(myYear)+String(nextMonth)+"01&amp;";
-    //指定したidを書き換え
-    document.getElementById("nextMonthCal").innerHTML = calendarCode1+dates+calenderCode2;
-    }
+    // window.onload = googleCalendarSet;
+    // function googleCalendarSet(){
+    // //カレンダーの埋め込みコードをコピペして分割する
+    // var calendarCode1 = '<iframe src="https://calendar.google.com/calendar/embed?';
+    // var calenderCode2 = 'height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;src=Y19xMWFqaTkxcW4wdm5mc2o5N3BvMWdmbDZiNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y191a29zZWhqcmk5aTVlNDB1N3M0aXU0ZjEyY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y18wanI0aTBzajR0MDNvaDk1M3U5NG9nOXVlb0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19mbWJpZWNkbnRvaXVpaThnYTBlYWlocXExZ0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19xMWNlcmI4cWRmbmh0Z2I5a2dhZWpoMjNkb0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19odGtzYXA5aThyYjJxZTJyZGo5c2wwaWFnMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19mNGRwcmIzc2Fob2tzdWdka2doMnNjdnBnY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y185dTlyZGZlZjhpMjRodjU0NDkwZmZycHBla0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%234285F4&amp;color=%237986CB&amp;color=%237CB342&amp;color=%233F51B5&amp;color=%23D81B60&amp;color=%23AD1457&amp;color=%23D50000&amp;color=%238E24AA&amp;mode=MONTH&amp;showPrint=0&amp;showNav=1&amp;title=%E7%94%B3%E8%AB%8B%E7%8A%B6%E6%B3%81" style="border:solid 1px #777" width="100%" height="650" frameborder="0" scrolling="no">'
+    // /*来月のカレンダー*/
+    // var today = new Date;
+    // var myYear = today.getFullYear();//年を取得
+    // var myMonth = today.getMonth()+1;//月を取得、1月が0から始まるからややこしい
+    // var nextMonth = myMonth+1;
+    // //12月を超えると1月に
+    // if(nextMonth>12){nextMonth-=12;myYear+=1;};
+    // //10以下を二ケタに
+    // if(nextMonth<10){nextMonth = "0"+nextMonth;};
+    // //日付を出力
+    // var dates = "dates="+String(myYear)+String(nextMonth)+"01/"+String(myYear)+String(nextMonth)+"01&amp;";
+    // //指定したidを書き換え
+    // document.getElementById("nextMonthCal").innerHTML = calendarCode1+dates+calenderCode2;
+    // }
     function shiftMonth(shift,num){
         var calendarCode1 = '<iframe src="https://calendar.google.com/calendar/embed?';
 	    var calenderCode2 = [
