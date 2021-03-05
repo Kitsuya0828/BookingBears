@@ -50,7 +50,76 @@
       dom_obj_parent.removeChild(dom_obj);
   }
   function SubForm3 (){
-      screenLock();
+    screenLock();
+    var checked = new Date();
+    var myYear = checked.getFullYear();//年を取得
+    var myMonth = checked.getMonth()+1;//月を取得、1月が0から始まるからややこしい
+    var nextMonth = myMonth+1;
+
+    if(nextMonth>12){nextMonth-=12;myYear+=1;}
+
+    if ((document.normal.date1.value)){
+      if ((new Date(document.normal.date1.value)).getMonth()+1 != myMonth && (new Date(document.normal.date1.value)).getMonth()+1 != nextMonth){
+          window.alert(`${myMonth},${nextMonth}月の一般申請のみ可能です。\nもう一度ご確認ください。`);
+          return 0;
+      }
+    }
+    if ((document.normal.date2.value)){
+      if ((new Date(document.normal.date2.value)).getMonth()+1 != myMonth && (new Date(document.normal.date2.value)).getMonth()+1 != nextMonth){
+          window.alert(`${myMonth},${nextMonth}月の一般申請のみ可能です。\nもう一度ご確認ください。`);
+          return 0;
+      }
+    }
+    if ((document.normal.date3.value)){
+      if ((new Date(document.normal.date3.value)).getMonth()+1 != myMonth && (new Date(document.normal.date3.value)).getMonth()+1 != nextMonth){
+          window.alert(`${myMonth},${nextMonth}月の一般申請のみ可能です。\nもう一度ご確認ください。`);
+          return 0;
+      }
+    }
+    if ((document.normal.date4.value)){
+      if ((new Date(document.normal.date4.value)).getMonth()+1 != myMonth && (new Date(document.normal.date4.value)).getMonth()+1 != nextMonth){
+          window.alert(`${myMonth},${nextMonth}月の一般申請のみ可能です。\nもう一度ご確認ください。`);
+          return 0;
+      }
+    }
+    if ((document.normal.date5.value)){
+      if ((new Date(document.normal.date5.value)).getMonth()+1 != myMonth && (new Date(document.normal.date5.value)).getMonth()+1 != nextMonth){
+          window.alert(`${myMonth},${nextMonth}月の一般申請のみ可能です。\nもう一度ご確認ください。`);
+          return 0;
+      }
+    }
+
+    // var gymCnt = 0;
+    // if ((document.normal.placetime1.value)){
+    //   if ((document.normal.placetime1.value).startsWith("体育館")){
+    //     gymCnt += 1;
+    //   }
+    // }
+    // if ((document.normal.placetime2.value)){
+    //   if ((document.normal.placetime2.value).startsWith("体育館")){
+    //     gymCnt += 1;
+    //   }
+    // }
+    // if ((document.normal.placetime3.value)){
+    //   if ((document.normal.placetime3.value).startsWith("体育館")){
+    //     gymCnt += 1;
+    //   }
+    // }
+    // if ((document.normal.placetime4.value)){
+    //   if ((document.normal.placetime4.value).startsWith("体育館")){
+    //     gymCnt += 1;
+    //   }
+    // }
+    // if ((document.normal.placetime5.value)){
+    //   if ((document.normal.placetime5.value).startsWith("体育館")){
+    //     gymCnt += 1;
+    //   }
+    // }
+    // if (gymCnt > 2){
+    //   window.alert(`１度の申請で体育館は２件まで申請可能です。\n体育館の申請が${gymCnt}件ありました。\nもう一度ご確認ください。`);
+    //   return 0;
+    // }
+      
       $.ajax({
           url:'https://api.apispreadsheets.com/data/8392/',
           type:'post',
