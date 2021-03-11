@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, user-scalable=yes, maximum-scale=1.0, minimum-scale=1.0">
+<meta name="description" content="Sprouty | 東北大学　青葉山グラウンド・体育館の予約サイト">
+<meta name="keywords" content="">
+<title>Sprouty | 東北大学　青葉山グラウンド・体育館の予約サイト</title>
+<link rel="stylesheet" href="style.css" type="text/css" media="screen">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="js/html5.js"></script>
+<script src="js/css3-mediaqueries.js"></script>
+<![endif]-->
+</head>
+
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+
+<script>
+    // ロック用関数
+    function screenLock(){
+      // ロック用のdivを生成
+      var element = document.createElement('div'); 
+      element.id = "screenLock"; 
+      // ロック用のスタイル
+      element.style.height = '100%'; 
+      element.style.left = '0px'; 
+      element.style.position = 'fixed';
+      element.style.top = '0px';
+      element.style.width = '100%';
+      element.style.zIndex = '9999';
+      element.style.opacity = '0';
+   
+      var objBody = document.getElementsByTagName("body").item(0); 
+      objBody.appendChild(element);
+   
+      setTimeout( function() {
+          // ロック画面の削除
+          delete_dom_obj('screenLock');
+      }, 2000 );
+  }
+   
+  // div削除関数
+  function delete_dom_obj( id_name ){
+      var dom_obj = document.getElementById(id_name);
+      var dom_obj_parent=dom_obj.parentNode;
+      dom_obj_parent.removeChild(dom_obj);
+  }
+
+  function SubForm5 (){
+      screenLock();
+      $.ajax({
+          url:'https://api.apispreadsheets.com/data/5756/',
+          type:'post',
+          data:$("#cancel").serializeArray(),
+          success: function(){
+            alert("フォームが正常に送信されました")
+            window.location.href = "after_cancellation.html";
+          },
+          error: function(){
+            alert("フォーム送信時にエラーが発生しました")
+          }
+      });
+    }
+</script>
+
+<body>
+
+  <script type="text/javascript">
+    function shiftMonth(shift,num){
+        var calendarCode1 = '<iframe src="https://calendar.google.com/calendar/embed?';
+	    var calenderCode2 = [
+			'height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;src=Y19wdWczbWFqMXU5cmd2czk3Z2xmaGlpOW9ka0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y18yb2YwcjVmbGJidmZlOGU3Z3Z0NHBiZTU5c0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19nMTUwMDRwNmEwb3NqcnRkYWdndGRhZWR1b0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23E67C73&amp;color=%237986CB&amp;color=%23E4C441&amp;title=%E7%94%B3%E8%AB%8B%E7%8A%B6%E6%B3%81%E3%80%90%E4%BD%93%E8%82%B2%E9%A4%A8A%E9%9D%A2%E3%80%91" id="shinsei" style="border:solid 1px #777" width="100%" height="650" frameborder="0" scrolling="no">',
+			'height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;title=%E7%94%B3%E8%AB%8B%E7%8A%B6%E6%B3%81%E3%80%90%E4%BD%93%E8%82%B2%E9%A4%A8B%E9%9D%A2%E3%80%91&amp;src=Y18ybzlzcnRpbWJqbmk5N3NpYzFndHZsamo5NEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19kNWhzMzY3aXJyY280b3R2czJsNGgydWFua0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y192MmZndGtocTczanZ0M21xZml1MDVoNGhya0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23E67C73&amp;color=%237986CB&amp;color=%23E4C441" id="shinsei" style="border:solid 1px #777" width="100%" height="650" frameborder="0" scrolling="no">',
+			'height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;title=%E7%94%B3%E8%AB%8B%E7%8A%B6%E6%B3%81%E3%80%90%E3%82%B0%E3%83%A9%E3%82%A6%E3%83%B3%E3%83%89C%E9%9D%A2%E3%80%91&amp;src=Y19maWYwYWpjZGxuMWtnYzZndW40cnE3ZWZ0a0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19nZjBlc2twNDRtNHV2MHRpZ2MzaGpqaXR0MEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19lYjVtdThlbGZ0MnFzaWMyNTJ1NTNlMTg4a0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23E67C73&amp;color=%237986CB&amp;color=%23E4C441" id="shinsei" style="border:solid 1px #777" width="100%" height="650" frameborder="0" scrolling="no">',
+			'height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;title=%E7%94%B3%E8%AB%8B%E7%8A%B6%E6%B3%81%E3%80%90%E3%82%B0%E3%83%A9%E3%82%A6%E3%83%B3%E3%83%89D%E9%9D%A2%E3%80%91&amp;src=Y19jZjdpaDJlZXJiNmFrMmRnZTRia2cxZmE5c0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19xOTczbHZuNTlsZGQzaGZvMG1qMmdtdDFnc0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19ocXFyNWEyN3ZxOGRkcnVrYzFxNHI4bWY3Z0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23E67C73&amp;color=%237986CB&amp;color=%23E4C441" id="shinsei" style="border:solid 1px #777" width="100%" height="650" frameborder="0" scrolling="no">',
+			'height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;title=%E7%94%B3%E8%AB%8B%E7%8A%B6%E6%B3%81%E3%80%90%E3%82%B0%E3%83%A9%E3%82%A6%E3%83%B3%E3%83%89E%E9%9D%A2%E3%80%91&amp;src=Y19wczZ0NDVkMGJkajRscDh2cWNxYzVvdnFqOEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19vZWM5dnM1OWs0MjVhdGszYTU2a2QwYWNrMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y18wcWt0cjcwZGFhNXBiYWhzdW5tMzE5NDBwNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23E67C73&amp;color=%237986CB&amp;color=%23E4C441" id="shinsei" style="border:solid 1px #777" width="100%" height="650" frameborder="0" scrolling="no">',
+			'height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;title=%E7%94%B3%E8%AB%8B%E7%8A%B6%E6%B3%81%E3%80%90%E3%82%B0%E3%83%A9%E3%82%A6%E3%83%B3%E3%83%89F%E9%9D%A2%E3%80%91&amp;src=Y19hNGM1NDcxYTVzbDhiY2pmNXZsbWRzcW5tNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19lOHZzcDI2MDllb2ltYnIzcmVoNmE1aGwzOEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y183Z25yb2U3c2cwMWRhdHM1NzE2dGJldWduZ0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23E67C73&amp;color=%237986CB&amp;color=%23E4C441" id="shinsei" style="border:solid 1px #777" width="100%" height="650" frameborder="0" scrolling="no">',
+			'height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;title=%E7%94%B3%E8%AB%8B%E7%8A%B6%E6%B3%81%E3%80%90%E3%82%B0%E3%83%A9%E3%82%A6%E3%83%B3%E3%83%89G%E9%9D%A2%E3%80%91&amp;src=Y18zb3E1bjA0YmdkdHZhc3RsZzVmNXRobXNjOEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19nOTA0ZHR0YmYwYW9tOXNwZXJ1cnRobzNtOEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19mcG5rdTRiNmJpNHVsOXFjbmpyb24wMDljZ0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23E67C73&amp;color=%237986CB&amp;color=%23E4C441" id="shinsei" style="border:solid 1px #777" width="100%" height="650" frameborder="0" scrolling="no">',
+			'height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;title=%E7%94%B3%E8%AB%8B%E7%8A%B6%E6%B3%81%E3%80%90%E3%82%B0%E3%83%A9%E3%82%A6%E3%83%B3%E3%83%89H%E9%9D%A2%E3%80%91&amp;src=Y180amc2aXNocG9kdTA0ZHM2NDZkcW10a2RlNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y184Z2JxZzVzcW9vOHJiZjdpbTVzNGxhOGhvZ0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19wNGg4b244MG9ncHZuOTBpa2ExaDFvamVhNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23E67C73&amp;color=%237986CB&amp;color=%23E4C441" id="shinsei" style="border:solid 1px #777" width="100%" height="650" frameborder="0" scrolling="no"></iframe>'
+		];
+        var today = new Date();
+        var myYear = today.getFullYear();//年を取得
+        var myMonth = today.getMonth()+1;//月を取得、1月が0から始まるからややこしい
+        var nextMonth = myMonth+parseInt(shift);
+        //12月を超えると月マイナス12
+        if(nextMonth>12){nextMonth-=12;myYear+=1;};
+        //10以下を二ケタに
+        if(nextMonth<10){nextMonth = "0"+nextMonth;};
+        //日付を出力
+        var dates = "dates="+String(myYear)+String(nextMonth)+"01/"+String(myYear)+String(nextMonth)+"01&amp;";
+		console.log(String(calendarCode1)+String(dates)+String(calenderCode2[num]));
+        document.getElementById("shinsei").innerHTML = calendarCode1+dates+calenderCode2[num];
+    }
+	window.onload = function(){shiftMonth(2,0);}
+
+  </script>
+
+  <!-- ヘッダー -->
+  <div id="header">
+    <div class="inner">
+      <h1>東北大学　青葉山グラウンド・体育館の予約サイト</h1>
+      <!-- ロゴ -->
+      <div class="changelang">
+        <a href="cancellation.html" data-stt-changelang="ja" data-stt-ignore>日本語</a> | 
+        <a href="en/cancellation.html" data-stt-changelang="en" data-stt-ignore>English</a>
+    </div>
+      <div class="logo">
+        <a href="index.html">Sprouty<span>-スプラウティ-</span></a>
+      </div><br>
+      <!-- / ロゴ -->
+		<!-- トップナビゲーション -->
+		<ul id="topnav">
+			<li ><a  href="index.html">トップページ<br><span>Top</span></a></li>
+			<li class="active" ><a  href="reservation.html">予約<br><span>Reservation</span></a></li>
+			<li ><a  href="cautions.html">ご利用上の注意<br><span>Cautions</span></a></li>
+			<li ><a  href="developers.html">開発者情報<br><span>Developers</span></a></li>
+			<li ><a  href="contact.html">お問い合わせ<br><span>Contact</span></a></li>
+		</ul>
+		<!-- トップナビゲーション -->
+	</div>
+</div>
+<!-- / ヘッダー -->
+
+<div id="wrapper">
+
+	<!-- コンテンツ -->
+	<section id="main">
+
+		<!-- サブ画像 -->
+		<div id="mainBanner" class="subImg">
+			<img src="images/mainImg2.jpg" alt="" width="940" height="200">
+			<div class="slogan">
+				<h2>Lorem ipsum dolor sit amet</h2>
+				<h3>Donec ut magna in dolor aliquet feugiat eu eget risus.</h3>
+			</div>
+		</div>
+    <!-- / サブ画像 -->
+    
+    <section class="content">
+			<p style="font-size: xx-small;">
+                <a style="text-decoration: underline;" href="reservation.html">予約</a>
+                >>
+                <a style="text-decoration: underline;">申請取り消し</a>
+            </p>
+		</section>
+
+		<section class="content">
+			<h3 class="heading">D. 申請内容取り消しフォーム</h3>
+                <p>※事前申請（抽選前 or 抽選後）や一般申請の内容を取り消すことができます。</a></p>
+                <p>※以前入力した情報と違う場合は取り消すことができません。</p><br><br>
+                <p>※予約IDは、申請完了メールに記載してあります。</p><br><br>
+			<article>
+        <details style = "border: solid 1px #0090ff;border-radius: 10px;">
+          <summary><span>みんなの申請状況を表示</span></summary>
+          <div class="scroll">
+            <table class="table">
+              <tr>
+              <th>名称</th>
+              <th>＜午前＞</th>
+              <th>＜午後＞</th>
+              <th>＜夕方＞</th>
+              </tr>
+              <tr>
+              <td>時間区分</td>
+              <td>10:00~11:50</td>
+              <td>13:00~15:50</td>
+              <td>16:00~18:50</td>
+              </tr>
+            </table>
+          </div>
+          <hr style="border:0;border-top:1px dashed;">
+          <button onClick="javascript:shiftMonth(2,0)"><a>体育館A面</a></button>
+          <button onClick="javascript:shiftMonth(2,1)"><a>体育館B面</a></button>
+          <button onClick="javascript:shiftMonth(2,2)"><a>グラウンドC面</a></button>
+          <button onClick="javascript:shiftMonth(2,3)"><a>グラウンドD面</a></button>
+          <button onClick="javascript:shiftMonth(2,4)"><a>グラウンドE面</a></button>
+          <button onClick="javascript:shiftMonth(2,5)"><a>グラウンドF面</a></button>
+          <button onClick="javascript:shiftMonth(2,6)"><a>グラウンドG面</a></button>
+          <button onClick="javascript:shiftMonth(2,7)"><a>グラウンドH面</a></button>
+          <br><br>
+          
+          <div class="googlecal"id="shinsei">
+            <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;src=Y19wdWczbWFqMXU5cmd2czk3Z2xmaGlpOW9ka0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y18yb2YwcjVmbGJidmZlOGU3Z3Z0NHBiZTU5c0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19nMTUwMDRwNmEwb3NqcnRkYWdndGRhZWR1b0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23E67C73&amp;color=%237986CB&amp;color=%23E4C441&amp;title=%E7%94%B3%E8%AB%8B%E7%8A%B6%E6%B3%81%E3%80%90%E4%BD%93%E8%82%B2%E9%A4%A8A%E9%9D%A2%E3%80%91" id="shinsei" style="border:solid 1px #777" width="100%" height="650" frameborder="0" scrolling="no"></iframe>
+          </div>
+          <br>
+          <p>✋：事前申請【通常版】<br>👍：事前申請【グラウンド全面版】<br>🙏：特別使用申請</p>
+          <br>
+      </details>                       
+				<form method="post" id="cancel">
+                    <label for="mailaddress">使用責任者のメールアドレス（DCMail）<span style="color: #ff0000"><必須></span>：</label><input name="mailaddress" type="email" id="mailaddress" required><br><br>
+                    <label for="studentid">使用責任者の学籍番号<span style="color: #ff0000"><必須></span>：</label><input name="studentid" type="text" id="studentid" required><br><br>
+                    <label for="reservationid">予約ID<span style="color: #ff0000"><必須></span>：</label><input name="reservationid" type="text" id="reservationid" required><br><br>
+					</form>
+          <button type="submit" onclick="SubForm5()">送信</button>
+					
+			</article>
+		</section>
+
+	</section>
+	<!-- / コンテンツ -->
+
+
+</div>
+<!-- / WRAPPER -->
+
+<!-- フッター -->
+<div id="footer">
+	<div class="inner">
+		<!-- 3カラム -->
+		<section class="gridWrapper">
+			<article class="grid">
+				<!-- ロゴ -->
+				<a href="index.html"><b>Sprouty</b><span>-スプラウティ-</span></a>
+				<!-- / ロゴ -->
+			</article>
+			<article class="grid">
+				<!-- 電話番号+受付時間 -->
+				<p>工学部・工学研究科　教務課学生支援係</p>
+				<p class="tel">電話: <strong>022-795-5822</strong></p>
+				<p class="mail">E-mail: eng-kose@grp.tohoku.ac.jp</p>
+				<!--<p>受付時間: 平日 AM 10:00 〜 PM 5:00</p>-->
+				<!-- / 電話番号+受付時間 -->
+			</article>
+			<article class="grid copyright">
+				Copyright(c) 2012 Sample Inc. All Rights Reserved. Design by <a href="http://f-tpl.com" target="blank" rel="nofollow">http://f-tpl.com</a>
+			</article>
+		</section>
+		<!-- / 3カラム -->
+	</div>
+</div>
+<!-- / フッター -->
+
+</body>
+</html>
